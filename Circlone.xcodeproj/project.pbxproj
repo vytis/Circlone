@@ -1,0 +1,506 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F19C1D5C1B35F039002522F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19C1D5B1B35F039002522F2 /* AppDelegate.swift */; };
+		F19C1D5E1B35F039002522F2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19C1D5D1B35F039002522F2 /* ViewController.swift */; };
+		F19C1D611B35F039002522F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F19C1D5F1B35F039002522F2 /* Main.storyboard */; };
+		F19C1D631B35F039002522F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F19C1D621B35F039002522F2 /* Assets.xcassets */; };
+		F19C1D661B35F039002522F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F19C1D641B35F039002522F2 /* LaunchScreen.storyboard */; };
+		F19C1D711B35F039002522F2 /* CircloneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19C1D701B35F039002522F2 /* CircloneTests.swift */; };
+		F19C1D7C1B35F039002522F2 /* CircloneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19C1D7B1B35F039002522F2 /* CircloneUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F19C1D6D1B35F039002522F2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F19C1D501B35F038002522F2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F19C1D571B35F039002522F2;
+			remoteInfo = Circlone;
+		};
+		F19C1D781B35F039002522F2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F19C1D501B35F038002522F2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F19C1D571B35F039002522F2;
+			remoteInfo = Circlone;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F19C1D581B35F039002522F2 /* Circlone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Circlone.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F19C1D5B1B35F039002522F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F19C1D5D1B35F039002522F2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F19C1D601B35F039002522F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F19C1D621B35F039002522F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F19C1D651B35F039002522F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F19C1D671B35F039002522F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F19C1D6C1B35F039002522F2 /* CircloneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CircloneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F19C1D701B35F039002522F2 /* CircloneTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircloneTests.swift; sourceTree = "<group>"; };
+		F19C1D721B35F039002522F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F19C1D771B35F039002522F2 /* CircloneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CircloneUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F19C1D7B1B35F039002522F2 /* CircloneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircloneUITests.swift; sourceTree = "<group>"; };
+		F19C1D7D1B35F039002522F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F19C1D551B35F039002522F2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F19C1D691B35F039002522F2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F19C1D741B35F039002522F2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F19C1D4F1B35F038002522F2 = {
+			isa = PBXGroup;
+			children = (
+				F19C1D5A1B35F039002522F2 /* Circlone */,
+				F19C1D6F1B35F039002522F2 /* CircloneTests */,
+				F19C1D7A1B35F039002522F2 /* CircloneUITests */,
+				F19C1D591B35F039002522F2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F19C1D591B35F039002522F2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F19C1D581B35F039002522F2 /* Circlone.app */,
+				F19C1D6C1B35F039002522F2 /* CircloneTests.xctest */,
+				F19C1D771B35F039002522F2 /* CircloneUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F19C1D5A1B35F039002522F2 /* Circlone */ = {
+			isa = PBXGroup;
+			children = (
+				F19C1D5B1B35F039002522F2 /* AppDelegate.swift */,
+				F19C1D5D1B35F039002522F2 /* ViewController.swift */,
+				F19C1D5F1B35F039002522F2 /* Main.storyboard */,
+				F19C1D621B35F039002522F2 /* Assets.xcassets */,
+				F19C1D641B35F039002522F2 /* LaunchScreen.storyboard */,
+				F19C1D671B35F039002522F2 /* Info.plist */,
+			);
+			path = Circlone;
+			sourceTree = "<group>";
+		};
+		F19C1D6F1B35F039002522F2 /* CircloneTests */ = {
+			isa = PBXGroup;
+			children = (
+				F19C1D701B35F039002522F2 /* CircloneTests.swift */,
+				F19C1D721B35F039002522F2 /* Info.plist */,
+			);
+			path = CircloneTests;
+			sourceTree = "<group>";
+		};
+		F19C1D7A1B35F039002522F2 /* CircloneUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F19C1D7B1B35F039002522F2 /* CircloneUITests.swift */,
+				F19C1D7D1B35F039002522F2 /* Info.plist */,
+			);
+			path = CircloneUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F19C1D571B35F039002522F2 /* Circlone */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F19C1D801B35F039002522F2 /* Build configuration list for PBXNativeTarget "Circlone" */;
+			buildPhases = (
+				F19C1D541B35F039002522F2 /* Sources */,
+				F19C1D551B35F039002522F2 /* Frameworks */,
+				F19C1D561B35F039002522F2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Circlone;
+			productName = Circlone;
+			productReference = F19C1D581B35F039002522F2 /* Circlone.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F19C1D6B1B35F039002522F2 /* CircloneTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F19C1D831B35F039002522F2 /* Build configuration list for PBXNativeTarget "CircloneTests" */;
+			buildPhases = (
+				F19C1D681B35F039002522F2 /* Sources */,
+				F19C1D691B35F039002522F2 /* Frameworks */,
+				F19C1D6A1B35F039002522F2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F19C1D6E1B35F039002522F2 /* PBXTargetDependency */,
+			);
+			name = CircloneTests;
+			productName = CircloneTests;
+			productReference = F19C1D6C1B35F039002522F2 /* CircloneTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F19C1D761B35F039002522F2 /* CircloneUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F19C1D861B35F039002522F2 /* Build configuration list for PBXNativeTarget "CircloneUITests" */;
+			buildPhases = (
+				F19C1D731B35F039002522F2 /* Sources */,
+				F19C1D741B35F039002522F2 /* Frameworks */,
+				F19C1D751B35F039002522F2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F19C1D791B35F039002522F2 /* PBXTargetDependency */,
+			);
+			name = CircloneUITests;
+			productName = CircloneUITests;
+			productReference = F19C1D771B35F039002522F2 /* CircloneUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F19C1D501B35F038002522F2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = Wahanda;
+				TargetAttributes = {
+					F19C1D571B35F039002522F2 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					F19C1D6B1B35F039002522F2 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = F19C1D571B35F039002522F2;
+					};
+					F19C1D761B35F039002522F2 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = F19C1D571B35F039002522F2;
+					};
+				};
+			};
+			buildConfigurationList = F19C1D531B35F038002522F2 /* Build configuration list for PBXProject "Circlone" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F19C1D4F1B35F038002522F2;
+			productRefGroup = F19C1D591B35F039002522F2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F19C1D571B35F039002522F2 /* Circlone */,
+				F19C1D6B1B35F039002522F2 /* CircloneTests */,
+				F19C1D761B35F039002522F2 /* CircloneUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F19C1D561B35F039002522F2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F19C1D661B35F039002522F2 /* LaunchScreen.storyboard in Resources */,
+				F19C1D631B35F039002522F2 /* Assets.xcassets in Resources */,
+				F19C1D611B35F039002522F2 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F19C1D6A1B35F039002522F2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F19C1D751B35F039002522F2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F19C1D541B35F039002522F2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F19C1D5E1B35F039002522F2 /* ViewController.swift in Sources */,
+				F19C1D5C1B35F039002522F2 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F19C1D681B35F039002522F2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F19C1D711B35F039002522F2 /* CircloneTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F19C1D731B35F039002522F2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F19C1D7C1B35F039002522F2 /* CircloneUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F19C1D6E1B35F039002522F2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F19C1D571B35F039002522F2 /* Circlone */;
+			targetProxy = F19C1D6D1B35F039002522F2 /* PBXContainerItemProxy */;
+		};
+		F19C1D791B35F039002522F2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F19C1D571B35F039002522F2 /* Circlone */;
+			targetProxy = F19C1D781B35F039002522F2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F19C1D5F1B35F039002522F2 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F19C1D601B35F039002522F2 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F19C1D641B35F039002522F2 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F19C1D651B35F039002522F2 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F19C1D7E1B35F039002522F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F19C1D7F1B35F039002522F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F19C1D811B35F039002522F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Circlone/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wahanda.Circlone;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F19C1D821B35F039002522F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Circlone/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wahanda.Circlone;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		F19C1D841B35F039002522F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = CircloneTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wahanda.CircloneTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Circlone.app/Circlone";
+			};
+			name = Debug;
+		};
+		F19C1D851B35F039002522F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = CircloneTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wahanda.CircloneTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Circlone.app/Circlone";
+			};
+			name = Release;
+		};
+		F19C1D871B35F039002522F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = CircloneUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wahanda.CircloneUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Circlone;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		F19C1D881B35F039002522F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = CircloneUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wahanda.CircloneUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Circlone;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F19C1D531B35F038002522F2 /* Build configuration list for PBXProject "Circlone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F19C1D7E1B35F039002522F2 /* Debug */,
+				F19C1D7F1B35F039002522F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F19C1D801B35F039002522F2 /* Build configuration list for PBXNativeTarget "Circlone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F19C1D811B35F039002522F2 /* Debug */,
+				F19C1D821B35F039002522F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F19C1D831B35F039002522F2 /* Build configuration list for PBXNativeTarget "CircloneTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F19C1D841B35F039002522F2 /* Debug */,
+				F19C1D851B35F039002522F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F19C1D861B35F039002522F2 /* Build configuration list for PBXNativeTarget "CircloneUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F19C1D871B35F039002522F2 /* Debug */,
+				F19C1D881B35F039002522F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F19C1D501B35F038002522F2 /* Project object */;
+}

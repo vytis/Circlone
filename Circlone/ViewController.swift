@@ -10,16 +10,20 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var circleView: CircleView!
+    var hatchery: Hatchery!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        let viewport = Viewport(height: Float(view.frame.height), width: Float(view.frame.width))
+        hatchery = Hatchery(viewport: viewport, maxSize: 30)
+        
+        for _ in 0...1000 {
+            hatchery.hatch { _ in
+                self.circleView.circles = self.hatchery.circles
+            }
+        }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
 

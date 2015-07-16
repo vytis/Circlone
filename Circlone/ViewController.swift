@@ -7,22 +7,28 @@
 //
 
 import UIKit
+import CoreGraphics
 
 class ViewController: UIViewController {
 
     @IBOutlet weak var circleView: CircleView!
     var hatchery: Hatchery!
+    var displayLink: CADisplayLink!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        displayLink = CADisplayLink(target: self, selector: Selector("update"))
+        displayLink.addToRunLoop(NSRunLoop.mainRunLoop(), forMode: NSDefaultRunLoopMode)
+        
         let viewport = Viewport(height: Float(view.frame.height), width: Float(view.frame.width))
         hatchery = Hatchery(viewport: viewport, maxSize: 30)
-        
-        for _ in 0...10000 {
-            hatchery.hatch { _ in
-                self.circleView.circles = self.hatchery.circles
-            }
+        hatchery.running = true
+    }
+    
+    func update() {
+        hatchery.fetchAllCircles {
+            self.circleView.circles = $0
         }
     }
 }

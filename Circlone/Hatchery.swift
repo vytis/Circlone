@@ -8,20 +8,37 @@
 
 import Foundation
 
+typealias OnCircles = ([Circle] -> Void)
+
 class Hatchery {
     
     let maxSize: Float
     let viewport: Viewport
-    let hatchQueue = dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)
+    var running = false {
+        didSet {
+            if (running) {
+                hatch()
+            }
+        }
+    }
     
-    var circles: [Circle] = []
+    private let hatchQueue = dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)
+
+    private var circles: [Circle] = []
     
     init(viewport:Viewport, maxSize:Float) {
         self.viewport = viewport
         self.maxSize = maxSize;
     }
     
-    func randomCircle(viewport: Viewport, maxSize: Float) -> Circle {
+    func fetchAllCircles(onCircles: OnCircles) {
+        dispatch_async(dispatch_get_main_queue()) {
+            let circles = self.circles
+            onCircles(circles)
+        }
+    }
+    
+    private func randomCircle(viewport: Viewport, maxSize: Float) -> Circle {
         let radius = Float(arc4random_uniform(uint(maxSize)) + 1)
 
         let x = Float(arc4random_uniform(uint(viewport.width - radius)) + uint(radius))
@@ -30,18 +47,22 @@ class Hatchery {
         return Circle(x:x, y:y, radius:radius)
     }
     
-    func hatch(onHatch: (Circle -> Void)) {
+    private func hatch() {
         dispatch_async(hatchQueue) {
-            while(true) {
+            while(self.running) {
                 let circle = self.randomCircle(self.viewport, maxSize: self.maxSize)
-                if (circle.fits(self.circles)) {
-                    self.circles += [circle]
-                    dispatch_async(dispatch_get_main_queue()) {
-                        onHatch(circle)
+                var circles: [Circle] = []
+                dispatch_sync(dispatch_get_main_queue()) {
+                    circles = self.circles
+                }
+                if (circle.fits(circles)) {
+                    dispatch_sync(dispatch_get_main_queue()) {
+                        self.circles = circles + [circle]
                     }
-                    break
                 }
             }
         }
     }
+    
+    
 }

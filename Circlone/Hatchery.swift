@@ -34,7 +34,7 @@ class Hatchery {
         dispatch_async(hatchQueue) {
             while(true) {
                 let circle = self.randomCircle(self.viewport, maxSize: self.maxSize)
-                if (circle.isValid(self.viewport, circles: self.circles)) {
+                if (circle.fits(self.circles)) {
                     self.circles += [circle]
                     dispatch_async(dispatch_get_main_queue()) {
                         onHatch(circle)

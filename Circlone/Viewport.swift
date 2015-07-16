@@ -16,8 +16,4 @@ struct Viewport {
         self.height = height
         self.width = width
     }
-    
-    func fits(circle: Circle) -> Bool {
-        return (circle.x - circle.radius >= 0) && (circle.y - circle.radius >= 0) && (circle.x + circle.radius <= width) && (circle.y + circle.radius <= height)
-    }
 }

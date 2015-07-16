@@ -25,10 +25,6 @@ struct Circle {
     func fits(circles:[Circle]) -> Bool {
         return circles.filter {collides($0)}.count == 0
     }
-    
-    func isValid(viewport: Viewport, circles: [Circle]) -> Bool {
-        return viewport.fits(self) && fits(circles)
-    }
 }
 
 

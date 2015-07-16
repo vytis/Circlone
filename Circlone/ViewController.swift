@@ -19,7 +19,7 @@ class ViewController: UIViewController {
         let viewport = Viewport(height: Float(view.frame.height), width: Float(view.frame.width))
         hatchery = Hatchery(viewport: viewport, maxSize: 30)
         
-        for _ in 0...1000 {
+        for _ in 0...10000 {
             hatchery.hatch { _ in
                 self.circleView.circles = self.hatchery.circles
             }

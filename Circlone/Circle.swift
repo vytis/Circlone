@@ -9,10 +9,10 @@
 import Foundation
 
 struct Circle {
-    var x: Float
-    var y: Float
-    var radius: Float
-    
+    let x: Float
+    let y: Float
+    let radius: Float
+
     func collides(circle: Circle) -> Bool {
         let otherCircle = circle
         let delta_x = x - otherCircle.x;

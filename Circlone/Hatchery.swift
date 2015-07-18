@@ -23,18 +23,32 @@ class Hatchery {
     }
     
     private let hatchQueue = dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)
+    private let circlesQueue = dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)
 
     private var circles: [Circle] = []
-    
+    private var newCircles: [Circle] = []
+
     init(viewport:Viewport, maxSize:Float) {
         self.viewport = viewport
         self.maxSize = maxSize;
     }
     
     func fetchAllCircles(onCircles: OnCircles) {
-        dispatch_async(dispatch_get_main_queue()) {
+        dispatch_async(circlesQueue) {
             let circles = self.circles
-            onCircles(circles)
+            dispatch_sync(dispatch_get_main_queue()) {
+                onCircles(circles)
+            }
+        }
+    }
+    
+    func fetchNewCircles(onCircles: OnCircles) {
+        dispatch_async(circlesQueue) {
+            let circles = self.newCircles
+            self.newCircles = []
+            dispatch_sync(dispatch_get_main_queue()) {
+                onCircles(circles)
+            }
         }
     }
     
@@ -52,12 +66,13 @@ class Hatchery {
             while(self.running) {
                 let circle = self.randomCircle(self.viewport, maxSize: self.maxSize)
                 var circles: [Circle] = []
-                dispatch_sync(dispatch_get_main_queue()) {
+                dispatch_sync(self.circlesQueue) {
                     circles = self.circles
                 }
                 if (circle.fits(circles)) {
-                    dispatch_sync(dispatch_get_main_queue()) {
-                        self.circles = circles + [circle]
+                    dispatch_sync(self.circlesQueue) {
+                        self.circles += [circle]
+                        self.newCircles += [circle]
                     }
                 }
             }

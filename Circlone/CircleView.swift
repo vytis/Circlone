@@ -18,7 +18,9 @@ class CircleView: UIView {
         dispatch_sync(circleQueue) {
             self.circlesToDraw += circles
         }
-        setNeedsDisplay()
+        if (self.circlesToDraw.count > 0) {
+            setNeedsDisplay()
+        }
     }
     
     override func drawRect(rect: CGRect) {

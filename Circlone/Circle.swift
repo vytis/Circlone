@@ -23,7 +23,12 @@ struct Circle {
     }
     
     func fits(circles:[Circle]) -> Bool {
-        return circles.filter {collides($0)}.count == 0
+        for circle in circles {
+            if self.collides(circle) {
+                return false
+            }
+        }
+        return true
     }
 }
 

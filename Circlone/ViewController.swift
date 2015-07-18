@@ -28,7 +28,7 @@ class ViewController: UIViewController {
     
     func update() {
         hatchery.fetchAllCircles {
-            self.circleView.circles = $0
+            self.circleView.drawCircles($0)
         }
     }
 }

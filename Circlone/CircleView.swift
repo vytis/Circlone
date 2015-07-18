@@ -10,17 +10,39 @@ import UIKit
 
 class CircleView: UIView {
     
-    var circles: [Circle] = [] {
-        didSet {
-            setNeedsDisplay()
+    private var circlesToDraw: [Circle] = []
+    private var circleQueue = dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)
+    private var circleLayer: CGLayerRef!
+    
+    func drawCircles(circles: [Circle]) {
+        dispatch_sync(circleQueue) {
+            self.circlesToDraw += circles
         }
+        setNeedsDisplay()
     }
     
     override func drawRect(rect: CGRect) {
-        let context: CGContext = UIGraphicsGetCurrentContext();
-        circles.map {
-            $0.draw(context)
+        let context: CGContext = UIGraphicsGetCurrentContext()
+        
+        if circleLayer == nil {
+            let size = CGSize(width: self.frame.width * 2, height: self.frame.height * 2)
+            circleLayer = CGLayerCreateWithContext(context, size, nil)
+            let layerContext = CGLayerGetContext(circleLayer)
+            CGContextScaleCTM(layerContext, 2, 2)
         }
+        
+        var circles: [Circle] = []
+        dispatch_sync(circleQueue) {
+            circles += self.circlesToDraw
+            self.circlesToDraw = []
+        }
+        
+        let layerContext = CGLayerGetContext(circleLayer)
+        circles.map {
+            $0.draw(layerContext)
+        }
+        
+        CGContextDrawLayerInRect(context, bounds, circleLayer)
     }
 }
 

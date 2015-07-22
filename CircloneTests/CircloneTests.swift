@@ -10,25 +10,24 @@ import XCTest
 
 class CircloneTests: XCTestCase {
     
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
+    func testCollisionPerformance() {
+        var circles: [Circle] = []
+        srand(100)
+        for _ in 0...10000 {
+            let circle = Circle(x:Float(rand() % 500), y:Float(rand() % 500), radius:Float(rand() % 50))
+            if circle.fits(circles) {
+                circles += [circle]
+            }
+        }
+        
         self.measureBlock() {
-            // Put the code you want to measure the time of here.
+            var newCircles: [Circle] = []
+            for _ in 0...10000 {
+                let circle = Circle(x:Float(rand() % 500), y:Float(rand() % 500), radius:Float(rand() % 50))
+                if circle.fits(circles) {
+                    newCircles += [circle]
+                }
+            }
         }
     }
     

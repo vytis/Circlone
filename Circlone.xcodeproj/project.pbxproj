@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F18A75171B5AEE4300A051DB /* Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19C1D891B35F05C002522F2 /* Circle.swift */; };
 		F19C1D5C1B35F039002522F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19C1D5B1B35F039002522F2 /* AppDelegate.swift */; };
 		F19C1D5E1B35F039002522F2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19C1D5D1B35F039002522F2 /* ViewController.swift */; };
 		F19C1D611B35F039002522F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F19C1D5F1B35F039002522F2 /* Main.storyboard */; };
@@ -283,6 +284,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F19C1D711B35F039002522F2 /* CircloneTests.swift in Sources */,
+				F18A75171B5AEE4300A051DB /* Circle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

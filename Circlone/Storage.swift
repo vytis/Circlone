@@ -11,31 +11,31 @@ import Foundation
 struct Storage<T> {
     
     private let fetchQueue = dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)
+    private let mutex = dispatch_semaphore_create(1)
     
     private var all: [T] = []
     private var new: [T] = []
     
     mutating func popAllNew() -> [T] {
-        var items: [T] = []
-        dispatch_sync(fetchQueue) {
-            items = self.new
-            self.new = []
-        }
+        dispatch_semaphore_wait(mutex, DISPATCH_TIME_FOREVER)
+        let items = self.new
+        self.new = []
+        dispatch_semaphore_signal(mutex)
         return items
     }
     
     mutating func pushNew(item: T) {
-        dispatch_sync(fetchQueue) {
+        dispatch_semaphore_wait(mutex, DISPATCH_TIME_FOREVER)
             self.all += [item]
             self.new += [item]
-        }
+        dispatch_semaphore_signal(mutex)
     }
     
     func fetchAll() -> [T] {
-        var items: [T] = []
-        dispatch_sync(fetchQueue) {
-            items = self.all
-        }
+        dispatch_semaphore_wait(mutex, DISPATCH_TIME_FOREVER)
+        let items = self.all
+        dispatch_semaphore_signal(mutex)
+
         return items
     }
 }

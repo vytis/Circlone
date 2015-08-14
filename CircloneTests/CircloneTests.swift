@@ -30,5 +30,4 @@ class CircloneTests: XCTestCase {
             }
         }
     }
-    
 }

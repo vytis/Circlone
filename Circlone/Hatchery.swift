@@ -22,7 +22,7 @@ class Hatchery {
         }
     }
     
-    private let hatchQueue = dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)
+    private let hatchQueue = dispatch_queue_create("com.circles.hatchery", DISPATCH_QUEUE_SERIAL)
 
     private var storage = Storage<Circle>()
 

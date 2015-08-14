@@ -66,30 +66,30 @@ class Hatchery {
         }
     }
 
-    private func asyncHatch() {
-        dispatch_async(hatchQueue) {
-            let q = dispatch_queue_create("com.circlone.hatch.collisions", DISPATCH_QUEUE_CONCURRENT)
-
-            while(self.running) {
-                
-                let count = 1024
-                let newCircles = self.randomCircles(count)
-                
-                let existingCircles = self.storage.fetchAll()
-                
-                let paralellCount = 16
-                let perIteration = count / paralellCount
-                dispatch_apply(paralellCount, q) {
-                    
-                    for idx in 0..<perIteration {
-                        let circle = newCircles[$0 * paralellCount + idx]
-                        
-                        if (circle.fits(existingCircles)) {
-                            self.storage.pushNew(circle)
-                        }
-                    }
-                }
-            }
-        }
-    }
+//    private func asyncHatch() {
+//        dispatch_async(hatchQueue) {
+//            let q = dispatch_queue_create("com.circlone.hatch.collisions", DISPATCH_QUEUE_CONCURRENT)
+//
+//            while(self.running) {
+//                
+//                let count = 1024
+//                let newCircles = self.randomCircles(count)
+//                
+//                let existingCircles = self.storage.fetchAll()
+//                
+//                let paralellCount = 16
+//                let perIteration = count / paralellCount
+//                dispatch_apply(paralellCount, q) {
+//                    
+//                    for idx in 0..<perIteration {
+//                        let circle = newCircles[$0 * paralellCount + idx]
+//                        
+//                        if (circle.fits(existingCircles)) {
+//                            self.storage.pushNew(circle)
+//                        }
+//                    }
+//                }
+//            }
+//        }
+//    }
 }

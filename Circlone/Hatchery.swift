@@ -12,6 +12,8 @@ class Hatchery {
     
     let maxSize: Float
     let viewport: Viewport
+    let generator: CircleGenerator
+    
     var running = false {
         didSet {
             if (running) {
@@ -21,30 +23,21 @@ class Hatchery {
     }
     
     private let hatchQueue = dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)
-    private let circlesQueue = dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)
 
     private var storage = Storage<Circle>()
 
-    init(viewport:Viewport, maxSize:Float) {
+    init(viewport:Viewport, maxSize:Float, generator: CircleGenerator = RandomGenerator()) {
         self.viewport = viewport
-        self.maxSize = maxSize;
+        self.maxSize = maxSize
+        self.generator = generator
     }
     
     func popNewCircles() -> [Circle] {
         return storage.popAllNew()
     }
     
-    private func randomCircle(viewport: Viewport, maxSize: Float) -> Circle {
-        let radius = Float(arc4random_uniform(uint(maxSize)) + 1)
-
-        let x = Float(arc4random_uniform(uint(viewport.width - radius)) + uint(radius))
-        let y = Float(arc4random_uniform(uint(viewport.height - radius)) + uint(radius))
-        
-        return Circle(x:x, y:y, radius:radius)
-    }
-    
     private func randomCircle() -> Circle {
-        return randomCircle(viewport, maxSize: maxSize)
+        return generator.generate(viewport, maxSize: maxSize)
     }
     
     private func hatch() {

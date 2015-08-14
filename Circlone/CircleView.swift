@@ -24,7 +24,7 @@ class CircleView: UIView {
     }
     
     override func drawRect(rect: CGRect) {
-        let context: CGContext = UIGraphicsGetCurrentContext()
+        let context = UIGraphicsGetCurrentContext()!
         
         if circleLayer == nil {
             let size = CGSize(width: self.frame.width * 2, height: self.frame.height * 2)

@@ -8,11 +8,19 @@
 
 import Foundation
 
-struct Circle {
+func <(lhs: Circle, rhs: Circle) -> Bool {
+    return lhs.radius < rhs.radius
+}
+
+func ==(lhs: Circle, rhs: Circle) -> Bool {
+    return lhs.radius == rhs.radius
+}
+
+struct Circle: Comparable {
     let x: Float
     let y: Float
     let radius: Float
-
+    
     func collides(circle: Circle) -> Bool {
         let otherCircle = circle
         let delta_x = x - otherCircle.x;

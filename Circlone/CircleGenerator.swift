@@ -22,3 +22,19 @@ class RandomGenerator: CircleGenerator {
         return Circle(x:x, y:y, radius:radius)
     }
 }
+
+class SeededRandomGenerator: CircleGenerator {
+    init(seed: Int) {
+        srand(100)
+    }
+    
+    func generate(viewport: Viewport, maxSize: Float) -> Circle {
+        
+        let radius = Float(rand() % Int32(maxSize) + 1)
+        
+        let x = Float(rand() % Int32(viewport.width - radius) + Int32(radius))
+        let y = Float(rand() % Int32(viewport.height - radius) + Int32(radius))
+        
+        return Circle(x:x, y:y, radius:radius)
+    }
+}

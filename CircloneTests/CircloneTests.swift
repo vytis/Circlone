@@ -30,4 +30,18 @@ class CircloneTests: XCTestCase {
             }
         }
     }
+    
+    func testGenerationPerformance() {
+        self.measureBlock() {
+            let viewport = Viewport(height: 500, width: 500)
+            let generator = SeededRandomGenerator(seed: 100)
+            let hatchery = Hatchery(viewport: viewport, maxSize: 50, generator: generator)
+            hatchery.running = true
+
+            var circles: [Circle] = []
+            while circles.count < 500 {
+                circles += hatchery.popNewCircles()
+            }
+        }
+    }
 }

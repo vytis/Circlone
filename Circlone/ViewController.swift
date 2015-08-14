@@ -12,8 +12,26 @@ import CoreGraphics
 class ViewController: UIViewController {
 
     @IBOutlet weak var circleView: CircleView!
+    @IBOutlet weak var labelContainer: UIView!
+
     var hatchery: Hatchery!
     var displayLink: CADisplayLink!
+    
+    @IBAction func viewTapped(sender: UITapGestureRecognizer) {
+        hatchery.running = true
+        labelContainer.hidden = true
+    }
+    
+    override func canBecomeFirstResponder() -> Bool {
+        return true
+    }
+    
+    override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
+        hatchery.running = false
+        hatchery.reset()
+        labelContainer.hidden = false
+        circleView.reset()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,8 +40,7 @@ class ViewController: UIViewController {
         displayLink.addToRunLoop(NSRunLoop.mainRunLoop(), forMode: NSDefaultRunLoopMode)
         
         let viewport = Viewport(height: Float(view.frame.height), width: Float(view.frame.width))
-        hatchery = Hatchery(viewport: viewport, maxSize: 30)
-        hatchery.running = true
+        hatchery = Hatchery(viewport: viewport, maxSize: 60)
     }
     
     func update() {

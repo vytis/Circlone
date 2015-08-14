@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8152.3" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8173.3" systemVersion="14F25a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8124.4"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8142"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -18,10 +20,46 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4kQ-Kb-Fs1" customClass="CircleView" customModule="Circlone" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PMa-7o-Mim" userLabel="Labels container">
+                                        <rect key="frame" x="0.0" y="60" width="600" height="480"/>
+                                        <subviews>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Tap to start" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d0m-jT-0v6">
+                                                <rect key="frame" x="210.5" y="20" width="179" height="45.5"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="35"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Shake to reset" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XFn-mA-lrp">
+                                                <rect key="frame" x="187.5" y="414.5" width="225" height="45.5"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="35"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="d0m-jT-0v6" firstAttribute="centerX" secondItem="PMa-7o-Mim" secondAttribute="centerX" id="8kR-8R-Dx6"/>
+                                            <constraint firstItem="d0m-jT-0v6" firstAttribute="top" secondItem="PMa-7o-Mim" secondAttribute="top" constant="20" symbolic="YES" id="8yQ-4Z-fb3"/>
+                                            <constraint firstItem="XFn-mA-lrp" firstAttribute="centerX" secondItem="PMa-7o-Mim" secondAttribute="centerX" id="YCc-eM-dU9"/>
+                                            <constraint firstAttribute="bottom" secondItem="XFn-mA-lrp" secondAttribute="bottom" constant="20" symbolic="YES" id="Zaq-l6-h90"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstItem="PMa-7o-Mim" firstAttribute="centerX" secondItem="4kQ-Kb-Fs1" secondAttribute="centerX" id="POc-dh-sWQ"/>
+                                    <constraint firstItem="PMa-7o-Mim" firstAttribute="width" secondItem="4kQ-Kb-Fs1" secondAttribute="width" id="esM-Co-b8Z"/>
+                                    <constraint firstItem="PMa-7o-Mim" firstAttribute="height" secondItem="4kQ-Kb-Fs1" secondAttribute="height" multiplier="0.8" id="gCK-Jq-dY1"/>
+                                    <constraint firstItem="PMa-7o-Mim" firstAttribute="centerY" secondItem="4kQ-Kb-Fs1" secondAttribute="centerY" id="gH9-sS-459"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="wPW-1E-Hze" appends="YES" id="oCA-ak-nF5"/>
+                                </connections>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="4kQ-Kb-Fs1" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="4zx-Hh-Rce"/>
                             <constraint firstItem="4kQ-Kb-Fs1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="QrX-7P-h4c"/>
@@ -37,10 +75,17 @@
                     </view>
                     <connections>
                         <outlet property="circleView" destination="4kQ-Kb-Fs1" id="INz-aT-rBG"/>
+                        <outlet property="labelContainer" destination="PMa-7o-Mim" id="b76-OQ-eBB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="wPW-1E-Hze">
+                    <connections>
+                        <action selector="viewTapped:" destination="BYZ-38-t0r" id="Oto-Vx-OqW"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="286" y="377"/>
         </scene>
     </scenes>
 </document>

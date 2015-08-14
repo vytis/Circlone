@@ -26,6 +26,11 @@ class Hatchery {
 
     private var storage: Storage<Circle>
     
+    func reset() {
+        self.running = false
+        self.storage = Storage<Circle>(pivotPoint: self.storage.pivotPoint)
+    }
+    
     init(viewport:Viewport, maxSize:Float, generator: CircleGenerator = RandomGenerator(), pivot: Circle = Circle(x:0, y:0, radius:5)) {
         self.viewport = viewport
         self.maxSize = maxSize
@@ -59,7 +64,7 @@ class Hatchery {
             while(self.running) {
                 let circle = self.randomCircle()
                 
-                if (circle.fits(self.storage)) {
+                if (circle.fits(self.storage) && self.running) {
                     self.storage.pushNew(circle)
                 }
             }

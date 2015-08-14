@@ -18,7 +18,7 @@ struct Storage<T: Comparable> {
     
     private var new: [T] = []
     
-    private let pivotPoint: T
+    let pivotPoint: T
     
     init(pivotPoint: T) {
         self.pivotPoint = pivotPoint

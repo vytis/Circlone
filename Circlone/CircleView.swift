@@ -14,6 +14,11 @@ class CircleView: UIView {
     private var circleQueue = dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)
     private var circleLayer: CGLayerRef!
     
+    func reset() {
+        circleLayer = nil
+        setNeedsDisplay()
+    }
+    
     func drawCircles(circles: [Circle]) {
         dispatch_sync(circleQueue) {
             self.circlesToDraw += circles
@@ -40,6 +45,8 @@ class CircleView: UIView {
         }
         
         let layerContext = CGLayerGetContext(circleLayer)
+        CGContextSetFillColorWithColor(layerContext, UIColor.whiteColor().CGColor)
+
         circles.map {
             $0.draw(layerContext)
         }

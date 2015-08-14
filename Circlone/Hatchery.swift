@@ -24,12 +24,13 @@ class Hatchery {
     
     private let hatchQueue = dispatch_queue_create("com.circles.hatchery", DISPATCH_QUEUE_SERIAL)
 
-    private var storage = Storage<Circle>()
-
-    init(viewport:Viewport, maxSize:Float, generator: CircleGenerator = RandomGenerator()) {
+    private var storage: Storage<Circle>
+    
+    init(viewport:Viewport, maxSize:Float, generator: CircleGenerator = RandomGenerator(), pivot: Circle = Circle(x:0, y:0, radius:5)) {
         self.viewport = viewport
         self.maxSize = maxSize
         self.generator = generator
+        self.storage = Storage<Circle>(pivotPoint: pivot)
     }
     
     func popNewCircles() -> [Circle] {
@@ -57,9 +58,8 @@ class Hatchery {
         dispatch_async(hatchQueue) {
             while(self.running) {
                 let circle = self.randomCircle()
-                let circles = self.storage.fetchAll()
                 
-                if (circle.fits(circles)) {
+                if (circle.fits(self.storage)) {
                     self.storage.pushNew(circle)
                 }
             }

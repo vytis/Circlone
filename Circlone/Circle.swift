@@ -38,6 +38,18 @@ struct Circle: Comparable {
         }
         return true
     }
+    
+    func fits(storage: Storage<Circle>) -> Bool {
+        let largeCircles = storage.fetchLarge()
+        
+        if (self.fits(largeCircles)) {
+            let smallCircles = storage.fetchSmall()
+            if self.fits(smallCircles) {
+                return true
+            }
+        }
+        return false
+    }
 }
 
 

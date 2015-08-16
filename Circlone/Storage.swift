@@ -10,7 +10,6 @@ import Foundation
 
 struct Storage<T: Comparable> {
     
-    private let fetchQueue = dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)
     private let mutex = dispatch_semaphore_create(1)
     
     private var small: [T] = []

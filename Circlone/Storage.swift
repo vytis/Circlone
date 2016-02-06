@@ -45,16 +45,10 @@ struct Storage<T: Comparable> {
     }
     
     func fetchLarge() -> [T] {
-        dispatch_semaphore_wait(mutex, DISPATCH_TIME_FOREVER)
-        let items = large
-        dispatch_semaphore_signal(mutex)
-        return items
+        return large
     }
 
     func fetchSmall() -> [T] {
-        dispatch_semaphore_wait(mutex, DISPATCH_TIME_FOREVER)
-        let items = small
-        dispatch_semaphore_signal(mutex)
-        return items
+        return small
     }
 }

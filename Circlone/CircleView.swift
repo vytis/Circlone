@@ -15,7 +15,8 @@ class CircleView: UIView {
     private var circleLayer: CGLayerRef!
     
     func reset() {
-        circleLayer = nil
+        let layerContext = CGLayerGetContext(circleLayer)
+        CGContextClearRect(layerContext, bounds)
         setNeedsDisplay()
     }
     

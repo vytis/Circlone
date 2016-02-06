@@ -47,7 +47,7 @@ class CircleView: UIView {
         let layerContext = CGLayerGetContext(circleLayer)
         CGContextSetFillColorWithColor(layerContext, UIColor.whiteColor().CGColor)
 
-        circles.map {
+        circles.forEach {
             $0.draw(layerContext)
         }
         

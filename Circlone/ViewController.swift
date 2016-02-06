@@ -19,7 +19,10 @@ class ViewController: UIViewController {
     
     @IBAction func viewTapped(sender: UITapGestureRecognizer) {
         if hatchery.running {
-            
+            let point = sender.locationInView(circleView)
+            if let circle = hatchery.removeCircleAt(x: Float(point.x), y: Float(point.y)) {
+                circleView.removeCircle(circle)
+            }
         } else {
             hatchery.running = true
             labelContainer.hidden = true
@@ -49,7 +52,7 @@ class ViewController: UIViewController {
     
     func update() {
         let newCircles = hatchery.popNewCircles()
-        self.circleView.addCircles(newCircles)
+        circleView.addCircles(newCircles)
     }
 }
 

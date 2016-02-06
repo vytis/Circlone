@@ -52,4 +52,8 @@ struct Circle: Comparable {
     }
 }
 
-
+extension Circle: Collideable {
+    func containsPoint(x x: Float, y: Float) -> Bool {
+        return self.collides(Circle(x: x, y: y, radius: 0))
+    }
+}

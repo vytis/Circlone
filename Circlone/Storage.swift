@@ -25,8 +25,8 @@ struct Storage<T: Comparable> {
     
     mutating func popAllNew() -> [T] {
         dispatch_semaphore_wait(mutex, DISPATCH_TIME_FOREVER)
-        let items = self.new
-        self.new = []
+        let items = new
+        new = []
         dispatch_semaphore_signal(mutex)
         return items
     }
@@ -40,7 +40,7 @@ struct Storage<T: Comparable> {
             large += [item]
         }
 
-        self.new += [item]
+        new += [item]
         dispatch_semaphore_signal(mutex)
     }
     
@@ -50,5 +50,28 @@ struct Storage<T: Comparable> {
 
     func fetchSmall() -> [T] {
         return small
+    }
+}
+
+protocol Collideable {
+    func containsPoint(x x: Float, y: Float) -> Bool
+}
+
+extension Storage where T: Collideable {
+    
+    mutating func removeLarge(atIndex index: Int) {
+        dispatch_semaphore_wait(mutex, DISPATCH_TIME_FOREVER)
+        large.removeAtIndex(index)
+        dispatch_semaphore_signal(mutex)
+    }
+    
+    mutating func itemAt(x x: Float, y: Float) -> T? {
+        for (index, item) in large.enumerate() {
+            if item.containsPoint(x: x, y: y) {
+                removeLarge(atIndex: index)
+                return item
+            }
+        }
+        return nil
     }
 }

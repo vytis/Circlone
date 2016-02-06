@@ -10,21 +10,36 @@ import UIKit
 
 class CircleView: UIView {
     
-    private var circlesToDraw: [Circle] = []
-    private var circleQueue = dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)
-    private var circleLayer: CGLayerRef!
+    struct Blob {
+        let circle: Circle
+        let color: UIColor
+    }
+    
+    private var blobsToDraw: [Blob] = []
+    
+    private var blobsQueue = dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)
+    private var blobsLayer: CGLayerRef!
     
     func reset() {
-        let layerContext = CGLayerGetContext(circleLayer)
+        let layerContext = CGLayerGetContext(blobsLayer)
         CGContextClearRect(layerContext, bounds)
         setNeedsDisplay()
     }
     
-    func drawCircles(circles: [Circle]) {
-        dispatch_sync(circleQueue) {
-            self.circlesToDraw += circles
+    func addCircles(circles: [Circle]) {
+        let newBlobs = circles.map { Blob(circle: $0, color: UIColor.whiteColor()) }
+        addBlobs(newBlobs)
+    }
+    
+    func removeCircle(circle: Circle) {
+        addBlobs([Blob(circle: circle, color: UIColor.blackColor())])
+    }
+    
+    private func addBlobs(blobs: [Blob]) {
+        dispatch_sync(blobsQueue) {
+            self.blobsToDraw += blobs
         }
-        if (self.circlesToDraw.count > 0) {
+        if (blobsToDraw.count > 0) {
             setNeedsDisplay()
         }
     }
@@ -32,34 +47,36 @@ class CircleView: UIView {
     override func drawRect(rect: CGRect) {
         let context = UIGraphicsGetCurrentContext()!
         
-        if circleLayer == nil {
-            let size = CGSize(width: self.frame.width * 2, height: self.frame.height * 2)
-            circleLayer = CGLayerCreateWithContext(context, size, nil)
-            let layerContext = CGLayerGetContext(circleLayer)
+        if blobsLayer == nil {
+            let size = CGSize(width: frame.width * 2, height: frame.height * 2)
+            blobsLayer = CGLayerCreateWithContext(context, size, nil)
+            let layerContext = CGLayerGetContext(blobsLayer)
             CGContextScaleCTM(layerContext, 2, 2)
         }
         
-        var circles: [Circle] = []
-        dispatch_sync(circleQueue) {
-            circles += self.circlesToDraw
-            self.circlesToDraw = []
+        var blobs: [Blob] = []
+        dispatch_sync(blobsQueue) {
+            blobs += self.blobsToDraw
+            self.blobsToDraw = []
         }
         
-        let layerContext = CGLayerGetContext(circleLayer)
-        CGContextSetFillColorWithColor(layerContext, UIColor.whiteColor().CGColor)
+        let layerContext = CGLayerGetContext(blobsLayer)
 
-        circles.forEach {
+        blobs.forEach {
             $0.draw(layerContext)
         }
         
-        CGContextDrawLayerInRect(context, bounds, circleLayer)
+        CGContextDrawLayerInRect(context, bounds, blobsLayer)
     }
 }
 
-extension Circle {
+extension CircleView.Blob {
     
-    func draw(context:CGContext?) {
-        let boundingBox = CGRectMake(CGFloat(x - radius), CGFloat(y - radius), CGFloat(radius * 2), CGFloat(radius * 2))
+    func draw(context: CGContext?) {
+        CGContextSetFillColorWithColor(context, color.CGColor)
+        
+        let radius = circle.radius
+        let boundingBox = CGRectMake(CGFloat(circle.x - radius), CGFloat(circle.y - radius), CGFloat(radius * 2), CGFloat(radius * 2))
         CGContextFillEllipseInRect(context, boundingBox);
     }
 }

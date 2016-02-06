@@ -31,7 +31,7 @@ class Hatchery {
         self.storage = Storage<Circle>(pivotPoint: self.storage.pivotPoint)
     }
     
-    init(viewport:Viewport, maxSize:Float, generator: CircleGenerator = RandomGenerator(), pivot: Circle = Circle(x:0, y:0, radius:5)) {
+    init(viewport: Viewport, maxSize: Float, generator: CircleGenerator = RandomGenerator(), pivot: Circle = Circle(x: 0, y: 0, radius: 5)) {
         self.viewport = viewport
         self.maxSize = maxSize
         self.generator = generator

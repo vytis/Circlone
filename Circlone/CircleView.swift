@@ -3,7 +3,7 @@
 //  Circlone
 //
 //  Created by Vytis ⚫ on 2015-07-13.
-//  Copyright © 2015 Wahanda. All rights reserved.
+//  Copyright © 2015 🗿. All rights reserved.
 //
 
 import UIKit

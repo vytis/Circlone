@@ -3,7 +3,7 @@
 //  Circlone
 //
 //  Created by Vytis ⚫ on 2015-06-20.
-//  Copyright © 2015 Wahanda. All rights reserved.
+//  Copyright © 2015 🗿. All rights reserved.
 //
 
 import UIKit
@@ -18,8 +18,12 @@ class ViewController: UIViewController {
     var displayLink: CADisplayLink!
     
     @IBAction func viewTapped(sender: UITapGestureRecognizer) {
-        hatchery.running = true
-        labelContainer.hidden = true
+        if hatchery.running {
+            
+        } else {
+            hatchery.running = true
+            labelContainer.hidden = true
+        }
     }
     
     override func canBecomeFirstResponder() -> Bool {

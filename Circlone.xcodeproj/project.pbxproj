@@ -213,7 +213,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0700;
-				ORGANIZATIONNAME = Wahanda;
+				ORGANIZATIONNAME = "🗿";
 				TargetAttributes = {
 					F19C1D571B35F039002522F2 = {
 						CreatedOnToolsVersion = 7.0;

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import DynamicColor
 
 class CircleView: UIView {
     
@@ -20,6 +21,8 @@ class CircleView: UIView {
     private var blobsQueue = dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)
     private var blobsLayer: CGLayerRef!
     
+    var baseColor = UIColor(hue: 184.0/360.0, saturation: 0.49, brightness: 0.95, alpha: 1.0)
+    
     func reset() {
         let layerContext = CGLayerGetContext(blobsLayer)
         CGContextClearRect(layerContext, bounds)
@@ -27,7 +30,12 @@ class CircleView: UIView {
     }
     
     func addCircles(circles: [Circle]) {
-        let newBlobs = circles.map { Blob(circle: $0, color: UIColor.whiteColor()) }
+        let newBlobs = circles.map { (circle) -> Blob in
+            let ratio = Double(circle.normalizedRadius)
+            let color = self.baseColor.tintColor(amount: CGFloat(ratio))
+            let blob = Blob(circle: circle, color: color)
+            return blob
+        }
         addBlobs(newBlobs)
     }
     

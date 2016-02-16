@@ -224,3 +224,4 @@ xcuserdata/
 #
 #*.xccheckout
 xcuserdata/*
+Carthage/*

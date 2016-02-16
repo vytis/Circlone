@@ -1,0 +1,10 @@
+framework module DynamicColor {
+  umbrella header "DynamicColor.h"
+
+  export *
+  module * { export * }
+}
+
+module DynamicColor.Swift {
+    header "DynamicColor-Swift.h"
+}

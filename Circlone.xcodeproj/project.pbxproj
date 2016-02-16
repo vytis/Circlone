@@ -13,6 +13,7 @@
 		F14561981B7DB64B00586774 /* CircleGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14561951B7DACF900586774 /* CircleGenerator.swift */; };
 		F14561991B7DB65000586774 /* Viewport.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DE053E1B543BEE00ACF5AD /* Viewport.swift */; };
 		F145619A1B7DB65300586774 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14561931B7DAAF200586774 /* Storage.swift */; };
+		F156838D1C739429005D09C0 /* DynamicColor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F156838C1C739429005D09C0 /* DynamicColor.framework */; };
 		F18A75171B5AEE4300A051DB /* Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19C1D891B35F05C002522F2 /* Circle.swift */; };
 		F19C1D5C1B35F039002522F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19C1D5B1B35F039002522F2 /* AppDelegate.swift */; };
 		F19C1D5E1B35F039002522F2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19C1D5D1B35F039002522F2 /* ViewController.swift */; };
@@ -47,6 +48,7 @@
 /* Begin PBXFileReference section */
 		F14561931B7DAAF200586774 /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		F14561951B7DACF900586774 /* CircleGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleGenerator.swift; sourceTree = "<group>"; };
+		F156838C1C739429005D09C0 /* DynamicColor.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DynamicColor.framework; sourceTree = "<group>"; };
 		F19C1D581B35F039002522F2 /* Circlone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Circlone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F19C1D5B1B35F039002522F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F19C1D5D1B35F039002522F2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F156838D1C739429005D09C0 /* DynamicColor.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,6 +119,7 @@
 		F19C1D5A1B35F039002522F2 /* Circlone */ = {
 			isa = PBXGroup;
 			children = (
+				F156838C1C739429005D09C0 /* DynamicColor.framework */,
 				F19C1D5B1B35F039002522F2 /* AppDelegate.swift */,
 				F19C1D5D1B35F039002522F2 /* ViewController.swift */,
 				F19C1D5F1B35F039002522F2 /* Main.storyboard */,
@@ -160,6 +164,7 @@
 				F19C1D541B35F039002522F2 /* Sources */,
 				F19C1D551B35F039002522F2 /* Frameworks */,
 				F19C1D561B35F039002522F2 /* Resources */,
+				F15683961C73C97B005D09C0 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -274,6 +279,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		F15683961C73C97B005D09C0 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/DynamicColor.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F19C1D541B35F039002522F2 /* Sources */ = {
@@ -434,6 +456,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Circlone",
+				);
 				INFOPLIST_FILE = Circlone/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -446,6 +473,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Circlone",
+				);
 				INFOPLIST_FILE = Circlone/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

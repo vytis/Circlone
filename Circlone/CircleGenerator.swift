@@ -14,9 +14,12 @@ protocol CircleGenerator {
 
 class RandomGenerator: CircleGenerator {
     func generate(viewport: Viewport, maxSize: Float) -> Circle {
-        let radius = Float(arc4random_uniform(uint(maxSize)) + 1)
         
-        let x = Float(arc4random_uniform(uint(viewport.width - 2 * radius)) + uint(radius))
+        let realMax = min(maxSize, viewport.width / 2.0 - 1)
+        
+        let radius = Float(arc4random_uniform(uint(realMax)) + 1)
+        let limit = uint(viewport.width - 2 * radius)
+        let x = Float(arc4random_uniform(limit) + uint(radius))
         let y = Float(arc4random_uniform(uint(viewport.height - 2 * radius)) + uint(radius))
         
         return Circle(x:x, y:y, radius:radius)

@@ -47,7 +47,7 @@ class ViewController: UIViewController {
         displayLink.addToRunLoop(NSRunLoop.mainRunLoop(), forMode: NSDefaultRunLoopMode)
         
         let viewport = Viewport(height: Float(view.frame.height), width: Float(view.frame.width))
-        hatchery = Hatchery(viewport: viewport, maxSize: 60)
+        hatchery = Hatchery(viewport: viewport, maxSize: Circle.maxRadius)
     }
     
     func update() {

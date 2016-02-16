@@ -21,6 +21,12 @@ struct Circle: Comparable {
     let y: Float
     let radius: Float
     
+    static let maxRadius: Float = 100
+    
+    var normalizedRadius: Float {
+        return radius / Circle.maxRadius
+    }
+    
     func collides(circle: Circle) -> Bool {
         let otherCircle = circle
         let delta_x = x - otherCircle.x;

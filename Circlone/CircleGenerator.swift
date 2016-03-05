@@ -28,7 +28,7 @@ class RandomGenerator: CircleGenerator {
 
 class SeededRandomGenerator: CircleGenerator {
     init(seed: Int) {
-        srand(100)
+        srand(UInt32(seed))
     }
     
     func generate(viewport: Viewport, maxSize: Float) -> Circle {

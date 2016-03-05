@@ -26,40 +26,18 @@ struct Circle: Comparable {
     var normalizedRadius: Float {
         return radius / Circle.maxRadius
     }
-    
-    func collides(circle: Circle) -> Bool {
-        let otherCircle = circle
-        let delta_x = x - otherCircle.x;
-        let delta_y = y - otherCircle.y;
-        let distance_sq = delta_x * delta_x + delta_y * delta_y;
-        let radiuses = radius + otherCircle.radius;
-        return distance_sq < radiuses * radiuses
-    }
-    
-    func fits(circles:[Circle]) -> Bool {
-        for circle in circles {
-            if self.collides(circle) {
-                return false
-            }
-        }
-        return true
-    }
-    
-    func fits(storage: Storage<Circle>) -> Bool {
-        let largeCircles = storage.fetchLarge()
-        
-        if (self.fits(largeCircles)) {
-            let smallCircles = storage.fetchSmall()
-            if self.fits(smallCircles) {
-                return true
-            }
-        }
-        return false
-    }
 }
 
 extension Circle: Collideable {
     func containsPoint(x x: Float, y: Float) -> Bool {
-        return self.collides(Circle(x: x, y: y, radius: 0))
+        return collides(Circle(x: x, y: y, radius: 0))
+    }
+    
+    func collides(other: Circle) -> Bool {
+        let delta_x = x - other.x;
+        let delta_y = y - other.y;
+        let distance_sq = delta_x * delta_x + delta_y * delta_y;
+        let radiuses = radius + other.radius;
+        return distance_sq < radiuses * radiuses
     }
 }

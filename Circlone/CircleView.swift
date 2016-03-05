@@ -11,14 +11,13 @@ import DynamicColor
 
 class CircleView: UIView {
     
-    struct Blob {
+    private struct Blob {
         let circle: Circle
         let color: UIColor
     }
     
     private var blobsToDraw: [Blob] = []
     
-    private var blobsQueue = dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)
     private var blobsLayer: CGLayerRef!
     
     var baseColor = UIColor(hue: 184.0/360.0, saturation: 0.49, brightness: 0.95, alpha: 1.0)
@@ -44,9 +43,7 @@ class CircleView: UIView {
     }
     
     private func addBlobs(blobs: [Blob]) {
-        dispatch_sync(blobsQueue) {
-            self.blobsToDraw += blobs
-        }
+        self.blobsToDraw += blobs
         if (blobsToDraw.count > 0) {
             setNeedsDisplay()
         }
@@ -62,17 +59,13 @@ class CircleView: UIView {
             CGContextScaleCTM(layerContext, 2, 2)
         }
         
-        var blobs: [Blob] = []
-        dispatch_sync(blobsQueue) {
-            blobs += self.blobsToDraw
-            self.blobsToDraw = []
-        }
-        
         let layerContext = CGLayerGetContext(blobsLayer)
 
-        blobs.forEach {
+        blobsToDraw.forEach {
             $0.draw(layerContext)
         }
+        
+        blobsToDraw.removeAll()
         
         CGContextDrawLayerInRect(context, bounds, blobsLayer)
     }

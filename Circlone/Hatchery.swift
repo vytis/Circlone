@@ -14,28 +14,27 @@ class Hatchery {
     let viewport: Viewport
     let generator = RandomGenerator()
     
-    var running = false
+    private var running = true
     
     private let q = dispatch_queue_create("com.circlone.hatchery", DISPATCH_QUEUE_SERIAL)
 
     private var storage: Storage
     
-    func reset() {
+    func stop() {
         dispatch_sync(q) {
             self.running = false
-            self.popNewCircles = nil
-            let pivot = self.storage.pivotPoint
-            self.storage = Storage(pivotPoint: pivot)
         }
     }
     
-    init(viewport: Viewport, maxSize: Float, pivot: Circle = Circle(x: 0, y: 0, radius: 2)) {
+    init(viewport: Viewport, maxSize: Float, pivot: Circle = Circle(x: 0, y: 0, radius: 2), newCircles: [Circle] -> Void) {
         self.viewport = viewport
         self.maxSize = maxSize
         self.storage = Storage(pivotPoint: pivot)
+        self.popNewCircles = newCircles
+        generateCircles()
     }
     
-    var popNewCircles: ([Circle] -> Void)? = nil
+    var popNewCircles: [Circle] -> Void
     
     func removeCircleAt(x x: Float, y: Float, circle: Circle -> Void) {
         dispatch_async(q) {
@@ -58,7 +57,7 @@ class Hatchery {
             }
             let newCircles = self.storage.add(circles)
             dispatch_async(dispatch_get_main_queue()) {
-                self.popNewCircles?(newCircles)
+                self.popNewCircles(newCircles)
             }
             self.generateCircles()
         }

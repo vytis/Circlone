@@ -17,19 +17,17 @@ class ViewController: UIViewController {
     @IBOutlet weak var tapLabel: UILabel!
     @IBOutlet weak var shakeLabel: UILabel!
     
-    var hatchery: Hatchery!
-    var displayLink: CADisplayLink!
+    var hatchery: Hatchery?
     
     @IBAction func viewTapped(sender: UITapGestureRecognizer) {
-        if hatchery.running {
+        if let hatchery = hatchery {
             let point = sender.locationInView(circleView)
             hatchery.removeCircleAt(x: Float(point.x), y: Float(point.y)) {[weak self] circle in
                 self?.circleView.removeCircle(circle)
             }
         } else {
-            hatchery.running = true
-            hatchery.popNewCircles = circleView.addCircles
-            hatchery.generateCircles()
+            let viewport = Viewport(height: Float(view.frame.height), width: Float(view.frame.width))
+            hatchery = Hatchery(viewport: viewport, maxSize: Circle.maxRadius, newCircles: circleView.addCircles)
             labelContainer.hidden = true
         }
     }
@@ -46,8 +44,8 @@ class ViewController: UIViewController {
     }
     
     override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
-        hatchery.running = false
-        hatchery.reset()
+        hatchery?.stop()
+        hatchery = nil
         labelContainer.hidden = false
         circleView.reset()
         let color = UIColor(hue: randValue(), saturation: randValue(), brightness: randValue(from: 0.3, to: 0.9), alpha: 1.0)
@@ -62,8 +60,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()        
-        let viewport = Viewport(height: Float(view.frame.height), width: Float(view.frame.width))
-        hatchery = Hatchery(viewport: viewport, maxSize: Circle.maxRadius)
         updateTextColor(circleView.baseColor)
     }
 }

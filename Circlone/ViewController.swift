@@ -28,6 +28,8 @@ class ViewController: UIViewController {
             }
         } else {
             hatchery.running = true
+            hatchery.popNewCircles = circleView.addCircles
+            hatchery.generateCircles()
             labelContainer.hidden = true
         }
     }
@@ -59,11 +61,9 @@ class ViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        
+        super.viewDidLoad()        
         let viewport = Viewport(height: Float(view.frame.height), width: Float(view.frame.width))
         hatchery = Hatchery(viewport: viewport, maxSize: Circle.maxRadius)
-        hatchery.popNewCircles = circleView.addCircles
         updateTextColor(circleView.baseColor)
     }
 }

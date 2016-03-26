@@ -14,7 +14,7 @@ class Storage {
     private var large: [Circle] = []
     
     let pivotPoint: Circle
-    
+
     init(pivotPoint: Circle) {
         self.pivotPoint = pivotPoint
     }
@@ -28,36 +28,29 @@ class Storage {
     }
 }
 
-private let q = dispatch_queue_create("com.circlone.storage", DISPATCH_QUEUE_SERIAL)
 
 extension Storage {
-    func popItemAt(x x: Float, y: Float, success: Circle -> Void) {
-        dispatch_async(q) {
-            for (index, item) in self.large.enumerate() {
-                if item.containsPoint(x: x, y: y) {
-                    self.large.removeAtIndex(index)
-                    success(item)
-                    break
-                }
+    func popItemAt(x x: Float, y: Float) -> Circle? {
+        for (index, item) in self.large.enumerate() {
+            if item.containsPoint(x: x, y: y) {
+                self.large.removeAtIndex(index)
+                return item
             }
         }
+        return nil
     }
     
-    func add(items: [Circle], completed: [Circle] -> Void) {
+    func add(items: [Circle]) -> [Circle] {
         var circles = [Circle]()
-        dispatch_async(q) {
-            for item in items {
-                if !item.collides(self.large) {
-                    if !item.collides(self.small) {
-                        circles.append(item)
-                        self.pushNew(item)
-                    }
+        for item in items {
+            if !item.collides(self.large) {
+                if !item.collides(self.small) {
+                    circles.append(item)
+                    self.pushNew(item)
                 }
             }
         }
-        dispatch_sync(q) {
-            completed(circles)
-        }
+        return circles
     }
 }
 

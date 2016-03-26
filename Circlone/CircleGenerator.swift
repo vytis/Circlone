@@ -12,7 +12,7 @@ protocol CircleGenerator {
     func generate(viewport: Viewport, maxSize: Float) -> Circle
 }
 
-class RandomGenerator: CircleGenerator {
+class RandomGenerator {
     func generate(viewport: Viewport, maxSize: Float) -> Circle {
         
         let realMax = min(maxSize, viewport.width / 2.0 - 1)
@@ -26,8 +26,8 @@ class RandomGenerator: CircleGenerator {
     }
 }
 
-class SeededRandomGenerator: CircleGenerator {
-    init(seed: Int) {
+class SeededRandomGenerator {
+    init(seed: Int = 100) {
         srand(UInt32(seed))
     }
     

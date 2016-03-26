@@ -23,8 +23,8 @@ class ViewController: UIViewController {
     @IBAction func viewTapped(sender: UITapGestureRecognizer) {
         if hatchery.running {
             let point = sender.locationInView(circleView)
-            if let circle = hatchery.removeCircleAt(x: Float(point.x), y: Float(point.y)) {
-                circleView.removeCircle(circle)
+            hatchery.removeCircleAt(x: Float(point.x), y: Float(point.y)) {[weak self] circle in
+                self?.circleView.removeCircle(circle)
             }
         } else {
             hatchery.running = true
@@ -61,17 +61,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        displayLink = CADisplayLink(target: self, selector: Selector("update"))
-        displayLink.addToRunLoop(NSRunLoop.mainRunLoop(), forMode: NSDefaultRunLoopMode)
-        
         let viewport = Viewport(height: Float(view.frame.height), width: Float(view.frame.width))
         hatchery = Hatchery(viewport: viewport, maxSize: Circle.maxRadius)
+        hatchery.popNewCircles = circleView.addCircles
         updateTextColor(circleView.baseColor)
     }
-    
-    func update() {
-        let newCircles = hatchery.popNewCircles()
-        circleView.addCircles(newCircles)
-    }
 }
-

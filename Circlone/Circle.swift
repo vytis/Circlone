@@ -28,7 +28,7 @@ struct Circle: Comparable {
     }
 }
 
-extension Circle: Collideable {
+extension Circle {
     func containsPoint(x x: Float, y: Float) -> Bool {
         return collides(Circle(x: x, y: y, radius: 0))
     }
@@ -39,5 +39,14 @@ extension Circle: Collideable {
         let distance_sq = delta_x * delta_x + delta_y * delta_y;
         let radiuses = radius + other.radius;
         return distance_sq < radiuses * radiuses
+    }
+    
+    func collides(others: [Circle]) -> Bool {
+        for other in others {
+            if collides(other) {
+                return true
+            }
+        }
+        return false
     }
 }

@@ -8,70 +8,56 @@
 
 import Foundation
 
-struct Storage<T: Comparable> {
+class Storage {
     
-    private let mutex = dispatch_semaphore_create(1)
+    private var small: [Circle] = []
+    private var large: [Circle] = []
     
-    private var small: [T] = []
-    private var large: [T] = []
+    let pivotPoint: Circle
     
-    private var new: [T] = []
-    
-    let pivotPoint: T
-    
-    init(pivotPoint: T) {
+    init(pivotPoint: Circle) {
         self.pivotPoint = pivotPoint
     }
     
-    mutating func popAllNew() -> [T] {
-        dispatch_semaphore_wait(mutex, DISPATCH_TIME_FOREVER)
-        let items = new
-        new = []
-        dispatch_semaphore_signal(mutex)
-        return items
-    }
-    
-    mutating func pushNew(item: T) {
-        dispatch_semaphore_wait(mutex, DISPATCH_TIME_FOREVER)
-        
+    private func pushNew(item: Circle) {
         if item <= pivotPoint {
-            small += [item]
+            small.append(item)
         } else {
-            large += [item]
+            large.append(item)
         }
-
-        new += [item]
-        dispatch_semaphore_signal(mutex)
-    }
-    
-    func fetchLarge() -> [T] {
-        return large
-    }
-
-    func fetchSmall() -> [T] {
-        return small
     }
 }
 
-protocol Collideable {
-    func containsPoint(x x: Float, y: Float) -> Bool
-}
+private let q = dispatch_queue_create("com.circlone.storage", DISPATCH_QUEUE_SERIAL)
 
-extension Storage where T: Collideable {
-    
-    mutating func removeLarge(atIndex index: Int) {
-        dispatch_semaphore_wait(mutex, DISPATCH_TIME_FOREVER)
-        large.removeAtIndex(index)
-        dispatch_semaphore_signal(mutex)
-    }
-    
-    mutating func itemAt(x x: Float, y: Float) -> T? {
-        for (index, item) in large.enumerate() {
-            if item.containsPoint(x: x, y: y) {
-                removeLarge(atIndex: index)
-                return item
+extension Storage {
+    func popItemAt(x x: Float, y: Float, success: Circle -> Void) {
+        dispatch_async(q) {
+            for (index, item) in self.large.enumerate() {
+                if item.containsPoint(x: x, y: y) {
+                    self.large.removeAtIndex(index)
+                    success(item)
+                    break
+                }
             }
         }
-        return nil
+    }
+    
+    func add(items: [Circle], completed: [Circle] -> Void) {
+        var circles = [Circle]()
+        dispatch_async(q) {
+            for item in items {
+                if !item.collides(self.large) {
+                    if !item.collides(self.small) {
+                        circles.append(item)
+                        self.pushNew(item)
+                    }
+                }
+            }
+        }
+        dispatch_sync(q) {
+            completed(circles)
+        }
     }
 }
+

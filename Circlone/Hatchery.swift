@@ -12,7 +12,7 @@ class Hatchery {
     
     let maxSize: Float
     let viewport: Viewport
-    let generator: CircleGenerator
+    let generator = RandomGenerator()
     
     var running = false {
         didSet {
@@ -22,54 +22,47 @@ class Hatchery {
         }
     }
     
-    private let hatchQueue = dispatch_queue_create("com.circles.hatchery", DISPATCH_QUEUE_SERIAL)
+    private let hatchQueue = dispatch_queue_create("com.circlone.hatchery", DISPATCH_QUEUE_SERIAL)
 
-    private var storage: Storage<Circle>
+    private var storage: Storage
     
     func reset() {
-        self.running = false
-        self.storage = Storage<Circle>(pivotPoint: self.storage.pivotPoint)
+        running = false
+        let pivot = storage.pivotPoint
+        dispatch_async(hatchQueue) { () -> Void in
+            self.storage = Storage(pivotPoint: pivot)
+        }
     }
     
-    init(viewport: Viewport, maxSize: Float, generator: CircleGenerator = RandomGenerator(), pivot: Circle = Circle(x: 0, y: 0, radius: 2)) {
+    init(viewport: Viewport, maxSize: Float, pivot: Circle = Circle(x: 0, y: 0, radius: 2)) {
         self.viewport = viewport
         self.maxSize = maxSize
-        self.generator = generator
-        self.storage = Storage<Circle>(pivotPoint: pivot)
+        self.storage = Storage(pivotPoint: pivot)
+        self.popNewCircles = {_ in}
     }
     
-    func popNewCircles() -> [Circle] {
-        return storage.popAllNew()
-    }
+    var popNewCircles: [Circle] -> Void
     
-    func removeCircleAt(x x: Float, y: Float) -> Circle? {
-        return storage.itemAt(x: x, y: y)
-    }
-    
-    private func randomCircle() -> Circle {
-        return generator.generate(viewport, maxSize: maxSize)
-    }
-    
-    private func randomCircles(count: Int) -> [Circle] {
-        var circles: [Circle] = []
-        
-        while circles.count < count {
-            let circle = randomCircle()
-            if (circle.fits(circles)) {
-                circles += [circle]
+    func removeCircleAt(x x: Float, y: Float, circle: Circle -> Void) {
+        storage.popItemAt(x: x, y: y) { newCircle in
+            dispatch_sync(dispatch_get_main_queue()) {
+                circle(newCircle)
             }
         }
-
-        return circles
     }
-    
+        
     private func hatch() {
         dispatch_async(hatchQueue) {
-            while(self.running) {
-                let circle = self.randomCircle()
-                
-                if (circle.fits(self.storage) && self.running) {
-                    self.storage.pushNew(circle)
+            var circles = [Circle]()
+            for _ in (0..<1000) {
+                circles.append(self.generator.generate(self.viewport, maxSize: self.maxSize))
+            }
+            self.storage.add(circles) { newCircles in
+                if self.running {
+                    dispatch_async(dispatch_get_main_queue()) {
+                        self.popNewCircles(newCircles)
+                    }
+                    self.hatch()
                 }
             }
         }

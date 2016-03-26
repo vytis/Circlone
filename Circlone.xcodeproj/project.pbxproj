@@ -9,12 +9,7 @@
 /* Begin PBXBuildFile section */
 		F14561941B7DAAF200586774 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14561931B7DAAF200586774 /* Storage.swift */; };
 		F14561961B7DACF900586774 /* CircleGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14561951B7DACF900586774 /* CircleGenerator.swift */; };
-		F14561971B7DB64900586774 /* Hatchery.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19C1D8B1B35F114002522F2 /* Hatchery.swift */; };
-		F14561981B7DB64B00586774 /* CircleGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14561951B7DACF900586774 /* CircleGenerator.swift */; };
-		F14561991B7DB65000586774 /* Viewport.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DE053E1B543BEE00ACF5AD /* Viewport.swift */; };
-		F145619A1B7DB65300586774 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14561931B7DAAF200586774 /* Storage.swift */; };
 		F156838D1C739429005D09C0 /* DynamicColor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F156838C1C739429005D09C0 /* DynamicColor.framework */; };
-		F18A75171B5AEE4300A051DB /* Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19C1D891B35F05C002522F2 /* Circle.swift */; };
 		F19C1D5C1B35F039002522F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19C1D5B1B35F039002522F2 /* AppDelegate.swift */; };
 		F19C1D5E1B35F039002522F2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19C1D5D1B35F039002522F2 /* ViewController.swift */; };
 		F19C1D611B35F039002522F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F19C1D5F1B35F039002522F2 /* Main.storyboard */; };
@@ -128,8 +123,8 @@
 				F19C1D671B35F039002522F2 /* Info.plist */,
 				F19C1D891B35F05C002522F2 /* Circle.swift */,
 				F1DE053E1B543BEE00ACF5AD /* Viewport.swift */,
-				F19C1D8B1B35F114002522F2 /* Hatchery.swift */,
 				F14561951B7DACF900586774 /* CircleGenerator.swift */,
+				F19C1D8B1B35F114002522F2 /* Hatchery.swift */,
 				F14561931B7DAAF200586774 /* Storage.swift */,
 				F1DE05401B54440B00ACF5AD /* CircleView.swift */,
 			);
@@ -318,11 +313,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F19C1D711B35F039002522F2 /* CircloneTests.swift in Sources */,
-				F14561981B7DB64B00586774 /* CircleGenerator.swift in Sources */,
-				F18A75171B5AEE4300A051DB /* Circle.swift in Sources */,
-				F14561971B7DB64900586774 /* Hatchery.swift in Sources */,
-				F14561991B7DB65000586774 /* Viewport.swift in Sources */,
-				F145619A1B7DB65300586774 /* Storage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

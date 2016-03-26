@@ -43,7 +43,7 @@ class CircleView: UIView {
     }
     
     private func addBlobs(blobs: [Blob]) {
-        self.blobsToDraw += blobs
+        blobsToDraw += blobs
         if (blobsToDraw.count > 0) {
             setNeedsDisplay()
         }

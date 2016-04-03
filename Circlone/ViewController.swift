@@ -25,7 +25,9 @@ class ViewController: UIViewController {
             hatchery.removeCircleAt(x: Float(point.x), y: Float(point.y))
         } else {
             let viewport = Viewport(height: Float(view.frame.height), width: Float(view.frame.width))
-            hatchery = Hatchery(viewport: viewport, maxSize: Circle.maxRadius, newCircles: circleView.addCircles, removedCircles: circleView.removeCircles)
+            let newCircles = Subscriber(onCircles: circleView.addCircles)
+            let removedCircles = Subscriber(onCircles: circleView.removeCircles)
+            hatchery = Hatchery(viewport: viewport, maxSize: Circle.maxRadius, newCircles: newCircles, removedCircles: removedCircles)
             labelContainer.hidden = true
         }
     }

@@ -21,6 +21,11 @@ class Hatchery {
     private let storage: Storage
     private let addedCirclesSubscriber: Subscriber
     private let removedCirclesSubscriber: Subscriber
+    
+    deinit {
+        addedCirclesSubscriber.stop()
+        removedCirclesSubscriber.stop()
+    }
 
     func stop() {
         dispatch_sync(q) {

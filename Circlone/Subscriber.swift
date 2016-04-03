@@ -16,6 +16,10 @@ class Subscriber {
     private let lock = NSLock()
     
     private let onNewCircles: Circles
+        
+    func stop() {
+        displayLink.invalidate()
+    }
     
     init(onCircles: Circles) {
         self.onNewCircles = onCircles

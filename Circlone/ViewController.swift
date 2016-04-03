@@ -22,12 +22,10 @@ class ViewController: UIViewController {
     @IBAction func viewTapped(sender: UITapGestureRecognizer) {
         if let hatchery = hatchery {
             let point = sender.locationInView(circleView)
-            hatchery.removeCircleAt(x: Float(point.x), y: Float(point.y)) {[weak self] circle in
-                self?.circleView.removeCircle(circle)
-            }
+            hatchery.removeCircleAt(x: Float(point.x), y: Float(point.y))
         } else {
             let viewport = Viewport(height: Float(view.frame.height), width: Float(view.frame.width))
-            hatchery = Hatchery(viewport: viewport, maxSize: Circle.maxRadius, newCircles: circleView.addCircles)
+            hatchery = Hatchery(viewport: viewport, maxSize: Circle.maxRadius, newCircles: circleView.addCircles, removedCircles: circleView.removeCircles)
             labelContainer.hidden = true
         }
     }

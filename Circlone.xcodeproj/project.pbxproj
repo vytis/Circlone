@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		F124582F1CB1706A00872D55 /* DynamicColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F124582D1CB1706A00872D55 /* DynamicColor.swift */; };
 		F12458301CB1706A00872D55 /* HSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = F124582E1CB1706A00872D55 /* HSL.swift */; };
+		F12458321CB175AD00872D55 /* Subscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12458311CB175AD00872D55 /* Subscriber.swift */; };
 		F14561941B7DAAF200586774 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14561931B7DAAF200586774 /* Storage.swift */; };
 		F14561961B7DACF900586774 /* CircleGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14561951B7DACF900586774 /* CircleGenerator.swift */; };
 		F19C1D5C1B35F039002522F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19C1D5B1B35F039002522F2 /* AppDelegate.swift */; };
@@ -44,6 +45,7 @@
 /* Begin PBXFileReference section */
 		F124582D1CB1706A00872D55 /* DynamicColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicColor.swift; sourceTree = "<group>"; };
 		F124582E1CB1706A00872D55 /* HSL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HSL.swift; sourceTree = "<group>"; };
+		F12458311CB175AD00872D55 /* Subscriber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Subscriber.swift; sourceTree = "<group>"; };
 		F14561931B7DAAF200586774 /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		F14561951B7DACF900586774 /* CircleGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleGenerator.swift; sourceTree = "<group>"; };
 		F19C1D581B35F039002522F2 /* Circlone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Circlone.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -135,6 +137,7 @@
 				F1DE053E1B543BEE00ACF5AD /* Viewport.swift */,
 				F14561951B7DACF900586774 /* CircleGenerator.swift */,
 				F19C1D8B1B35F114002522F2 /* Hatchery.swift */,
+				F12458311CB175AD00872D55 /* Subscriber.swift */,
 				F14561931B7DAAF200586774 /* Storage.swift */,
 				F1DE05401B54440B00ACF5AD /* CircleView.swift */,
 			);
@@ -311,6 +314,7 @@
 				F12458301CB1706A00872D55 /* HSL.swift in Sources */,
 				F14561961B7DACF900586774 /* CircleGenerator.swift in Sources */,
 				F14561941B7DAAF200586774 /* Storage.swift in Sources */,
+				F12458321CB175AD00872D55 /* Subscriber.swift in Sources */,
 				F19C1D5E1B35F039002522F2 /* ViewController.swift in Sources */,
 				F19C1D8C1B35F114002522F2 /* Hatchery.swift in Sources */,
 				F19C1D5C1B35F039002522F2 /* AppDelegate.swift in Sources */,

@@ -18,30 +18,29 @@ class Hatchery {
     
     private let q = dispatch_queue_create("com.circlone.hatchery", DISPATCH_QUEUE_SERIAL)
 
-    private var storage: Storage
-    
+    private let storage: Storage
+    private let addedCirclesSubscriber: Subscriber
+    private let removedCirclesSubscriber: Subscriber
+
     func stop() {
         dispatch_sync(q) {
             self.running = false
         }
     }
     
-    init(viewport: Viewport, maxSize: Float, pivot: Circle = Circle(x: 0, y: 0, radius: 2), newCircles: [Circle] -> Void) {
+    init(viewport: Viewport, maxSize: Float, newCircles: Circles, removedCircles: Circles) {
         self.viewport = viewport
         self.maxSize = maxSize
-        self.storage = Storage(pivotPoint: pivot)
-        self.popNewCircles = newCircles
+        self.storage = Storage(pivotPoint: Circle(x: 0, y: 0, radius: 2))
+        addedCirclesSubscriber = Subscriber(onCircles: newCircles)
+        removedCirclesSubscriber = Subscriber(onCircles: removedCircles)
         generateCircles()
     }
     
-    var popNewCircles: [Circle] -> Void
-    
-    func removeCircleAt(x x: Float, y: Float, circle: Circle -> Void) {
+    func removeCircleAt(x x: Float, y: Float) {
         dispatch_async(q) {
-            if let newCircle = self.storage.popItemAt(x: x, y: y)   {
-                dispatch_async(dispatch_get_main_queue()) {
-                    circle(newCircle)
-                }
+            if let removedCircle = self.storage.popItemAt(x: x, y: y)   {
+                self.removedCirclesSubscriber.addNew([removedCircle])
             }
         }
     }
@@ -56,9 +55,7 @@ class Hatchery {
                 circles.append(self.generator.generate(self.viewport, maxSize: self.maxSize))
             }
             let newCircles = self.storage.add(circles)
-            dispatch_async(dispatch_get_main_queue()) {
-                self.popNewCircles(newCircles)
-            }
+            self.addedCirclesSubscriber.addNew(newCircles)
             self.generateCircles()
         }
     }

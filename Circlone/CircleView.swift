@@ -37,8 +37,9 @@ class CircleView: UIView {
         addBlobs(newBlobs)
     }
     
-    func removeCircle(circle: Circle) {
-        addBlobs([Blob(circle: circle, color: UIColor.blackColor())])
+    func removeCircles(circles: [Circle]) {
+        let blobs = circles.map { Blob(circle: $0, color: UIColor.blackColor()) }
+        addBlobs(blobs)
     }
     
     private func addBlobs(blobs: [Blob]) {

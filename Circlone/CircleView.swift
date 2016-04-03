@@ -60,8 +60,12 @@ class CircleView: UIView {
         }
         
         let layerContext = CGLayerGetContext(blobsLayer)
+        
+        let sortedBlobs = blobsToDraw.sort { left, right in
+            return left.color == UIColor.blackColor()
+        }
 
-        blobsToDraw.forEach {
+        sortedBlobs.forEach {
             $0.draw(layerContext)
         }
         

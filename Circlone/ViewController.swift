@@ -19,6 +19,13 @@ class ViewController: UIViewController {
     
     var hatchery: Hatchery?
     
+    @IBAction func viewPanned(sender: AnyObject) {
+        if let hatchery = hatchery {
+            let point = sender.locationInView(circleView)
+            hatchery.removeCircleAt(x: Float(point.x), y: Float(point.y))
+        }
+    }
+    
     @IBAction func viewTapped(sender: UITapGestureRecognizer) {
         if let hatchery = hatchery {
             let point = sender.locationInView(circleView)

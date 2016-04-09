@@ -194,7 +194,6 @@
 				F19C1D541B35F039002522F2 /* Sources */,
 				F19C1D551B35F039002522F2 /* Frameworks */,
 				F19C1D561B35F039002522F2 /* Resources */,
-				F15683961C73C97B005D09C0 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -309,23 +308,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		F15683961C73C97B005D09C0 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/DynamicColor.framework",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F19C1D541B35F039002522F2 /* Sources */ = {

@@ -18,16 +18,20 @@ class Node {
         case Deeper([Node])
     }
     
-    init(circles: [Circle], frame: CGRect, splitLimit: Int = 1000) {
+    init(circles: [Circle], frame: CGRect, splitLimit: Int = 500) {
         let circlesInFrame = circles.filter(frame.intersects)
         self.contents = .Circles(circlesInFrame, splitLimit)
         self.frame = frame
     }
     
     static func split(circles circles: [Circle], frame: CGRect) -> [Node] {
-        let left = Node(circles: circles, frame: frame.leftSide)
-        let right = Node(circles: circles, frame: frame.rightSide)
-        return [left, right]
+        
+        let one = Node(circles: circles, frame: frame.leftSide.topSide)
+        let two = Node(circles: circles, frame: frame.rightSide.topSide)
+        let three = Node(circles: circles, frame: frame.bottomSide.rightSide)
+        let four = Node(circles: circles, frame: frame.bottomSide.leftSide)
+
+        return [one, two, three, four]
     }
     
     func collides(circle circle: Circle) -> Bool {

@@ -18,7 +18,7 @@ class CircloneTests: XCTestCase {
     let viewport = Viewport(height: 500, width: 500)
     
     let toAdd = (0...100000).map{ _ in Circle(x:Float(rand() % 500), y:Float(rand() % 500), radius:Float(rand() % 50)) }
-    let toCollide = (0...5000).map{ _ in Circle(x:Float(rand() % 500), y:Float(rand() % 500), radius:Float(rand() % 50)) }
+
     
     func testCollisionPerformance() {
         var circles: [Circle] = []
@@ -27,10 +27,10 @@ class CircloneTests: XCTestCase {
                 circles += [circle]
             }
         }
-        
+        let toCollide = (0...5000).map{ _ in Circle(x:Float(rand() % 500), y:Float(rand() % 500), radius:Float(rand() % 50)) }
         self.measureBlock() {
             var newCircles: [Circle] = []
-            for circle in self.toCollide {
+            for circle in toCollide {
                 if !circle.collides(circles) {
                     newCircles += [circle]
                 }
@@ -41,9 +41,9 @@ class CircloneTests: XCTestCase {
     func testStoragePerformance() {
         let storage = Storage(viewport: viewport)
         storage.add(toAdd)
-        
+        let toCollide = (0...20000).map{ _ in Circle(x:Float(rand() % 500), y:Float(rand() % 500), radius:Float(rand() % 50)) }
         self.measureBlock { 
-            storage.add(self.toCollide)
+            storage.add(toCollide)
         }
     }
     

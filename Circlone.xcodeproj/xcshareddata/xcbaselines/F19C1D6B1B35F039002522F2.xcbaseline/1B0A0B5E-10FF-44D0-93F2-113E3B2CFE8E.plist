@@ -11,9 +11,19 @@
 				<key>com.apple.XCTPerformanceMetric_WallClockTime</key>
 				<dict>
 					<key>baselineAverage</key>
-					<real>0.14629</real>
+					<real>0.086097</real>
 					<key>baselineIntegrationDisplayName</key>
-					<string>2016-04-10 00:47:31</string>
+					<string>2016-04-10 00:48:23</string>
+				</dict>
+			</dict>
+			<key>testGeneratorPerformance()</key>
+			<dict>
+				<key>com.apple.XCTPerformanceMetric_WallClockTime</key>
+				<dict>
+					<key>baselineAverage</key>
+					<real>0.092354</real>
+					<key>baselineIntegrationDisplayName</key>
+					<string>2016-04-10 00:48:23</string>
 				</dict>
 			</dict>
 			<key>testStoragePerformance()</key>
@@ -21,9 +31,9 @@
 				<key>com.apple.XCTPerformanceMetric_WallClockTime</key>
 				<dict>
 					<key>baselineAverage</key>
-					<real>0.27515</real>
+					<real>0.12453</real>
 					<key>baselineIntegrationDisplayName</key>
-					<string>2016-04-10 00:47:31</string>
+					<string>2016-04-10 00:48:23</string>
 				</dict>
 			</dict>
 		</dict>

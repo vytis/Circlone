@@ -99,13 +99,4 @@ class Node {
     }
 }
 
-let a = Circle(x: 2, y: 2, radius: 1)
-let b = Circle(x: 10, y: 2, radius: 1)
-let c = Circle(x: 20, y: 2, radius: 1)
-let d = Circle(x: 10, y: 10, radius: 1)
-
-let tree = Node(circles: [a], frame: CGRect(x: 0, y: 0, width: 20, height: 20))
-tree.add(circle: b)
-tree.add(circle: c)
-tree.add(circle: d)
-
+UInt64(2685821657736338717)

@@ -11,23 +11,33 @@ import XCTest
 
 class CircloneTests: XCTestCase {
     
-    override class func setUp() {
-        srand(100)
+    let maxSize: Float = 100
+    let viewport = Viewport(height: 500, width: 500)
+
+    var generator: RandomGenerator!
+    override func setUp() {
+        generator = RandomGenerator(seed: 1234)
     }
     
-    let viewport = Viewport(height: 500, width: 500)
     
-    let toAdd = (0...100000).map{ _ in Circle(x:Float(rand() % 500), y:Float(rand() % 500), radius:Float(rand() % 50)) }
+    func testGeneratorPerformance() {
+        self.measureBlock { 
+            for _ in 0...500000 {
+                self.generator.generate(self.viewport, maxSize: self.maxSize)
+            }
+        }
+    }
 
-    
     func testCollisionPerformance() {
         var circles: [Circle] = []
+        let toAdd = (0...100000).map{ _ in self.generator.generate(self.viewport, maxSize: self.maxSize) }
+
         for circle in toAdd {
             if !circle.collides(circles) {
                 circles += [circle]
             }
         }
-        let toCollide = (0...5000).map{ _ in Circle(x:Float(rand() % 500), y:Float(rand() % 500), radius:Float(rand() % 50)) }
+        let toCollide = (0...10000).map{ _ in self.generator.generate(self.viewport, maxSize: self.maxSize) }
         self.measureBlock() {
             var newCircles: [Circle] = []
             for circle in toCollide {
@@ -40,8 +50,9 @@ class CircloneTests: XCTestCase {
     
     func testStoragePerformance() {
         let storage = Storage(viewport: viewport)
+        let toAdd = (0...100000).map{ _ in self.generator.generate(self.viewport, maxSize: self.maxSize) }
         storage.add(toAdd)
-        let toCollide = (0...20000).map{ _ in Circle(x:Float(rand() % 500), y:Float(rand() % 500), radius:Float(rand() % 50)) }
+        let toCollide = (0...20000).map{ _ in self.generator.generate(self.viewport, maxSize: self.maxSize) }
         self.measureBlock { 
             storage.add(toCollide)
         }

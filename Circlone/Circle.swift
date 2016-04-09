@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreGraphics
 
 func <(lhs: Circle, rhs: Circle) -> Bool {
     return lhs.radius < rhs.radius
@@ -25,6 +26,10 @@ struct Circle: Comparable {
     
     var normalizedRadius: Float {
         return radius / Circle.maxRadius
+    }
+    
+    var boundingBox: CGRect {
+        return CGRect(x: CGFloat(x - radius), y: CGFloat(y - radius), width: CGFloat(radius * 2), height: CGFloat(radius * 2))
     }
 }
 

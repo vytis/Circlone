@@ -7,29 +7,27 @@
 //
 
 import Foundation
+import CoreGraphics
 
 class Storage {
     
-    private var small: [Circle] = []
+    private var tree: Node
     private var large: [Circle] = []
     
     let pivotPoint: Float = 5
     
-    private func pushNew(item: Circle) {
-        if item.radius <= pivotPoint {
-            small.append(item)
-        } else {
-            large.append(item)
-        }
+    init(viewport: Viewport) {
+        let frame = CGRect(origin: CGPoint.zero, size: CGSize(width: CGFloat(viewport.width), height: CGFloat(viewport.height)))
+        tree = Node(circles: [], frame: frame)
     }
 }
-
 
 extension Storage {
     func popItemAt(x x: Float, y: Float) -> Circle? {
         for (index, item) in self.large.enumerate() {
             if item.containsPoint(x: x, y: y) {
-                self.large.removeAtIndex(index)
+                large.removeAtIndex(index)
+                tree.remove(circle: item)
                 return item
             }
         }
@@ -40,9 +38,12 @@ extension Storage {
         var circles = [Circle]()
         for item in items {
             if !item.collides(self.large) {
-                if !item.collides(self.small) {
+                if !tree.collides(circle: item) {
+                    tree.add(circle: item)
+                    if item.radius >= pivotPoint {
+                        large.append(item)
+                    }
                     circles.append(item)
-                    self.pushNew(item)
                 }
             }
         }

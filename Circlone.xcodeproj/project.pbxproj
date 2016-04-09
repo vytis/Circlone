@@ -19,6 +19,10 @@
 		F19C1D7C1B35F039002522F2 /* CircloneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19C1D7B1B35F039002522F2 /* CircloneUITests.swift */; };
 		F19C1D8A1B35F05C002522F2 /* Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19C1D891B35F05C002522F2 /* Circle.swift */; };
 		F19C1D8C1B35F114002522F2 /* Hatchery.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19C1D8B1B35F114002522F2 /* Hatchery.swift */; };
+		F1BE7C801CB94CA700D94890 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BE7C7F1CB94CA700D94890 /* Node.swift */; };
+		F1BE7C821CB984E800D94890 /* CGRect+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BE7C811CB984E800D94890 /* CGRect+Helpers.swift */; };
+		F1BE7C841CB9867000D94890 /* TreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BE7C831CB9867000D94890 /* TreeTests.swift */; };
+		F1BE7C861CB9868F00D94890 /* CGRectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BE7C851CB9868F00D94890 /* CGRectTests.swift */; };
 		F1DE053F1B543BEE00ACF5AD /* Viewport.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DE053E1B543BEE00ACF5AD /* Viewport.swift */; };
 		F1DE05411B54440B00ACF5AD /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DE05401B54440B00ACF5AD /* CircleView.swift */; };
 		F1EC814D1CB92FA800DA311A /* DynamicColor+Deriving.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EC81211CB92FA800DA311A /* DynamicColor+Deriving.swift */; };
@@ -64,6 +68,10 @@
 		F19C1D891B35F05C002522F2 /* Circle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Circle.swift; sourceTree = "<group>"; };
 		F19C1D8B1B35F114002522F2 /* Hatchery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hatchery.swift; sourceTree = "<group>"; };
 		F19C1D8D1B35F24D002522F2 /* Circlone.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Circlone.playground; sourceTree = "<group>"; };
+		F1BE7C7F1CB94CA700D94890 /* Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
+		F1BE7C811CB984E800D94890 /* CGRect+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect+Helpers.swift"; sourceTree = "<group>"; };
+		F1BE7C831CB9867000D94890 /* TreeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreeTests.swift; sourceTree = "<group>"; };
+		F1BE7C851CB9868F00D94890 /* CGRectTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRectTests.swift; sourceTree = "<group>"; };
 		F1DE053E1B543BEE00ACF5AD /* Viewport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Viewport.swift; sourceTree = "<group>"; };
 		F1DE05401B54440B00ACF5AD /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		F1EC81211CB92FA800DA311A /* DynamicColor+Deriving.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DynamicColor+Deriving.swift"; sourceTree = "<group>"; };
@@ -143,6 +151,8 @@
 				F12458311CB175AD00872D55 /* Subscriber.swift */,
 				F14561931B7DAAF200586774 /* Storage.swift */,
 				F1DE05401B54440B00ACF5AD /* CircleView.swift */,
+				F1BE7C811CB984E800D94890 /* CGRect+Helpers.swift */,
+				F1BE7C7F1CB94CA700D94890 /* Node.swift */,
 			);
 			path = Circlone;
 			sourceTree = "<group>";
@@ -151,6 +161,8 @@
 			isa = PBXGroup;
 			children = (
 				F19C1D701B35F039002522F2 /* CircloneTests.swift */,
+				F1BE7C831CB9867000D94890 /* TreeTests.swift */,
+				F1BE7C851CB9868F00D94890 /* CGRectTests.swift */,
 				F19C1D721B35F039002522F2 /* Info.plist */,
 			);
 			path = CircloneTests;
@@ -321,9 +333,11 @@
 				F19C1D5E1B35F039002522F2 /* ViewController.swift in Sources */,
 				F19C1D8C1B35F114002522F2 /* Hatchery.swift in Sources */,
 				F1EC814D1CB92FA800DA311A /* DynamicColor+Deriving.swift in Sources */,
+				F1BE7C801CB94CA700D94890 /* Node.swift in Sources */,
 				F1EC81501CB92FA800DA311A /* HSL.swift in Sources */,
 				F19C1D5C1B35F039002522F2 /* AppDelegate.swift in Sources */,
 				F1EC814F1CB92FA800DA311A /* DynamicColor.swift in Sources */,
+				F1BE7C821CB984E800D94890 /* CGRect+Helpers.swift in Sources */,
 				F19C1D8A1B35F05C002522F2 /* Circle.swift in Sources */,
 				F1DE053F1B543BEE00ACF5AD /* Viewport.swift in Sources */,
 				F1EC814E1CB92FA800DA311A /* DynamicColor+RGBA.swift in Sources */,
@@ -335,6 +349,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F19C1D711B35F039002522F2 /* CircloneTests.swift in Sources */,
+				F1BE7C841CB9867000D94890 /* TreeTests.swift in Sources */,
+				F1BE7C861CB9868F00D94890 /* CGRectTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,6 +15,8 @@ class CircloneTests: XCTestCase {
         srand(100)
     }
     
+    let viewport = Viewport(height: 500, width: 500)
+    
     let toAdd = (0...100000).map{ _ in Circle(x:Float(rand() % 500), y:Float(rand() % 500), radius:Float(rand() % 50)) }
     let toCollide = (0...5000).map{ _ in Circle(x:Float(rand() % 500), y:Float(rand() % 500), radius:Float(rand() % 50)) }
     
@@ -37,7 +39,7 @@ class CircloneTests: XCTestCase {
     }
     
     func testStoragePerformance() {
-        let storage = Storage()
+        let storage = Storage(viewport: viewport)
         storage.add(toAdd)
         
         self.measureBlock { 

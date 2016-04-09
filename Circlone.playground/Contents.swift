@@ -1,156 +1,111 @@
 //: Playground - noun: a place where people can play
 
-import Cocoa
+import UIKit
 
-let maxSize: Float = 20
-
-struct Viewport {
-    let height: Float = 100
-    let width: Float = 200
-}
+let maxX = 500
+let maxY = 500
 
 struct Circle {
     var x: Float
     var y: Float
     var radius: Float
     
-    func collides(circle: Circle) -> Bool {
-        let otherCircle = circle
-        let delta_x = x - otherCircle.x;
-        let delta_y = y - otherCircle.y;
+    init(x: Float, y: Float, radius: Float) {
+        self.x = x
+        self.y = y
+        self.radius = radius
+    }
+    
+    func collidesWith(other: Circle) -> Bool {
+        let delta_x = x - other.x;
+        let delta_y = y - other.y;
         let distance_sq = delta_x * delta_x + delta_y * delta_y;
-        let radiuses = radius + otherCircle.radius;
+        let radiuses = radius + other.radius;
         return distance_sq < radiuses * radiuses
     }
     
-    func fits(circles:[Circle]) -> Bool {
-        return circles.filter {collides($0)}.count == 0
-    }
-    
-    func isValid(viewport: Viewport, circles: [Circle]) -> Bool {
-        return fits(viewport) && fits(circles)
-    }
-    
-    func fits(viewport: Viewport) -> Bool {
-        return (x - radius >= 0) && (y - radius >= 0) && (x + radius <= viewport.width) && (y + radius <= viewport.height)
-    }
-}
-
-class SeededRandomGenerator {
-    init(seed: Int) {
-        srand(UInt32(seed))
-    }
-    
-    func generate(viewport: Viewport, maxSize: Float) -> Circle {
-        
-        let radius = Float(rand() % Int32(maxSize) + 1)
-        
-        let x = Float(rand() % Int32(viewport.width - radius) + Int32(radius))
-        let y = Float(rand() % Int32(viewport.height - radius) + Int32(radius))
-        
-        return Circle(x:x, y:y, radius:radius)
-    }
-}
-
-
-let viewport = Viewport()
-
-//func randomCircle(viewport: Viewport, maxSize: Float) -> Circle {
-//    let x = Float(arc4random_uniform(uint(viewport.width)))
-//    let y = Float(arc4random_uniform(uint(viewport.height)))
-//    
-//    let radius = Float(arc4random_uniform(uint(maxSize)) + 1)
-//    return Circle(x:x, y:y, radius:radius)
-//}
-//
-//var circles: [Circle] = []
-//for _ in 1...100 {
-//    let c = randomCircle(viewport, maxSize: maxSize)
-//    if c.isValid(viewport, circles:circles) {
-//        circles.append(c)
-//    }
-//}
-//circles
-//let c = Circle(x: 50, y: 50, radius: 10 )
-//c.isValid(viewport, circles: circles)
-
-
-//let q = dispatch_queue_create("com.mine", DISPATCH_QUEUE_SERIAL)
-//
-//let source = dispatch_source_create(DISPATCH_SOURCE_TYPE_DATA_ADD, 0, 0, q)
-//
-//dispatch_source_set_event_handler(source) {
-//    print("Data: \(dispatch_source_get_data(source))")
-//}
-//
-//dispatch_resume(source)
-//
-////while true {
-//    dispatch_source_merge_data(source, 1)
-////}
-//
-//
-//protocol A {
-//    func randomCircles(count: Int) -> [Circle] // should not collide together
-//    func fits(storage: String, circle: Circle) -> Circle? // nil if it doesn't fit
-//    
-//}
-
-let produceQ = dispatch_queue_create("com.mine", DISPATCH_QUEUE_CONCURRENT)
-let resultsQ = dispatch_queue_create("com.mine", DISPATCH_QUEUE_SERIAL)
-
-let generator = SeededRandomGenerator(seed: 10)
-
-var storage: [Circle] = []
-
-func appendToStorage(circle: Circle) {
-    storage.append(circle)
-}
-
-func generate() {
-    var circles: [Circle] = []
-    for _ in 1...30 {
-        let circle = generator.generate(viewport, maxSize: 10)
-        if circle.fits(circles) {
-            circles.append(circle)
-        }
-    }
-    print("Generated \(circles.count)")
-    iteration(circles, storage: storage) {
-        print("Total \(storage.count)")
-    }
-}
-
-func iteration(circles: [Circle], storage: [Circle], completion: (Void) -> Void ) {
-    dispatch_async(resultsQ) {
-        for circle in circles {
-            dispatch_async(produceQ) {
-                if circle.fits(storage) {
-                    dispatch_async(resultsQ) {
-                        appendToStorage(circle)
-                    }
-                }
+    func collides(others: [Circle]) -> Bool {
+        for other in others {
+            if collidesWith(other) {
+                return true
             }
         }
-        dispatch_async(resultsQ, completion)
+        return false
     }
 }
-DISPATCH_API_VERSION
-generate()
-generate()
-generate()
-generate()
-generate()
-generate()
-generate()
-generate()
-generate()
-generate()
-//iteration(storage)
-//iteration()
 
-while true {}
-//dispatch_sync(resultsQ) {
-//    print(storage.count)
-//}
+extension CGRect {
+    func contains(circle: Circle) -> Bool {
+        return true
+    }
+    
+    var leftSide: CGRect {
+        return CGRect(origin: origin, size: CGSize(width: width / 2.0, height: height))
+    }
+    
+    var rightSide: CGRect {
+        return CGRect(x: origin.x + width / 2.0, y: origin.y, width: width / 2.0, height: height)
+    }
+}
+
+class Node {
+    
+    static let limit = 2
+    let frame: CGRect
+    var contents: Contents
+
+    enum Contents {
+        case Circles([Circle])
+        case Deeper(Node, Node)
+    }
+    
+    init(circles: [Circle], frame: CGRect) {
+        let circlesInFrame = circles.filter(frame.contains)
+        self.contents = .Circles(circlesInFrame)
+        self.frame = frame
+    }
+    
+    func add(circle circle: Circle) -> Circle? {
+        if !frame.contains(circle) {
+            return nil
+        }
+        
+        switch contents {
+        case var .Circles(circles):
+            if circle.collides(circles) {
+                return nil
+            } else {
+                circles.append(circle)
+                if circles.count >= Node.limit {
+                    let left = Node(circles: circles, frame: frame.leftSide)
+                    let right = Node(circles: circles, frame: frame.rightSide)
+                    contents = .Deeper(left, right)
+                }
+                return circle
+            }
+        case let .Deeper(left, right):
+            let addedLeft = left.add(circle: circle)
+            let addedRight = right.add(circle: circle)
+            
+            if let addedLeft = addedLeft {
+                return addedLeft
+            }
+         
+            if let addedRight = addedRight {
+                return addedRight
+            }
+            return nil
+        }
+    }
+}
+
+let a = Circle(x: 2, y: 2, radius: 1)
+let b = Circle(x: 10, y: 2, radius: 1)
+let c = Circle(x: 20, y: 2, radius: 1)
+let d = Circle(x: 10, y: 10, radius: 1)
+
+let tree = Node(circles: [a], frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+tree.add(circle: b)
+tree.add(circle: c)
+tree.add(circle: d)
 

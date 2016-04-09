@@ -36,7 +36,7 @@ class Hatchery {
     init(viewport: Viewport, maxSize: Float, newCircles: Subscriber, removedCircles: Subscriber) {
         self.viewport = viewport
         self.maxSize = maxSize
-        self.storage = Storage()
+        self.storage = Storage(viewport: viewport)
         addedCirclesSubscriber = newCircles
         removedCirclesSubscriber = removedCircles
         generateCircles()

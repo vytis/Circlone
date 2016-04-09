@@ -51,20 +51,27 @@ class Node {
         }
     }
     
-    func remove(circle circle: Circle) {
+    func remove(x x: Float, y: Float) -> Circle? {
         switch contents {
         case .Circles(let circles, let limit):
-            if let idx = circles.indexOf(circle) {
-                var removed = circles
-                removed.removeAtIndex(idx)
-                contents = .Circles(removed, limit)
-            }
-        case let .Deeper(nodes):
-            for node in nodes {
-                if node.frame.intersects(circle) {
-                    node.remove(circle: circle)
+            for (idx, item) in circles.enumerate() {
+                if item.containsPoint(x: x, y: y) {
+                    var removed = circles
+                    removed.removeAtIndex(idx)
+                    contents = .Circles(removed, limit)
+                    return item
                 }
             }
+            return nil
+        case let .Deeper(nodes):
+            var circle: Circle?
+            for node in nodes {
+                if let removed = node.remove(x: x, y: y) {
+                    circle = removed
+                }
+            }
+        
+            return circle
         }
     }
 

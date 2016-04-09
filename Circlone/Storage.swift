@@ -25,13 +25,11 @@ class Storage {
 extension Storage {
     func popItemAt(x x: Float, y: Float) -> Circle? {
         for (index, item) in self.large.enumerate() {
-            if item.containsPoint(x: x, y: y) {
+            if item.containsPoint(x: x, y: y) {                
                 large.removeAtIndex(index)
-                tree.remove(circle: item)
-                return item
             }
         }
-        return nil
+        return tree.remove(x: x, y: y)
     }
     
     func add(items: [Circle]) -> [Circle] {

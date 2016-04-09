@@ -36,7 +36,7 @@ class Hatchery {
     init(viewport: Viewport, maxSize: Float, newCircles: Subscriber, removedCircles: Subscriber) {
         self.viewport = viewport
         self.maxSize = maxSize
-        self.storage = Storage(pivotPoint: Circle(x: 0, y: 0, radius: 2))
+        self.storage = Storage()
         addedCirclesSubscriber = newCircles
         removedCirclesSubscriber = removedCircles
         generateCircles()

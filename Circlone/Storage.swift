@@ -13,14 +13,10 @@ class Storage {
     private var small: [Circle] = []
     private var large: [Circle] = []
     
-    let pivotPoint: Circle
-
-    init(pivotPoint: Circle) {
-        self.pivotPoint = pivotPoint
-    }
+    let pivotPoint: Float = 5
     
     private func pushNew(item: Circle) {
-        if item <= pivotPoint {
+        if item.radius <= pivotPoint {
             small.append(item)
         } else {
             large.append(item)

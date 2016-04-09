@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "CFB83CFF93E2170217D2EBBA19DD9E47AF89C3FF",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "124669F0DF675BB95A418DB8F67186B00255CEFE" : 0,
+    "CFB83CFF93E2170217D2EBBA19DD9E47AF89C3FF" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "CB396C5E-95CC-4DDB-8F7E-38C063E6F098",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "124669F0DF675BB95A418DB8F67186B00255CEFE" : "Circlone\/Circlone\/External\/DynamicColor\/",
+    "CFB83CFF93E2170217D2EBBA19DD9E47AF89C3FF" : "Circlone\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Circlone",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Circlone.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:yannickl\/DynamicColor.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "124669F0DF675BB95A418DB8F67186B00255CEFE"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:vytis\/Circlone.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "CFB83CFF93E2170217D2EBBA19DD9E47AF89C3FF"
+    }
+  ]
+}

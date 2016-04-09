@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F124582F1CB1706A00872D55 /* DynamicColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F124582D1CB1706A00872D55 /* DynamicColor.swift */; };
-		F12458301CB1706A00872D55 /* HSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = F124582E1CB1706A00872D55 /* HSL.swift */; };
 		F12458321CB175AD00872D55 /* Subscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12458311CB175AD00872D55 /* Subscriber.swift */; };
 		F14561941B7DAAF200586774 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14561931B7DAAF200586774 /* Storage.swift */; };
 		F14561961B7DACF900586774 /* CircleGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14561951B7DACF900586774 /* CircleGenerator.swift */; };
@@ -23,6 +21,10 @@
 		F19C1D8C1B35F114002522F2 /* Hatchery.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19C1D8B1B35F114002522F2 /* Hatchery.swift */; };
 		F1DE053F1B543BEE00ACF5AD /* Viewport.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DE053E1B543BEE00ACF5AD /* Viewport.swift */; };
 		F1DE05411B54440B00ACF5AD /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DE05401B54440B00ACF5AD /* CircleView.swift */; };
+		F1EC814D1CB92FA800DA311A /* DynamicColor+Deriving.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EC81211CB92FA800DA311A /* DynamicColor+Deriving.swift */; };
+		F1EC814E1CB92FA800DA311A /* DynamicColor+RGBA.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EC81221CB92FA800DA311A /* DynamicColor+RGBA.swift */; };
+		F1EC814F1CB92FA800DA311A /* DynamicColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EC81231CB92FA800DA311A /* DynamicColor.swift */; };
+		F1EC81501CB92FA800DA311A /* HSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EC81241CB92FA800DA311A /* HSL.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,8 +45,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		F124582D1CB1706A00872D55 /* DynamicColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicColor.swift; sourceTree = "<group>"; };
-		F124582E1CB1706A00872D55 /* HSL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HSL.swift; sourceTree = "<group>"; };
 		F12458311CB175AD00872D55 /* Subscriber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Subscriber.swift; sourceTree = "<group>"; };
 		F14561931B7DAAF200586774 /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		F14561951B7DACF900586774 /* CircleGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleGenerator.swift; sourceTree = "<group>"; };
@@ -66,6 +66,10 @@
 		F19C1D8D1B35F24D002522F2 /* Circlone.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Circlone.playground; sourceTree = "<group>"; };
 		F1DE053E1B543BEE00ACF5AD /* Viewport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Viewport.swift; sourceTree = "<group>"; };
 		F1DE05401B54440B00ACF5AD /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
+		F1EC81211CB92FA800DA311A /* DynamicColor+Deriving.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DynamicColor+Deriving.swift"; sourceTree = "<group>"; };
+		F1EC81221CB92FA800DA311A /* DynamicColor+RGBA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DynamicColor+RGBA.swift"; sourceTree = "<group>"; };
+		F1EC81231CB92FA800DA311A /* DynamicColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicColor.swift; sourceTree = "<group>"; };
+		F1EC81241CB92FA800DA311A /* HSL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HSL.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,8 +100,7 @@
 		F124582C1CB1706500872D55 /* External */ = {
 			isa = PBXGroup;
 			children = (
-				F124582D1CB1706A00872D55 /* DynamicColor.swift */,
-				F124582E1CB1706A00872D55 /* HSL.swift */,
+				F1EC80E41CB92FA800DA311A /* DynamicColor */,
 			);
 			path = External;
 			sourceTree = "<group>";
@@ -160,6 +163,25 @@
 				F19C1D7D1B35F039002522F2 /* Info.plist */,
 			);
 			path = CircloneUITests;
+			sourceTree = "<group>";
+		};
+		F1EC80E41CB92FA800DA311A /* DynamicColor */ = {
+			isa = PBXGroup;
+			children = (
+				F1EC81201CB92FA800DA311A /* Sources */,
+			);
+			path = DynamicColor;
+			sourceTree = "<group>";
+		};
+		F1EC81201CB92FA800DA311A /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				F1EC81211CB92FA800DA311A /* DynamicColor+Deriving.swift */,
+				F1EC81221CB92FA800DA311A /* DynamicColor+RGBA.swift */,
+				F1EC81231CB92FA800DA311A /* DynamicColor.swift */,
+				F1EC81241CB92FA800DA311A /* HSL.swift */,
+			);
+			path = Sources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,16 +333,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1DE05411B54440B00ACF5AD /* CircleView.swift in Sources */,
-				F12458301CB1706A00872D55 /* HSL.swift in Sources */,
 				F14561961B7DACF900586774 /* CircleGenerator.swift in Sources */,
 				F14561941B7DAAF200586774 /* Storage.swift in Sources */,
 				F12458321CB175AD00872D55 /* Subscriber.swift in Sources */,
 				F19C1D5E1B35F039002522F2 /* ViewController.swift in Sources */,
 				F19C1D8C1B35F114002522F2 /* Hatchery.swift in Sources */,
+				F1EC814D1CB92FA800DA311A /* DynamicColor+Deriving.swift in Sources */,
+				F1EC81501CB92FA800DA311A /* HSL.swift in Sources */,
 				F19C1D5C1B35F039002522F2 /* AppDelegate.swift in Sources */,
+				F1EC814F1CB92FA800DA311A /* DynamicColor.swift in Sources */,
 				F19C1D8A1B35F05C002522F2 /* Circle.swift in Sources */,
-				F124582F1CB1706A00872D55 /* DynamicColor.swift in Sources */,
 				F1DE053F1B543BEE00ACF5AD /* Viewport.swift in Sources */,
+				F1EC814E1CB92FA800DA311A /* DynamicColor+RGBA.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

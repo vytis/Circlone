@@ -11,11 +11,16 @@ import XCTest
 
 class CircloneTests: XCTestCase {
     
+    override class func setUp() {
+        srand(100)
+    }
+    
+    let toAdd = (0...100000).map{ _ in Circle(x:Float(rand() % 500), y:Float(rand() % 500), radius:Float(rand() % 50)) }
+    let toCollide = (0...5000).map{ _ in Circle(x:Float(rand() % 500), y:Float(rand() % 500), radius:Float(rand() % 50)) }
+    
     func testCollisionPerformance() {
         var circles: [Circle] = []
-        srand(100)
-        for _ in 0...100000 {
-            let circle = Circle(x:Float(rand() % 500), y:Float(rand() % 500), radius:Float(rand() % 50))
+        for circle in toAdd {
             if !circle.collides(circles) {
                 circles += [circle]
             }
@@ -23,12 +28,21 @@ class CircloneTests: XCTestCase {
         
         self.measureBlock() {
             var newCircles: [Circle] = []
-            for _ in 0...10000 {
-                let circle = Circle(x:Float(rand() % 500), y:Float(rand() % 500), radius:Float(rand() % 50))
+            for circle in self.toCollide {
                 if !circle.collides(circles) {
                     newCircles += [circle]
                 }
             }
         }
     }
+    
+    func testStoragePerformance() {
+        let storage = Storage()
+        storage.add(toAdd)
+        
+        self.measureBlock { 
+            storage.add(self.toCollide)
+        }
+    }
+    
 }

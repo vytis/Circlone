@@ -31,12 +31,16 @@ class ViewController: UIViewController {
             let point = sender.locationInView(circleView)
             hatchery.removeCircleAt(x: Float(point.x), y: Float(point.y))
         } else {
-            let viewport = Viewport(height: Float(view.frame.height), width: Float(view.frame.width))
-            let newCircles = Subscriber(onCircles: circleView.addCircles)
-            let removedCircles = Subscriber(onCircles: circleView.removeCircles)
-            hatchery = Hatchery(viewport: viewport, maxSize: Circle.maxRadius, newCircles: newCircles, removedCircles: removedCircles)
-            labelContainer.hidden = true
+            start()
         }
+    }
+    
+    func start() {
+        let viewport = Viewport(height: Float(view.frame.height), width: Float(view.frame.width))
+        let newCircles = Subscriber(onCircles: circleView.addCircles)
+        let removedCircles = Subscriber(onCircles: circleView.removeCircles)
+        hatchery = Hatchery(viewport: viewport, maxSize: Circle.maxRadius, newCircles: newCircles, removedCircles: removedCircles)
+        labelContainer.hidden = true
     }
     
     override func canBecomeFirstResponder() -> Bool {
@@ -56,17 +60,38 @@ class ViewController: UIViewController {
         labelContainer.hidden = false
         circleView.reset()
         let color = UIColor(hue: randValue(), saturation: randValue(), brightness: randValue(from: 0.3, to: 0.9), alpha: 1.0)
-        circleView.baseColor = color
-        updateTextColor(color)
+        updateColor(color)
     }
     
-    func updateTextColor(color: UIColor) {
+    func updateColor(color: UIColor) {
+        circleView.baseColor = color
         tapLabel.textColor = color.tintColor(amount: 0.7)
         shakeLabel.textColor = color.tintColor(amount: 0.3)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()        
-        updateTextColor(circleView.baseColor)
+        updateColor(circleView.baseColor)
+    }
+}
+
+extension ViewController {
+    override func encodeRestorableStateWithCoder(coder: NSCoder) {
+        coder.encodeObject(circleView.baseColor, forKey: "baseColor")
+        coder.encodeBool(hatchery != nil, forKey: "running")
+        
+        super.encodeRestorableStateWithCoder(coder)
+    }
+    
+    override func decodeRestorableStateWithCoder(coder: NSCoder) {
+        if let color = coder.decodeObjectForKey("baseColor") as? UIColor {
+            updateColor(color)
+        }
+        
+        if coder.decodeBoolForKey("running") {
+            start()
+        }
+        
+        super.decodeRestorableStateWithCoder(coder)
     }
 }

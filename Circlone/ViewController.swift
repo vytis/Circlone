@@ -72,6 +72,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()        
         updateColor(circleView.baseColor)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(applicationWillEnterForeground), name: UIApplicationWillEnterForegroundNotification, object: nil)
+    }
+    
+    func applicationWillEnterForeground() {
+        if let hatchery = hatchery {
+            hatchery.start()
+        }
     }
 }
 
@@ -80,6 +87,7 @@ extension ViewController {
         coder.encodeObject(circleView.baseColor, forKey: "baseColor")
         if let hatchery = hatchery {
             let path = "circles"
+            hatchery.stop()
             hatchery.saveState(toFile: path)
             if let documentsDir = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true).last {
                 let path = (documentsDir as NSString).stringByAppendingPathComponent("image.png")

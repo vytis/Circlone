@@ -6,7 +6,7 @@
 //  Copyright © 2015 🗿. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class Hatchery {
     
@@ -31,6 +31,13 @@ class Hatchery {
         dispatch_sync(q) {
             self.running = false
         }
+    }
+    
+    func start() {
+        dispatch_sync(q) {
+            self.running = true
+        }
+        generateCircles()
     }
     
     init(viewport: Viewport, maxSize: Float, newCircles: Subscriber, removedCircles: Subscriber, statePath: String?) {

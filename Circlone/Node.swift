@@ -7,8 +7,9 @@
 //
 
 import CoreGraphics
+import Foundation
 
-class Node {
+class Node: NSObject, NSCoding {
     
     let frame: CGRect
     var contents: Contents
@@ -90,6 +91,49 @@ class Node {
                     node.add(circle: circle)
                 }
             }
+        }
+    }
+    
+    enum Kind: String {
+        case Circles
+        case Deeper
+    }
+    
+    func encodeWithCoder(aCoder: NSCoder) {
+        aCoder.encodeCGRect(frame, forKey: "frame")
+        switch contents {
+        case let .Circles(circles, limit):
+            aCoder.encodeObject(Kind.Circles.rawValue, forKey: "kind")
+            aCoder.encodeCircles(circles, forKey: "circles")
+            aCoder.encodeInteger(limit, forKey: "limit")
+        case let .Deeper(nodes):
+            aCoder.encodeObject(Kind.Deeper.rawValue, forKey: "kind")
+            aCoder.encodeObject(nodes, forKey: "nodes")
+        }
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        frame = aDecoder.decodeCGRectForKey("frame")
+        guard let kindString = aDecoder.decodeObjectForKey("kind") as? String else {
+            return nil
+        }
+        
+        guard let kind = Kind(rawValue: kindString) else {
+            return nil
+        }
+        
+        switch kind {
+        case .Circles:
+            let limit = aDecoder.decodeIntegerForKey("limit")
+            guard let circles = aDecoder.decodeCirclesForKey("circles") else {
+                return nil
+            }
+            contents = .Circles(circles, limit)
+        case .Deeper:
+            guard let nodes = aDecoder.decodeObjectForKey("nodes") as? [Node] else {
+                return nil
+            }
+            contents = .Deeper(nodes)
         }
     }
 }

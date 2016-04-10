@@ -33,13 +33,27 @@ class Hatchery {
         }
     }
     
-    init(viewport: Viewport, maxSize: Float, newCircles: Subscriber, removedCircles: Subscriber) {
+    init(viewport: Viewport, maxSize: Float, newCircles: Subscriber, removedCircles: Subscriber, statePath: String?) {
         self.viewport = viewport
         self.maxSize = maxSize
-        self.storage = Storage(viewport: viewport)
+        if let path = statePath,
+            let documentsDir = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true).last,
+            let data = NSData(contentsOfFile: (documentsDir as NSString).stringByAppendingPathComponent(path)),
+            let storage = NSKeyedUnarchiver.unarchiveObjectWithData(data) as? Storage {
+            self.storage = storage
+        } else {
+            self.storage = Storage(viewport: viewport)
+        }
         addedCirclesSubscriber = newCircles
         removedCirclesSubscriber = removedCircles
         generateCircles()
+    }
+    
+    func saveState(toFile path: String) {
+        if let documentsDir = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true).last {
+            let fullPath = (documentsDir as NSString).stringByAppendingPathComponent(path)
+            NSKeyedArchiver.archiveRootObject(storage, toFile: fullPath)
+        }
     }
     
     func removeCircleAt(x x: Float, y: Float) {

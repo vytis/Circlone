@@ -18,6 +18,7 @@ class CircleView: UIView {
     private var blobsToDraw: [Blob] = []
     
     private var blobsLayer: CGLayerRef!
+    private var imageToDraw: UIImage?
     
     var baseColor = UIColor(hue: 184.0/360.0, saturation: 0.49, brightness: 0.95, alpha: 1.0)
     
@@ -25,6 +26,23 @@ class CircleView: UIView {
         let layerContext = CGLayerGetContext(blobsLayer)
         CGContextClearRect(layerContext, bounds)
         setNeedsDisplay()
+    }
+    
+    var image: UIImage {
+        get {
+            let context = CGBitmapContextCreate(nil, Int(bounds.width) * 2, Int(bounds.height) * 2, 8, 0, CGColorSpaceCreateDeviceRGB(), CGImageAlphaInfo.NoneSkipFirst.rawValue)
+            CGContextScaleCTM(context, 2, 2)
+            CGContextDrawLayerInRect(context, bounds, blobsLayer)
+            
+            guard let imageData = CGBitmapContextCreateImage(context) else {
+                return UIImage()
+            }
+            return UIImage(CGImage: imageData)
+        }
+        set {
+            imageToDraw = newValue
+            setNeedsDisplay()
+        }
     }
     
     func addCircles(circles: [Circle]) {
@@ -52,6 +70,8 @@ class CircleView: UIView {
     override func drawRect(rect: CGRect) {
         let context = UIGraphicsGetCurrentContext()!
         
+
+        
         if blobsLayer == nil {
             let size = CGSize(width: frame.width * 2, height: frame.height * 2)
             blobsLayer = CGLayerCreateWithContext(context, size, nil)
@@ -60,6 +80,11 @@ class CircleView: UIView {
         }
         
         let layerContext = CGLayerGetContext(blobsLayer)
+        
+        if let image = imageToDraw {
+            CGContextDrawImage(layerContext, bounds, image.CGImage)
+            imageToDraw = nil
+        }
         
         let sortedBlobs = blobsToDraw.sort { left, right in
             return left.color == UIColor.blackColor()

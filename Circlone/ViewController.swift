@@ -35,11 +35,11 @@ class ViewController: UIViewController {
         }
     }
     
-    func start() {
+    func start(statePath statePath: String? = nil) {
         let viewport = Viewport(height: Float(view.frame.height), width: Float(view.frame.width))
         let newCircles = Subscriber(onCircles: circleView.addCircles)
         let removedCircles = Subscriber(onCircles: circleView.removeCircles)
-        hatchery = Hatchery(viewport: viewport, maxSize: Circle.maxRadius, newCircles: newCircles, removedCircles: removedCircles)
+        hatchery = Hatchery(viewport: viewport, maxSize: Circle.maxRadius, newCircles: newCircles, removedCircles: removedCircles, statePath: statePath)
         labelContainer.hidden = true
     }
     
@@ -78,7 +78,18 @@ class ViewController: UIViewController {
 extension ViewController {
     override func encodeRestorableStateWithCoder(coder: NSCoder) {
         coder.encodeObject(circleView.baseColor, forKey: "baseColor")
-        coder.encodeBool(hatchery != nil, forKey: "running")
+        if let hatchery = hatchery {
+            let path = "circles"
+            hatchery.saveState(toFile: path)
+            if let documentsDir = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true).last {
+                let path = (documentsDir as NSString).stringByAppendingPathComponent("image.png")
+                let image = circleView.image
+                do {
+                    try UIImagePNGRepresentation(image)?.writeToFile(path, options: .AtomicWrite)
+                } catch {}
+            }
+            coder.encodeObject(path, forKey: "statePath")
+        }
         
         super.encodeRestorableStateWithCoder(coder)
     }
@@ -88,8 +99,13 @@ extension ViewController {
             updateColor(color)
         }
         
-        if coder.decodeBoolForKey("running") {
-            start()
+        if let path = coder.decodeObjectForKey("statePath") as? String {
+            if let documentsDir = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true).last ,
+            let image = UIImage(contentsOfFile: (documentsDir as NSString).stringByAppendingPathComponent("image.png")) {
+                circleView.image = image
+            }
+            
+            start(statePath: path)
         }
         
         super.decodeRestorableStateWithCoder(coder)

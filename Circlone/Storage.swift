@@ -9,7 +9,7 @@
 import Foundation
 import CoreGraphics
 
-class Storage {
+class Storage: NSObject, NSCoding {
     
     private var tree: Node
     private var large: [Circle] = []
@@ -19,6 +19,20 @@ class Storage {
     init(viewport: Viewport) {
         let frame = CGRect(origin: CGPoint.zero, size: CGSize(width: CGFloat(viewport.width), height: CGFloat(viewport.height)))
         tree = Node(circles: [], frame: frame)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        guard let tree = aDecoder.decodeObjectForKey("tree") as? Node,
+        let large = aDecoder.decodeCirclesForKey("large") else {
+            return nil
+        }
+        self.tree = tree
+        self.large = large
+    }
+    
+    func encodeWithCoder(aCoder: NSCoder) {
+        aCoder.encodeObject(tree, forKey: "tree")
+        aCoder.encodeCircles(large, forKey: "large")
     }
 }
 

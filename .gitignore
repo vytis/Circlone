@@ -223,6 +223,7 @@ xcuserdata/
 # pull your cahnges to other's repo"
 #
 #*.xccheckout
-xcuserdata/*
+*.xcodeproj/xcuserdata/*
 Carthage/*
 iOSInjectionProject
+xcodeproj/xcuserdata/*

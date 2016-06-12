@@ -19,12 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(application: UIApplication, shouldSaveApplicationState coder: NSCoder) -> Bool {
-        return true
+        return false
     }
     
     func application(application: UIApplication, shouldRestoreApplicationState coder: NSCoder) -> Bool {
-        return true
+        return false
     }
-
 }
 

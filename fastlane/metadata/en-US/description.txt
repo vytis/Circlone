@@ -1,0 +1,5 @@
+Strangely calming circle generator.
+
+Pop the big circles first, leave them until the very end or come up with your own rules.
+
+Shake the device to start again.

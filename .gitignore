@@ -227,3 +227,5 @@ xcuserdata/
 Carthage/*
 iOSInjectionProject
 xcodeproj/xcuserdata/*
+fastlane/report.xml
+Preview.html

@@ -12,14 +12,23 @@ import CoreGraphics
 class ViewController: UIViewController {
 
     @IBOutlet weak var circleView: CircleView!
+
     @IBOutlet weak var labelContainer: UIView!
 
     @IBOutlet weak var tapLabel: UILabel!
     @IBOutlet weak var shakeLabel: UILabel!
     
     var hatchery: Hatchery?
+    var colorScheme: ColorScheme! {
+        didSet {
+            let color = colorScheme.currentColor
+            circleView.baseColor = color
+            tapLabel.textColor = color.tintColor(amount: 0.7)
+            shakeLabel.textColor = color.tintColor(amount: 0.3)
+        }
+    }
     
-    @IBAction func viewPanned(sender: AnyObject) {
+    @IBAction func viewPanned(sender: UIPanGestureRecognizer) {
         if let hatchery = hatchery {
             let point = sender.locationInView(circleView)
             hatchery.removeCircleAt(x: Float(point.x), y: Float(point.y))
@@ -47,31 +56,17 @@ class ViewController: UIViewController {
         return true
     }
     
-    func randValue(from from: CGFloat = 0.0, to: CGFloat = 1.0) -> CGFloat {
-        let interval = to - from
-        let ratio = CGFloat(arc4random()) / CGFloat(UINT32_MAX)
-        let value = interval * ratio + from
-        return value
-    }
-    
     override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
         hatchery?.stop()
         hatchery = nil
         labelContainer.hidden = false
         circleView.reset()
-        let color = UIColor(hue: randValue(), saturation: randValue(), brightness: randValue(from: 0.3, to: 0.9), alpha: 1.0)
-        updateColor(color)
-    }
-    
-    func updateColor(color: UIColor) {
-        circleView.baseColor = color
-        tapLabel.textColor = color.tintColor(amount: 0.7)
-        shakeLabel.textColor = color.tintColor(amount: 0.3)
+        colorScheme = colorScheme.nextScheme
     }
     
     override func viewDidLoad() {
-        super.viewDidLoad()        
-        updateColor(circleView.baseColor)
+        super.viewDidLoad()
+        colorScheme = ColorScheme()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(applicationWillEnterForeground), name: UIApplicationWillEnterForegroundNotification, object: nil)
     }
     
@@ -79,43 +74,5 @@ class ViewController: UIViewController {
         if let hatchery = hatchery {
             hatchery.start()
         }
-    }
-}
-
-extension ViewController {
-    override func encodeRestorableStateWithCoder(coder: NSCoder) {
-        coder.encodeObject(circleView.baseColor, forKey: "baseColor")
-        if let hatchery = hatchery {
-            let path = "circles"
-            hatchery.stop()
-            hatchery.saveState(toFile: path)
-            if let documentsDir = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true).last {
-                let path = (documentsDir as NSString).stringByAppendingPathComponent("image.png")
-                let image = circleView.image
-                do {
-                    try UIImagePNGRepresentation(image)?.writeToFile(path, options: .AtomicWrite)
-                } catch {}
-            }
-            coder.encodeObject(path, forKey: "statePath")
-        }
-        
-        super.encodeRestorableStateWithCoder(coder)
-    }
-    
-    override func decodeRestorableStateWithCoder(coder: NSCoder) {
-        if let color = coder.decodeObjectForKey("baseColor") as? UIColor {
-            updateColor(color)
-        }
-        
-        if let path = coder.decodeObjectForKey("statePath") as? String {
-            if let documentsDir = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true).last ,
-            let image = UIImage(contentsOfFile: (documentsDir as NSString).stringByAppendingPathComponent("image.png")) {
-                circleView.image = image
-            }
-            
-            start(statePath: path)
-        }
-        
-        super.decodeRestorableStateWithCoder(coder)
     }
 }

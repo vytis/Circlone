@@ -20,7 +20,7 @@ class CircleView: UIView {
     private var blobsLayer: CGLayerRef!
     private var imageToDraw: UIImage?
     
-    var baseColor = UIColor(hue: 184.0/360.0, saturation: 0.49, brightness: 0.95, alpha: 1.0)
+    var baseColor: UIColor!
     
     func reset() {
         let layerContext = CGLayerGetContext(blobsLayer)

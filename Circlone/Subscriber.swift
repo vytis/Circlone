@@ -13,7 +13,7 @@ typealias Circles = [Circle] -> Void
 class Subscriber {
     private var displayLink: CADisplayLink!
     private var newCircles = [Circle]()
-    private let lock = NSLock()
+    private let q = dispatch_queue_create("Subscriber Queue", DISPATCH_QUEUE_SERIAL)
     
     private let onNewCircles: Circles
         
@@ -28,17 +28,19 @@ class Subscriber {
     }
     
     func addNew(circles: [Circle]) {
-        lock.lock()
-        newCircles += circles
-        lock.unlock()
+        dispatch_sync(q) {
+            self.newCircles += circles
+        }
     }
     
     @objc private func onDraw() {
-        lock.lock()
-        if !newCircles.isEmpty {
-            onNewCircles(newCircles)
-            newCircles.removeAll()
+        dispatch_sync(q) {
+            if !self.newCircles.isEmpty {
+                dispatch_async(dispatch_get_main_queue()) { [circles = self.newCircles] in
+                    self.onNewCircles(circles)
+                }
+                self.newCircles.removeAll()
+            }
         }
-        lock.unlock()
     }
 }

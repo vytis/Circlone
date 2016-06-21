@@ -1,0 +1,2 @@
+- Fixed rotation bug on iPad
+- Fixed a ghostly circle that never disappears

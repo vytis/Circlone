@@ -13,6 +13,7 @@ class Storage: NSObject, NSCoding {
     
     private var tree: Node
     private var large: [Circle] = []
+    private var all: [Circle] = []
     
     let pivotPoint: Float = 5
     
@@ -55,6 +56,7 @@ extension Storage {
                     if item.radius >= pivotPoint {
                         large.append(item)
                     }
+                    all.append(item)
                     circles.append(item)
                 }
             }
@@ -63,3 +65,30 @@ extension Storage {
     }
 }
 
+typealias SVG = Storage
+extension SVG {
+    func saveSVG(atPath path: String) {
+        var output = "<svg xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\">\n"
+        let circles = all
+        for circle in circles {
+            output += circle.svgFormat
+        }
+        print("Unique: \(circles.count)")
+        output += "</svg>"
+        if let documentsDir = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true).last {
+            let path = (documentsDir as NSString).stringByAppendingPathComponent(path)
+            do {
+                try output.writeToFile(path, atomically: true, encoding: NSUTF8StringEncoding)
+                print("saved at \(path)")
+            } catch {
+                
+            }
+        }
+    }
+}
+
+extension Circle {
+    var svgFormat: String {
+        return "<circle cx=\"\(x)\" cy=\"\(y)\" r=\"\(radius-0.5)\" fill=\"none\" stroke=\"black\"/>\n"
+    }
+}

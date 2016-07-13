@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Hatching
 
 class CircleView: UIView {
     
@@ -47,7 +48,7 @@ class CircleView: UIView {
     
     func addCircles(circles: [Circle]) {
         let newBlobs = circles.map { (circle) -> Blob in
-            let ratio = Double(circle.normalizedRadius)
+            let ratio = Double(circle.normalizedRadius(maxRadius: 500))
             let color = self.baseColor.tintColor(amount: CGFloat(ratio))
             let blob = Blob(circle: circle, color: color)
             return blob

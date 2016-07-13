@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Hatching
 
 typealias Circles = [Circle] -> Void
 

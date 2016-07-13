@@ -9,32 +9,19 @@
 import Foundation
 import CoreGraphics
 
-class Storage: NSObject, NSCoding {
+class Storage {
     
     private var tree: Node
     private var large: [Circle] = []
     private var all: [Circle] = []
     
-    let pivotPoint: Float = 5
+    let pivotPoint: Float
     
-    init(viewport: Viewport) {
+    init(viewport: Viewport, pivotPoint: Float = 5) {
+        self.pivotPoint = pivotPoint
         let frame = CGRect(origin: CGPoint.zero, size: CGSize(width: CGFloat(viewport.width), height: CGFloat(viewport.height)))
         tree = Node(circles: [], frame: frame)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        guard let tree = aDecoder.decodeObjectForKey("tree") as? Node,
-        let large = aDecoder.decodeCirclesForKey("large") else {
-            return nil
-        }
-        self.tree = tree
-        self.large = large
-    }
-    
-    func encodeWithCoder(aCoder: NSCoder) {
-        aCoder.encodeObject(tree, forKey: "tree")
-        aCoder.encodeCircles(large, forKey: "large")
-    }
+    }    
 }
 
 extension Storage {

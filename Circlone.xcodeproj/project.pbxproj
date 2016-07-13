@@ -11,8 +11,19 @@
 		F124672B1D0B35F9002A8325 /* ViewController+StateRestoration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F124672A1D0B35F9002A8325 /* ViewController+StateRestoration.swift */; };
 		F124672D1D0B3D6F002A8325 /* ColorScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = F124672C1D0B3D6F002A8325 /* ColorScheme.swift */; };
 		F12467311D0DBDBD002A8325 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12467301D0DBDBD002A8325 /* SnapshotHelper.swift */; };
-		F14561941B7DAAF200586774 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14561931B7DAAF200586774 /* Storage.swift */; };
-		F14561961B7DACF900586774 /* RandomGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14561951B7DACF900586774 /* RandomGenerator.swift */; };
+		F18C86FA1D36BCDB0021F729 /* Hatching.h in Headers */ = {isa = PBXBuildFile; fileRef = F18C86F91D36BCDB0021F729 /* Hatching.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F18C87011D36BCDB0021F729 /* Hatching.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F18C86F71D36BCDB0021F729 /* Hatching.framework */; };
+		F18C87081D36BCDB0021F729 /* HatchingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18C87071D36BCDB0021F729 /* HatchingTests.swift */; };
+		F18C870C1D36BCDB0021F729 /* Hatching.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F18C86F71D36BCDB0021F729 /* Hatching.framework */; };
+		F18C870D1D36BCDB0021F729 /* Hatching.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F18C86F71D36BCDB0021F729 /* Hatching.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F18C871C1D36BD3E0021F729 /* Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18C87161D36BD3E0021F729 /* Circle.swift */; };
+		F18C87281D36BD5B0021F729 /* Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18C87211D36BD5B0021F729 /* Circle.swift */; };
+		F18C87291D36BD5B0021F729 /* Hatchery.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18C87221D36BD5B0021F729 /* Hatchery.swift */; };
+		F18C872A1D36BD5B0021F729 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18C87231D36BD5B0021F729 /* Node.swift */; };
+		F18C872B1D36BD5B0021F729 /* RandomGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18C87241D36BD5B0021F729 /* RandomGenerator.swift */; };
+		F18C872C1D36BD5B0021F729 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18C87251D36BD5B0021F729 /* Storage.swift */; };
+		F18C872E1D36BD5B0021F729 /* Viewport.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18C87271D36BD5B0021F729 /* Viewport.swift */; };
+		F18C87301D36BE430021F729 /* CGRect+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18C872F1D36BE430021F729 /* CGRect+Helpers.swift */; };
 		F19C1D5C1B35F039002522F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19C1D5B1B35F039002522F2 /* AppDelegate.swift */; };
 		F19C1D5E1B35F039002522F2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19C1D5D1B35F039002522F2 /* ViewController.swift */; };
 		F19C1D611B35F039002522F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F19C1D5F1B35F039002522F2 /* Main.storyboard */; };
@@ -20,13 +31,8 @@
 		F19C1D661B35F039002522F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F19C1D641B35F039002522F2 /* LaunchScreen.storyboard */; };
 		F19C1D711B35F039002522F2 /* CircloneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19C1D701B35F039002522F2 /* CircloneTests.swift */; };
 		F19C1D7C1B35F039002522F2 /* CircloneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19C1D7B1B35F039002522F2 /* CircloneUITests.swift */; };
-		F19C1D8A1B35F05C002522F2 /* Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19C1D891B35F05C002522F2 /* Circle.swift */; };
-		F19C1D8C1B35F114002522F2 /* Hatchery.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19C1D8B1B35F114002522F2 /* Hatchery.swift */; };
-		F1BE7C801CB94CA700D94890 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BE7C7F1CB94CA700D94890 /* Node.swift */; };
-		F1BE7C821CB984E800D94890 /* CGRect+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BE7C811CB984E800D94890 /* CGRect+Helpers.swift */; };
 		F1BE7C841CB9867000D94890 /* TreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BE7C831CB9867000D94890 /* TreeTests.swift */; };
 		F1BE7C861CB9868F00D94890 /* CGRectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BE7C851CB9868F00D94890 /* CGRectTests.swift */; };
-		F1DE053F1B543BEE00ACF5AD /* Viewport.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DE053E1B543BEE00ACF5AD /* Viewport.swift */; };
 		F1DE05411B54440B00ACF5AD /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DE05401B54440B00ACF5AD /* CircleView.swift */; };
 		F1EC814D1CB92FA800DA311A /* DynamicColor+Deriving.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EC81211CB92FA800DA311A /* DynamicColor+Deriving.swift */; };
 		F1EC814E1CB92FA800DA311A /* DynamicColor+RGBA.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EC81221CB92FA800DA311A /* DynamicColor+RGBA.swift */; };
@@ -35,6 +41,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		F18C87021D36BCDB0021F729 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F19C1D501B35F038002522F2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F18C86F61D36BCDB0021F729;
+			remoteInfo = Hatching;
+		};
+		F18C87041D36BCDB0021F729 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F19C1D501B35F038002522F2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F19C1D571B35F039002522F2;
+			remoteInfo = Circlone;
+		};
+		F18C870A1D36BCDB0021F729 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F19C1D501B35F038002522F2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F18C86F61D36BCDB0021F729;
+			remoteInfo = Hatching;
+		};
 		F19C1D6D1B35F039002522F2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F19C1D501B35F038002522F2 /* Project object */;
@@ -51,13 +78,39 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		F18C87131D36BCDB0021F729 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F18C870D1D36BCDB0021F729 /* Hatching.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		F12458311CB175AD00872D55 /* Subscriber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Subscriber.swift; sourceTree = "<group>"; };
 		F124672A1D0B35F9002A8325 /* ViewController+StateRestoration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+StateRestoration.swift"; sourceTree = "<group>"; };
 		F124672C1D0B3D6F002A8325 /* ColorScheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorScheme.swift; sourceTree = "<group>"; };
 		F12467301D0DBDBD002A8325 /* SnapshotHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = ../fastlane/SnapshotHelper.swift; sourceTree = "<group>"; };
-		F14561931B7DAAF200586774 /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
-		F14561951B7DACF900586774 /* RandomGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomGenerator.swift; sourceTree = "<group>"; };
+		F18C86F71D36BCDB0021F729 /* Hatching.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Hatching.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F18C86F91D36BCDB0021F729 /* Hatching.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Hatching.h; sourceTree = "<group>"; };
+		F18C86FB1D36BCDB0021F729 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F18C87001D36BCDB0021F729 /* HatchingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HatchingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F18C87071D36BCDB0021F729 /* HatchingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HatchingTests.swift; sourceTree = "<group>"; };
+		F18C87091D36BCDB0021F729 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F18C87161D36BD3E0021F729 /* Circle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Circle.swift; sourceTree = "<group>"; };
+		F18C87211D36BD5B0021F729 /* Circle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Circle.swift; sourceTree = "<group>"; };
+		F18C87221D36BD5B0021F729 /* Hatchery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hatchery.swift; sourceTree = "<group>"; };
+		F18C87231D36BD5B0021F729 /* Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
+		F18C87241D36BD5B0021F729 /* RandomGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomGenerator.swift; sourceTree = "<group>"; };
+		F18C87251D36BD5B0021F729 /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		F18C87271D36BD5B0021F729 /* Viewport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Viewport.swift; sourceTree = "<group>"; };
+		F18C872F1D36BE430021F729 /* CGRect+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect+Helpers.swift"; sourceTree = "<group>"; };
 		F19C1D581B35F039002522F2 /* Circlone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Circlone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F19C1D5B1B35F039002522F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F19C1D5D1B35F039002522F2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -71,14 +124,9 @@
 		F19C1D771B35F039002522F2 /* CircloneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CircloneUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F19C1D7B1B35F039002522F2 /* CircloneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircloneUITests.swift; sourceTree = "<group>"; };
 		F19C1D7D1B35F039002522F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F19C1D891B35F05C002522F2 /* Circle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Circle.swift; sourceTree = "<group>"; };
-		F19C1D8B1B35F114002522F2 /* Hatchery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hatchery.swift; sourceTree = "<group>"; };
 		F19C1D8D1B35F24D002522F2 /* Circlone.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Circlone.playground; sourceTree = "<group>"; };
-		F1BE7C7F1CB94CA700D94890 /* Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
-		F1BE7C811CB984E800D94890 /* CGRect+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect+Helpers.swift"; sourceTree = "<group>"; };
 		F1BE7C831CB9867000D94890 /* TreeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreeTests.swift; sourceTree = "<group>"; };
 		F1BE7C851CB9868F00D94890 /* CGRectTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRectTests.swift; sourceTree = "<group>"; };
-		F1DE053E1B543BEE00ACF5AD /* Viewport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Viewport.swift; sourceTree = "<group>"; };
 		F1DE05401B54440B00ACF5AD /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		F1EC81211CB92FA800DA311A /* DynamicColor+Deriving.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DynamicColor+Deriving.swift"; sourceTree = "<group>"; };
 		F1EC81221CB92FA800DA311A /* DynamicColor+RGBA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DynamicColor+RGBA.swift"; sourceTree = "<group>"; };
@@ -87,10 +135,26 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		F18C86F31D36BCDB0021F729 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F18C86FD1D36BCDB0021F729 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F18C87011D36BCDB0021F729 /* Hatching.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F19C1D551B35F039002522F2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F18C870C1D36BCDB0021F729 /* Hatching.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +183,31 @@
 			path = External;
 			sourceTree = "<group>";
 		};
+		F18C86F81D36BCDB0021F729 /* Hatching */ = {
+			isa = PBXGroup;
+			children = (
+				F18C87211D36BD5B0021F729 /* Circle.swift */,
+				F18C87231D36BD5B0021F729 /* Node.swift */,
+				F18C87221D36BD5B0021F729 /* Hatchery.swift */,
+				F18C87241D36BD5B0021F729 /* RandomGenerator.swift */,
+				F18C87251D36BD5B0021F729 /* Storage.swift */,
+				F18C87271D36BD5B0021F729 /* Viewport.swift */,
+				F18C872F1D36BE430021F729 /* CGRect+Helpers.swift */,
+				F18C86F91D36BCDB0021F729 /* Hatching.h */,
+				F18C86FB1D36BCDB0021F729 /* Info.plist */,
+			);
+			path = Hatching;
+			sourceTree = "<group>";
+		};
+		F18C87061D36BCDB0021F729 /* HatchingTests */ = {
+			isa = PBXGroup;
+			children = (
+				F18C87071D36BCDB0021F729 /* HatchingTests.swift */,
+				F18C87091D36BCDB0021F729 /* Info.plist */,
+			);
+			path = HatchingTests;
+			sourceTree = "<group>";
+		};
 		F19C1D4F1B35F038002522F2 = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +215,8 @@
 				F19C1D5A1B35F039002522F2 /* Circlone */,
 				F19C1D6F1B35F039002522F2 /* CircloneTests */,
 				F19C1D7A1B35F039002522F2 /* CircloneUITests */,
+				F18C86F81D36BCDB0021F729 /* Hatching */,
+				F18C87061D36BCDB0021F729 /* HatchingTests */,
 				F19C1D591B35F039002522F2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -136,6 +227,8 @@
 				F19C1D581B35F039002522F2 /* Circlone.app */,
 				F19C1D6C1B35F039002522F2 /* CircloneTests.xctest */,
 				F19C1D771B35F039002522F2 /* CircloneUITests.xctest */,
+				F18C86F71D36BCDB0021F729 /* Hatching.framework */,
+				F18C87001D36BCDB0021F729 /* HatchingTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -143,6 +236,7 @@
 		F19C1D5A1B35F039002522F2 /* Circlone */ = {
 			isa = PBXGroup;
 			children = (
+				F18C87161D36BD3E0021F729 /* Circle.swift */,
 				F124582C1CB1706500872D55 /* External */,
 				F19C1D5B1B35F039002522F2 /* AppDelegate.swift */,
 				F19C1D5D1B35F039002522F2 /* ViewController.swift */,
@@ -152,15 +246,8 @@
 				F19C1D621B35F039002522F2 /* Assets.xcassets */,
 				F19C1D641B35F039002522F2 /* LaunchScreen.storyboard */,
 				F19C1D671B35F039002522F2 /* Info.plist */,
-				F19C1D891B35F05C002522F2 /* Circle.swift */,
-				F1DE053E1B543BEE00ACF5AD /* Viewport.swift */,
-				F14561951B7DACF900586774 /* RandomGenerator.swift */,
-				F19C1D8B1B35F114002522F2 /* Hatchery.swift */,
 				F12458311CB175AD00872D55 /* Subscriber.swift */,
-				F14561931B7DAAF200586774 /* Storage.swift */,
 				F1DE05401B54440B00ACF5AD /* CircleView.swift */,
-				F1BE7C811CB984E800D94890 /* CGRect+Helpers.swift */,
-				F1BE7C7F1CB94CA700D94890 /* Node.swift */,
 			);
 			path = Circlone;
 			sourceTree = "<group>";
@@ -207,7 +294,55 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		F18C86F41D36BCDB0021F729 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F18C86FA1D36BCDB0021F729 /* Hatching.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		F18C86F61D36BCDB0021F729 /* Hatching */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F18C87121D36BCDB0021F729 /* Build configuration list for PBXNativeTarget "Hatching" */;
+			buildPhases = (
+				F18C86F21D36BCDB0021F729 /* Sources */,
+				F18C86F31D36BCDB0021F729 /* Frameworks */,
+				F18C86F41D36BCDB0021F729 /* Headers */,
+				F18C86F51D36BCDB0021F729 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Hatching;
+			productName = Hatching;
+			productReference = F18C86F71D36BCDB0021F729 /* Hatching.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		F18C86FF1D36BCDB0021F729 /* HatchingTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F18C87141D36BCDB0021F729 /* Build configuration list for PBXNativeTarget "HatchingTests" */;
+			buildPhases = (
+				F18C86FC1D36BCDB0021F729 /* Sources */,
+				F18C86FD1D36BCDB0021F729 /* Frameworks */,
+				F18C86FE1D36BCDB0021F729 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F18C87031D36BCDB0021F729 /* PBXTargetDependency */,
+				F18C87051D36BCDB0021F729 /* PBXTargetDependency */,
+			);
+			name = HatchingTests;
+			productName = HatchingTests;
+			productReference = F18C87001D36BCDB0021F729 /* HatchingTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		F19C1D571B35F039002522F2 /* Circlone */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F19C1D801B35F039002522F2 /* Build configuration list for PBXNativeTarget "Circlone" */;
@@ -215,10 +350,12 @@
 				F19C1D541B35F039002522F2 /* Sources */,
 				F19C1D551B35F039002522F2 /* Frameworks */,
 				F19C1D561B35F039002522F2 /* Resources */,
+				F18C87131D36BCDB0021F729 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				F18C870B1D36BCDB0021F729 /* PBXTargetDependency */,
 			);
 			name = Circlone;
 			productName = Circlone;
@@ -267,9 +404,17 @@
 		F19C1D501B35F038002522F2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "🗿";
 				TargetAttributes = {
+					F18C86F61D36BCDB0021F729 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					F18C86FF1D36BCDB0021F729 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = F19C1D571B35F039002522F2;
+					};
 					F19C1D571B35F039002522F2 = {
 						CreatedOnToolsVersion = 7.0;
 					};
@@ -299,11 +444,27 @@
 				F19C1D571B35F039002522F2 /* Circlone */,
 				F19C1D6B1B35F039002522F2 /* CircloneTests */,
 				F19C1D761B35F039002522F2 /* CircloneUITests */,
+				F18C86F61D36BCDB0021F729 /* Hatching */,
+				F18C86FF1D36BCDB0021F729 /* HatchingTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		F18C86F51D36BCDB0021F729 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F18C86FE1D36BCDB0021F729 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F19C1D561B35F039002522F2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -331,25 +492,41 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		F18C86F21D36BCDB0021F729 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F18C872B1D36BD5B0021F729 /* RandomGenerator.swift in Sources */,
+				F18C872A1D36BD5B0021F729 /* Node.swift in Sources */,
+				F18C87281D36BD5B0021F729 /* Circle.swift in Sources */,
+				F18C872E1D36BD5B0021F729 /* Viewport.swift in Sources */,
+				F18C87301D36BE430021F729 /* CGRect+Helpers.swift in Sources */,
+				F18C87291D36BD5B0021F729 /* Hatchery.swift in Sources */,
+				F18C872C1D36BD5B0021F729 /* Storage.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F18C86FC1D36BCDB0021F729 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F18C87081D36BCDB0021F729 /* HatchingTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F19C1D541B35F039002522F2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				F1DE05411B54440B00ACF5AD /* CircleView.swift in Sources */,
-				F14561961B7DACF900586774 /* RandomGenerator.swift in Sources */,
-				F14561941B7DAAF200586774 /* Storage.swift in Sources */,
 				F12458321CB175AD00872D55 /* Subscriber.swift in Sources */,
 				F19C1D5E1B35F039002522F2 /* ViewController.swift in Sources */,
 				F124672B1D0B35F9002A8325 /* ViewController+StateRestoration.swift in Sources */,
-				F19C1D8C1B35F114002522F2 /* Hatchery.swift in Sources */,
 				F1EC814D1CB92FA800DA311A /* DynamicColor+Deriving.swift in Sources */,
-				F1BE7C801CB94CA700D94890 /* Node.swift in Sources */,
 				F1EC81501CB92FA800DA311A /* HSL.swift in Sources */,
 				F19C1D5C1B35F039002522F2 /* AppDelegate.swift in Sources */,
 				F1EC814F1CB92FA800DA311A /* DynamicColor.swift in Sources */,
-				F1BE7C821CB984E800D94890 /* CGRect+Helpers.swift in Sources */,
-				F19C1D8A1B35F05C002522F2 /* Circle.swift in Sources */,
-				F1DE053F1B543BEE00ACF5AD /* Viewport.swift in Sources */,
+				F18C871C1D36BD3E0021F729 /* Circle.swift in Sources */,
 				F1EC814E1CB92FA800DA311A /* DynamicColor+RGBA.swift in Sources */,
 				F124672D1D0B3D6F002A8325 /* ColorScheme.swift in Sources */,
 			);
@@ -377,6 +554,21 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		F18C87031D36BCDB0021F729 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F18C86F61D36BCDB0021F729 /* Hatching */;
+			targetProxy = F18C87021D36BCDB0021F729 /* PBXContainerItemProxy */;
+		};
+		F18C87051D36BCDB0021F729 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F19C1D571B35F039002522F2 /* Circlone */;
+			targetProxy = F18C87041D36BCDB0021F729 /* PBXContainerItemProxy */;
+		};
+		F18C870B1D36BCDB0021F729 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F18C86F61D36BCDB0021F729 /* Hatching */;
+			targetProxy = F18C870A1D36BCDB0021F729 /* PBXContainerItemProxy */;
+		};
 		F19C1D6E1B35F039002522F2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = F19C1D571B35F039002522F2 /* Circlone */;
@@ -409,6 +601,79 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		F18C870E1D36BCDB0021F729 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Hatching/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Vytis.Hatching;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		F18C870F1D36BCDB0021F729 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Hatching/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Vytis.Hatching;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		F18C87101D36BCDB0021F729 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				INFOPLIST_FILE = HatchingTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Vytis.HatchingTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Circlone.app/Circlone";
+			};
+			name = Debug;
+		};
+		F18C87111D36BCDB0021F729 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				INFOPLIST_FILE = HatchingTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Vytis.HatchingTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Circlone.app/Circlone";
+			};
+			name = Release;
+		};
 		F19C1D7E1B35F039002522F2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -497,6 +762,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Circlone",
@@ -514,6 +780,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Circlone",
@@ -577,6 +844,22 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		F18C87121D36BCDB0021F729 /* Build configuration list for PBXNativeTarget "Hatching" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F18C870E1D36BCDB0021F729 /* Debug */,
+				F18C870F1D36BCDB0021F729 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F18C87141D36BCDB0021F729 /* Build configuration list for PBXNativeTarget "HatchingTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F18C87101D36BCDB0021F729 /* Debug */,
+				F18C87111D36BCDB0021F729 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		F19C1D531B35F038002522F2 /* Build configuration list for PBXProject "Circlone" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

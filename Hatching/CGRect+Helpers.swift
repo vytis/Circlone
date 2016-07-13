@@ -8,6 +8,12 @@
 
 import CoreGraphics
 
+extension Circle {
+    var boundingBox: CGRect {
+        return CGRect(x: CGFloat(x - radius), y: CGFloat(y - radius), width: CGFloat(radius * 2), height: CGFloat(radius * 2))
+    }
+}
+
 extension CGRect {
     func intersects(circle: Circle) -> Bool {
         return intersects(circle.boundingBox)

@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreGraphics
+import Hatching
 
 class ViewController: UIViewController {
 
@@ -17,6 +18,9 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var tapLabel: UILabel!
     @IBOutlet weak var shakeLabel: UILabel!
+    
+    var newCircles: Subscriber!
+    var removedCircles: Subscriber!
     
     var hatchery: Hatchery?
     var colorScheme: ColorScheme! {
@@ -46,9 +50,10 @@ class ViewController: UIViewController {
     
     func start(statePath statePath: String? = nil) {
         let viewport = Viewport(height: Float(view.frame.height), width: Float(view.frame.width))
-        let newCircles = Subscriber(onCircles: circleView.addCircles)
-        let removedCircles = Subscriber(onCircles: circleView.removeCircles)
-        hatchery = Hatchery(viewport: viewport, maxSize: Circle.maxRadius, newCircles: newCircles, removedCircles: removedCircles, statePath: statePath)
+        newCircles = Subscriber(onCircles: circleView.addCircles)
+        removedCircles = Subscriber(onCircles: circleView.removeCircles)
+
+        hatchery = Hatchery(viewport: viewport, maxSize: 500, newCircles: newCircles.addNew, removedCircles: removedCircles.addNew)
         labelContainer.hidden = true
     }
     

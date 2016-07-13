@@ -6,7 +6,7 @@
 //  Copyright © 2015 🗿. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 public typealias Circles = ([Circle]) -> Void
 

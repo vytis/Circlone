@@ -24,6 +24,23 @@
 		F18C872C1D36BD5B0021F729 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18C87251D36BD5B0021F729 /* Storage.swift */; };
 		F18C872E1D36BD5B0021F729 /* Viewport.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18C87271D36BD5B0021F729 /* Viewport.swift */; };
 		F18C87301D36BE430021F729 /* CGRect+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18C872F1D36BE430021F729 /* CGRect+Helpers.swift */; };
+		F18C87381D36C36C0021F729 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18C87371D36C36C0021F729 /* AppDelegate.swift */; };
+		F18C873A1D36C36C0021F729 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18C87391D36C36C0021F729 /* ViewController.swift */; };
+		F18C873C1D36C36C0021F729 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F18C873B1D36C36C0021F729 /* Assets.xcassets */; };
+		F18C873F1D36C36C0021F729 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F18C873D1D36C36C0021F729 /* Main.storyboard */; };
+		F18C874A1D36C36C0021F729 /* HeadlessGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18C87491D36C36C0021F729 /* HeadlessGeneratorTests.swift */; };
+		F18C875D1D36C4340021F729 /* Hatching Mac.h in Headers */ = {isa = PBXBuildFile; fileRef = F18C875C1D36C4340021F729 /* Hatching Mac.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F18C87641D36C4350021F729 /* Hatching.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F18C875A1D36C4340021F729 /* Hatching.framework */; };
+		F18C876B1D36C4350021F729 /* Hatching_MacTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18C876A1D36C4350021F729 /* Hatching_MacTests.swift */; };
+		F18C876F1D36C4350021F729 /* Hatching.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F18C875A1D36C4340021F729 /* Hatching.framework */; };
+		F18C87701D36C4350021F729 /* Hatching.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F18C875A1D36C4340021F729 /* Hatching.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F18C87781D36C4950021F729 /* Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18C87211D36BD5B0021F729 /* Circle.swift */; };
+		F18C87791D36C4950021F729 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18C87231D36BD5B0021F729 /* Node.swift */; };
+		F18C877A1D36C4950021F729 /* Hatchery.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18C87221D36BD5B0021F729 /* Hatchery.swift */; };
+		F18C877B1D36C4950021F729 /* RandomGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18C87241D36BD5B0021F729 /* RandomGenerator.swift */; };
+		F18C877C1D36C4950021F729 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18C87251D36BD5B0021F729 /* Storage.swift */; };
+		F18C877D1D36C4950021F729 /* Viewport.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18C87271D36BD5B0021F729 /* Viewport.swift */; };
+		F18C877E1D36C4950021F729 /* CGRect+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18C872F1D36BE430021F729 /* CGRect+Helpers.swift */; };
 		F19C1D5C1B35F039002522F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19C1D5B1B35F039002522F2 /* AppDelegate.swift */; };
 		F19C1D5E1B35F039002522F2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19C1D5D1B35F039002522F2 /* ViewController.swift */; };
 		F19C1D611B35F039002522F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F19C1D5F1B35F039002522F2 /* Main.storyboard */; };
@@ -62,6 +79,34 @@
 			remoteGlobalIDString = F18C86F61D36BCDB0021F729;
 			remoteInfo = Hatching;
 		};
+		F18C87461D36C36C0021F729 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F19C1D501B35F038002522F2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F18C87341D36C36C0021F729;
+			remoteInfo = HeadlessGenerator;
+		};
+		F18C87651D36C4350021F729 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F19C1D501B35F038002522F2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F18C87591D36C4340021F729;
+			remoteInfo = "Hatching Mac";
+		};
+		F18C87671D36C4350021F729 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F19C1D501B35F038002522F2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F18C87341D36C36C0021F729;
+			remoteInfo = HeadlessGenerator;
+		};
+		F18C876D1D36C4350021F729 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F19C1D501B35F038002522F2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F18C87591D36C4340021F729;
+			remoteInfo = "Hatching Mac";
+		};
 		F19C1D6D1B35F039002522F2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F19C1D501B35F038002522F2 /* Project object */;
@@ -90,6 +135,17 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F18C87741D36C4350021F729 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F18C87701D36C4350021F729 /* Hatching.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -111,6 +167,21 @@
 		F18C87251D36BD5B0021F729 /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		F18C87271D36BD5B0021F729 /* Viewport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Viewport.swift; sourceTree = "<group>"; };
 		F18C872F1D36BE430021F729 /* CGRect+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect+Helpers.swift"; sourceTree = "<group>"; };
+		F18C87351D36C36C0021F729 /* HeadlessGenerator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeadlessGenerator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F18C87371D36C36C0021F729 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F18C87391D36C36C0021F729 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F18C873B1D36C36C0021F729 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F18C873E1D36C36C0021F729 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F18C87401D36C36C0021F729 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F18C87451D36C36C0021F729 /* HeadlessGeneratorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HeadlessGeneratorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F18C87491D36C36C0021F729 /* HeadlessGeneratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadlessGeneratorTests.swift; sourceTree = "<group>"; };
+		F18C874B1D36C36C0021F729 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F18C875A1D36C4340021F729 /* Hatching.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Hatching.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F18C875C1D36C4340021F729 /* Hatching Mac.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Hatching Mac.h"; sourceTree = "<group>"; };
+		F18C875E1D36C4340021F729 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F18C87631D36C4340021F729 /* Hatching.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Hatching.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F18C876A1D36C4350021F729 /* Hatching_MacTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hatching_MacTests.swift; sourceTree = "<group>"; };
+		F18C876C1D36C4350021F729 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F19C1D581B35F039002522F2 /* Circlone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Circlone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F19C1D5B1B35F039002522F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F19C1D5D1B35F039002522F2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -147,6 +218,36 @@
 			buildActionMask = 2147483647;
 			files = (
 				F18C87011D36BCDB0021F729 /* Hatching.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F18C87321D36C36C0021F729 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F18C876F1D36C4350021F729 /* Hatching.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F18C87421D36C36C0021F729 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F18C87561D36C4340021F729 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F18C87601D36C4340021F729 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F18C87641D36C4350021F729 /* Hatching.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,6 +309,45 @@
 			path = HatchingTests;
 			sourceTree = "<group>";
 		};
+		F18C87361D36C36C0021F729 /* HeadlessGenerator */ = {
+			isa = PBXGroup;
+			children = (
+				F18C87371D36C36C0021F729 /* AppDelegate.swift */,
+				F18C87391D36C36C0021F729 /* ViewController.swift */,
+				F18C873B1D36C36C0021F729 /* Assets.xcassets */,
+				F18C873D1D36C36C0021F729 /* Main.storyboard */,
+				F18C87401D36C36C0021F729 /* Info.plist */,
+			);
+			path = HeadlessGenerator;
+			sourceTree = "<group>";
+		};
+		F18C87481D36C36C0021F729 /* HeadlessGeneratorTests */ = {
+			isa = PBXGroup;
+			children = (
+				F18C87491D36C36C0021F729 /* HeadlessGeneratorTests.swift */,
+				F18C874B1D36C36C0021F729 /* Info.plist */,
+			);
+			path = HeadlessGeneratorTests;
+			sourceTree = "<group>";
+		};
+		F18C875B1D36C4340021F729 /* Hatching Mac */ = {
+			isa = PBXGroup;
+			children = (
+				F18C875C1D36C4340021F729 /* Hatching Mac.h */,
+				F18C875E1D36C4340021F729 /* Info.plist */,
+			);
+			path = "Hatching Mac";
+			sourceTree = "<group>";
+		};
+		F18C87691D36C4350021F729 /* Hatching MacTests */ = {
+			isa = PBXGroup;
+			children = (
+				F18C876A1D36C4350021F729 /* Hatching_MacTests.swift */,
+				F18C876C1D36C4350021F729 /* Info.plist */,
+			);
+			path = "Hatching MacTests";
+			sourceTree = "<group>";
+		};
 		F19C1D4F1B35F038002522F2 = {
 			isa = PBXGroup;
 			children = (
@@ -217,6 +357,10 @@
 				F19C1D7A1B35F039002522F2 /* CircloneUITests */,
 				F18C86F81D36BCDB0021F729 /* Hatching */,
 				F18C87061D36BCDB0021F729 /* HatchingTests */,
+				F18C87361D36C36C0021F729 /* HeadlessGenerator */,
+				F18C87481D36C36C0021F729 /* HeadlessGeneratorTests */,
+				F18C875B1D36C4340021F729 /* Hatching Mac */,
+				F18C87691D36C4350021F729 /* Hatching MacTests */,
 				F19C1D591B35F039002522F2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -229,6 +373,10 @@
 				F19C1D771B35F039002522F2 /* CircloneUITests.xctest */,
 				F18C86F71D36BCDB0021F729 /* Hatching.framework */,
 				F18C87001D36BCDB0021F729 /* HatchingTests.xctest */,
+				F18C87351D36C36C0021F729 /* HeadlessGenerator.app */,
+				F18C87451D36C36C0021F729 /* HeadlessGeneratorTests.xctest */,
+				F18C875A1D36C4340021F729 /* Hatching.framework */,
+				F18C87631D36C4340021F729 /* Hatching.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -303,6 +451,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F18C87571D36C4340021F729 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F18C875D1D36C4340021F729 /* Hatching Mac.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
@@ -341,6 +497,80 @@
 			name = HatchingTests;
 			productName = HatchingTests;
 			productReference = F18C87001D36BCDB0021F729 /* HatchingTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F18C87341D36C36C0021F729 /* HeadlessGenerator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F18C874C1D36C36C0021F729 /* Build configuration list for PBXNativeTarget "HeadlessGenerator" */;
+			buildPhases = (
+				F18C87311D36C36C0021F729 /* Sources */,
+				F18C87321D36C36C0021F729 /* Frameworks */,
+				F18C87331D36C36C0021F729 /* Resources */,
+				F18C87741D36C4350021F729 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F18C876E1D36C4350021F729 /* PBXTargetDependency */,
+			);
+			name = HeadlessGenerator;
+			productName = HeadlessGenerator;
+			productReference = F18C87351D36C36C0021F729 /* HeadlessGenerator.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F18C87441D36C36C0021F729 /* HeadlessGeneratorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F18C874F1D36C36C0021F729 /* Build configuration list for PBXNativeTarget "HeadlessGeneratorTests" */;
+			buildPhases = (
+				F18C87411D36C36C0021F729 /* Sources */,
+				F18C87421D36C36C0021F729 /* Frameworks */,
+				F18C87431D36C36C0021F729 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F18C87471D36C36C0021F729 /* PBXTargetDependency */,
+			);
+			name = HeadlessGeneratorTests;
+			productName = HeadlessGeneratorTests;
+			productReference = F18C87451D36C36C0021F729 /* HeadlessGeneratorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F18C87591D36C4340021F729 /* Hatching Mac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F18C87711D36C4350021F729 /* Build configuration list for PBXNativeTarget "Hatching Mac" */;
+			buildPhases = (
+				F18C87551D36C4340021F729 /* Sources */,
+				F18C87561D36C4340021F729 /* Frameworks */,
+				F18C87571D36C4340021F729 /* Headers */,
+				F18C87581D36C4340021F729 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Hatching Mac";
+			productName = "Hatching Mac";
+			productReference = F18C875A1D36C4340021F729 /* Hatching.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		F18C87621D36C4340021F729 /* Hatching MacTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F18C87751D36C4350021F729 /* Build configuration list for PBXNativeTarget "Hatching MacTests" */;
+			buildPhases = (
+				F18C875F1D36C4340021F729 /* Sources */,
+				F18C87601D36C4340021F729 /* Frameworks */,
+				F18C87611D36C4340021F729 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F18C87661D36C4350021F729 /* PBXTargetDependency */,
+				F18C87681D36C4350021F729 /* PBXTargetDependency */,
+			);
+			name = "Hatching MacTests";
+			productName = "Hatching MacTests";
+			productReference = F18C87631D36C4340021F729 /* Hatching.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		F19C1D571B35F039002522F2 /* Circlone */ = {
@@ -415,6 +645,20 @@
 						CreatedOnToolsVersion = 7.3.1;
 						TestTargetID = F19C1D571B35F039002522F2;
 					};
+					F18C87341D36C36C0021F729 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					F18C87441D36C36C0021F729 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = F18C87341D36C36C0021F729;
+					};
+					F18C87591D36C4340021F729 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					F18C87621D36C4340021F729 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = F18C87341D36C36C0021F729;
+					};
 					F19C1D571B35F039002522F2 = {
 						CreatedOnToolsVersion = 7.0;
 					};
@@ -446,6 +690,10 @@
 				F19C1D761B35F039002522F2 /* CircloneUITests */,
 				F18C86F61D36BCDB0021F729 /* Hatching */,
 				F18C86FF1D36BCDB0021F729 /* HatchingTests */,
+				F18C87341D36C36C0021F729 /* HeadlessGenerator */,
+				F18C87441D36C36C0021F729 /* HeadlessGeneratorTests */,
+				F18C87591D36C4340021F729 /* Hatching Mac */,
+				F18C87621D36C4340021F729 /* Hatching MacTests */,
 			);
 		};
 /* End PBXProject section */
@@ -459,6 +707,36 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		F18C86FE1D36BCDB0021F729 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F18C87331D36C36C0021F729 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F18C873C1D36C36C0021F729 /* Assets.xcassets in Resources */,
+				F18C873F1D36C36C0021F729 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F18C87431D36C36C0021F729 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F18C87581D36C4340021F729 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F18C87611D36C4340021F729 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -511,6 +789,45 @@
 			buildActionMask = 2147483647;
 			files = (
 				F18C87081D36BCDB0021F729 /* HatchingTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F18C87311D36C36C0021F729 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F18C873A1D36C36C0021F729 /* ViewController.swift in Sources */,
+				F18C87381D36C36C0021F729 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F18C87411D36C36C0021F729 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F18C874A1D36C36C0021F729 /* HeadlessGeneratorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F18C87551D36C4340021F729 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F18C877B1D36C4950021F729 /* RandomGenerator.swift in Sources */,
+				F18C87781D36C4950021F729 /* Circle.swift in Sources */,
+				F18C87791D36C4950021F729 /* Node.swift in Sources */,
+				F18C877D1D36C4950021F729 /* Viewport.swift in Sources */,
+				F18C877E1D36C4950021F729 /* CGRect+Helpers.swift in Sources */,
+				F18C877A1D36C4950021F729 /* Hatchery.swift in Sources */,
+				F18C877C1D36C4950021F729 /* Storage.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F18C875F1D36C4340021F729 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F18C876B1D36C4350021F729 /* Hatching_MacTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -569,6 +886,26 @@
 			target = F18C86F61D36BCDB0021F729 /* Hatching */;
 			targetProxy = F18C870A1D36BCDB0021F729 /* PBXContainerItemProxy */;
 		};
+		F18C87471D36C36C0021F729 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F18C87341D36C36C0021F729 /* HeadlessGenerator */;
+			targetProxy = F18C87461D36C36C0021F729 /* PBXContainerItemProxy */;
+		};
+		F18C87661D36C4350021F729 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F18C87591D36C4340021F729 /* Hatching Mac */;
+			targetProxy = F18C87651D36C4350021F729 /* PBXContainerItemProxy */;
+		};
+		F18C87681D36C4350021F729 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F18C87341D36C36C0021F729 /* HeadlessGenerator */;
+			targetProxy = F18C87671D36C4350021F729 /* PBXContainerItemProxy */;
+		};
+		F18C876E1D36C4350021F729 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F18C87591D36C4340021F729 /* Hatching Mac */;
+			targetProxy = F18C876D1D36C4350021F729 /* PBXContainerItemProxy */;
+		};
 		F19C1D6E1B35F039002522F2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = F19C1D571B35F039002522F2 /* Circlone */;
@@ -582,6 +919,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		F18C873D1D36C36C0021F729 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F18C873E1D36C36C0021F729 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
 		F19C1D5F1B35F039002522F2 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -604,6 +949,7 @@
 		F18C870E1D36BCDB0021F729 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -628,6 +974,7 @@
 		F18C870F1D36BCDB0021F729 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -671,6 +1018,158 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Vytis.HatchingTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Circlone.app/Circlone";
+			};
+			name = Release;
+		};
+		F18C874D1D36C36C0021F729 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				INFOPLIST_FILE = HeadlessGenerator/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = Vytis.HeadlessGenerator;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		F18C874E1D36C36C0021F729 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				INFOPLIST_FILE = HeadlessGenerator/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = Vytis.HeadlessGenerator;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		F18C87501D36C36C0021F729 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = HeadlessGeneratorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = Vytis.HeadlessGeneratorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HeadlessGenerator.app/Contents/MacOS/HeadlessGenerator";
+			};
+			name = Debug;
+		};
+		F18C87511D36C36C0021F729 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = HeadlessGeneratorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = Vytis.HeadlessGeneratorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HeadlessGenerator.app/Contents/MacOS/HeadlessGenerator";
+			};
+			name = Release;
+		};
+		F18C87721D36C4350021F729 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "Hatching Mac/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = "Vytis.Hatching-Mac";
+				PRODUCT_NAME = Hatching;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		F18C87731D36C4350021F729 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "Hatching Mac/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = "Vytis.Hatching-Mac";
+				PRODUCT_NAME = Hatching;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		F18C87761D36C4350021F729 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Hatching MacTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = "Vytis.Hatching-MacTests";
+				PRODUCT_NAME = Hatching;
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HeadlessGenerator.app/Contents/MacOS/HeadlessGenerator";
+			};
+			name = Debug;
+		};
+		F18C87771D36C4350021F729 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Hatching MacTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = "Vytis.Hatching-MacTests";
+				PRODUCT_NAME = Hatching;
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HeadlessGenerator.app/Contents/MacOS/HeadlessGenerator";
 			};
 			name = Release;
 		};
@@ -857,6 +1356,38 @@
 			buildConfigurations = (
 				F18C87101D36BCDB0021F729 /* Debug */,
 				F18C87111D36BCDB0021F729 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F18C874C1D36C36C0021F729 /* Build configuration list for PBXNativeTarget "HeadlessGenerator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F18C874D1D36C36C0021F729 /* Debug */,
+				F18C874E1D36C36C0021F729 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F18C874F1D36C36C0021F729 /* Build configuration list for PBXNativeTarget "HeadlessGeneratorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F18C87501D36C36C0021F729 /* Debug */,
+				F18C87511D36C36C0021F729 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F18C87711D36C4350021F729 /* Build configuration list for PBXNativeTarget "Hatching Mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F18C87721D36C4350021F729 /* Debug */,
+				F18C87731D36C4350021F729 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F18C87751D36C4350021F729 /* Build configuration list for PBXNativeTarget "Hatching MacTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F18C87761D36C4350021F729 /* Debug */,
+				F18C87771D36C4350021F729 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

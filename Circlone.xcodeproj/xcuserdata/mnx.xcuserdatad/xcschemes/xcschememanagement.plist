@@ -14,10 +14,20 @@
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
+		<key>Hatching Mac.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
 		<key>Hatching.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>2</integer>
+		</dict>
+		<key>HeadlessGenerator.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -28,6 +38,26 @@
 			<true/>
 		</dict>
 		<key>F18C86FF1D36BCDB0021F729</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F18C87341D36C36C0021F729</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F18C87441D36C36C0021F729</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F18C87591D36C4340021F729</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F18C87621D36C4340021F729</key>
 		<dict>
 			<key>primary</key>
 			<true/>

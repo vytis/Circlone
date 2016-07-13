@@ -16,11 +16,11 @@ class RandomGenerator {
         number = seed
     }
 
-    func generate(viewport: Viewport, maxSize: Float) -> Circle {
+    func generate(viewport: Viewport, minSize: Float = 1.0, maxSize: Float) -> Circle {
         
         let realMax = min(maxSize, viewport.width / 2.0 - 1)
         
-        let radius = rand_uniform(realMax) + 1
+        let radius = rand_uniform(realMax - minSize) + minSize
         let limit = viewport.width - 2 * radius
         let x = rand_uniform(limit) + radius
         let y = rand_uniform(viewport.height - 2 * radius) + radius
@@ -36,8 +36,9 @@ class RandomGenerator {
         number ^= number >> 27;
         
         let (multiplied, _) = UInt64.multiplyWithOverflow(number, 2685821657736338717)
+        let range = Double(multiplied) / Double(UInt64.max)
         
-        return Float( multiplied % UInt64(limit))
+        return Float(Double(limit) * range)
     }
 
 }

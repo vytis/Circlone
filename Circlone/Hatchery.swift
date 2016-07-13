@@ -30,6 +30,7 @@ class Hatchery {
     func stop() {
         dispatch_sync(q) {
             self.running = false
+            self.storage.saveSVG(atPath: "all.svg")
         }
     }
     

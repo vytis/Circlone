@@ -53,7 +53,7 @@ class ViewController: UIViewController {
         newCircles = Subscriber(onCircles: circleView.addCircles)
         removedCircles = Subscriber(onCircles: circleView.removeCircles)
 
-        hatchery = Hatchery(viewport: viewport, maxSize: 500, newCircles: newCircles.addNew, removedCircles: removedCircles.addNew)
+        hatchery = Hatchery(viewport: viewport, maxSize: 500, addedCircles: newCircles.addNew, removedCircles: removedCircles.addNew)
         labelContainer.hidden = true
     }
     

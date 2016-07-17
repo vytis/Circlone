@@ -22,14 +22,17 @@ public class Hatchery {
 
     
     private let storage: Storage
-    private let addedCirclesSubscriber: Circles
-    private let removedCirclesSubscriber: Circles
+    private let addedCircles: Circles?
+    private let removedCircles: Circles?
 
     public func stop() {
         dispatch_sync(q) {
             self.running = false
-            self.storage.saveSVG(atPath: "all.svg")
         }
+    }
+    
+    public func saveSVG(atPath path: String) {
+        storage.saveSVG(atPath: path)
     }
     
     public func start() {
@@ -39,19 +42,19 @@ public class Hatchery {
         generateCircles()
     }
     
-    public init(viewport: Viewport, maxSize: Float, newCircles: Circles, removedCircles: Circles) {
+    public init(viewport: Viewport, maxSize: Float, addedCircles: Circles? = nil, removedCircles: Circles? = nil) {
         self.viewport = viewport
         self.maxSize = maxSize
+        self.addedCircles = addedCircles
+        self.removedCircles = removedCircles
         storage = Storage(viewport: viewport)
-        addedCirclesSubscriber = newCircles
-        removedCirclesSubscriber = removedCircles
         generateCircles()
     }
         
     public func removeCircleAt(x x: Float, y: Float) {
         dispatch_async(q) {
             if let removedCircle = self.storage.popItemAt(x: x, y: y)   {
-                self.removedCirclesSubscriber([removedCircle])
+                self.removedCircles?([removedCircle])
             }
         }
     }
@@ -62,11 +65,11 @@ public class Hatchery {
                 return
             }
             var circles = [Circle]()
-            for _ in (0..<1000) {
+            for _ in (0..<10000) {
                 circles.append(self.generator.generate(self.viewport, maxSize: self.maxSize))
             }
             let newCircles = self.storage.add(circles)
-            self.addedCirclesSubscriber(newCircles)
+            self.addedCircles?(newCircles)
             self.generateCircles()
         }
     }

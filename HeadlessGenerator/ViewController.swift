@@ -23,6 +23,18 @@ class ViewController: NSViewController {
         }
     }
 
+    var hatchery: Hatchery?
+
+    @IBAction func startTapped(sender: AnyObject) {
+        let viewport = Viewport(height: 2000, width: 2000)
+        hatchery = Hatchery(viewport: viewport, maxSize: 1)
+    }
+    
+    @IBAction func stopTapped(sender: AnyObject) {
+        hatchery?.stop()
+        hatchery?.saveSVG(atPath: "Some.svg")
+        hatchery = nil
+    }
 
 }
 

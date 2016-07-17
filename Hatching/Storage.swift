@@ -15,10 +15,12 @@ class Storage {
     private var large: [Circle] = []
     private var all: [Circle] = []
     
+    let start = NSDate()
+    
     let pivotPoint: Float
     
-    init(viewport: Viewport, pivotPoint: Float = 5) {
-        self.pivotPoint = pivotPoint
+    init(viewport: Viewport, pivotPoint: Float? = nil) {
+        self.pivotPoint = pivotPoint ?? (viewport.height / 250)
         let frame = CGRect(origin: CGPoint.zero, size: CGSize(width: CGFloat(viewport.width), height: CGFloat(viewport.height)))
         tree = Node(circles: [], frame: frame)
     }    
@@ -45,6 +47,9 @@ extension Storage {
                     }
                     all.append(item)
                     circles.append(item)
+                    if all.count % 2500 == 0 {
+                        print("Circles: \(all.count) in \(-start.timeIntervalSinceNow)s")
+                    }
                 }
             }
         }
@@ -55,7 +60,8 @@ extension Storage {
 typealias SVG = Storage
 extension SVG {
     func saveSVG(atPath path: String) {
-        var output = "<svg xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\">\n"
+        var output = "<svg xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" viewBox=\"0 0 \(tree.frame.size.width) \(tree.frame.size.height)\" preserveAspectRatio=\"meet\">\n"
+        output += "<rect width=\"\(tree.frame.size.width)\" height=\"\(tree.frame.size.height)\" fill=\"black\"/>"
         let circles = all
         for circle in circles {
             output += circle.svgFormat
@@ -76,6 +82,6 @@ extension SVG {
 
 extension Circle {
     var svgFormat: String {
-        return "<circle cx=\"\(x)\" cy=\"\(y)\" r=\"\(radius-0.5)\" fill=\"none\" stroke=\"black\"/>\n"
+        return "<circle cx=\"\(x)\" cy=\"\(y)\" r=\"\(radius)\" fill=\"white\" stroke=\"none\"/>\n"
     }
 }

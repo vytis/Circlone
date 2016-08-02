@@ -9,7 +9,7 @@
 import Foundation
 import CoreGraphics
 
-class Storage {
+final class Storage {
     
     private var tree: Node
     private var large: [Circle] = []

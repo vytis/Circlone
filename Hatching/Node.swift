@@ -9,7 +9,7 @@
 import CoreGraphics
 import Foundation
 
-class Node {
+final class Node {
     
     let frame: CGRect
     var contents: Contents

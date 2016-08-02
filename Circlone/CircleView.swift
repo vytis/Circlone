@@ -9,7 +9,7 @@
 import UIKit
 import Hatching
 
-class CircleView: UIView {
+final class CircleView: UIView {
     
     private struct Blob {
         let circle: Circle

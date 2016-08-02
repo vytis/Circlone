@@ -10,7 +10,7 @@ import Foundation
 
 public typealias Circles = ([Circle]) -> Void
 
-public class Hatchery {
+final public class Hatchery {
     
     let maxSize: Float
     let viewport: Viewport

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class RandomGenerator {
+final class RandomGenerator {
     
     var number: UInt64
 

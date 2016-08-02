@@ -11,7 +11,7 @@ import Hatching
 
 typealias Circles = [Circle] -> Void
 
-class Subscriber {
+final class Subscriber {
     private var displayLink: CADisplayLink!
     private var newCircles = [Circle]()
     private let q = dispatch_queue_create("Subscriber Queue", DISPATCH_QUEUE_SERIAL)

@@ -10,7 +10,7 @@ import UIKit
 import CoreGraphics
 import Hatching
 
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
 
     @IBOutlet weak var circleView: CircleView!
 

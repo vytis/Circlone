@@ -25,7 +25,7 @@ extension UIColor {
     }
 }
 
-class ColorScheme: NSObject, NSCoding {
+final class ColorScheme: NSObject, NSCoding {
     var currentColor: UIColor
     var nextColor: UIColor
 

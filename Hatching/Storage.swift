@@ -9,7 +9,7 @@
 import Foundation
 import CoreGraphics
 
-final class Storage {
+struct Storage {
     
     private var tree: Node
     private var large: [Circle] = []
@@ -27,7 +27,7 @@ final class Storage {
 }
 
 extension Storage {
-    func popItemAt(x x: Float, y: Float) -> Circle? {
+    mutating func popItemAt(x x: Float, y: Float) -> Circle? {
         for (index, item) in self.large.enumerate() {
             if item.containsPoint(x: x, y: y) {                
                 large.removeAtIndex(index)
@@ -36,10 +36,10 @@ extension Storage {
         return tree.remove(x: x, y: y)
     }
     
-    func add(items: [Circle]) -> [Circle] {
+    mutating func add(items: [Circle]) -> [Circle] {
         var circles = [Circle]()
         for item in items {
-            if !item.collides(self.large) {
+            if !item.collides(large) {
                 if !tree.collides(circle: item) {
                     tree.add(circle: item)
                     if item.radius >= pivotPoint {

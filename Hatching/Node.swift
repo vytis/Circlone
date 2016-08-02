@@ -9,10 +9,10 @@
 import CoreGraphics
 import Foundation
 
-final class Node {
+struct Node {
     
     let frame: CGRect
-    var contents: Contents
+    private var contents: Contents
     
     enum Contents {
         case Circles([Circle], Int)
@@ -52,31 +52,30 @@ final class Node {
         }
     }
     
-    func remove(x x: Float, y: Float) -> Circle? {
+    mutating func remove(x x: Float, y: Float) -> Circle? {
         switch contents {
-        case .Circles(let circles, let limit):
+        case .Circles(var circles, let limit):
             for (idx, item) in circles.enumerate() {
                 if item.containsPoint(x: x, y: y) {
-                    var removed = circles
-                    removed.removeAtIndex(idx)
-                    contents = .Circles(removed, limit)
+                    circles.removeAtIndex(idx)
+                    contents = .Circles(circles, limit)
                     return item
                 }
             }
             return nil
-        case let .Deeper(nodes):
+        case var .Deeper(nodes):
             var circle: Circle?
-            for node in nodes {
-                if let removed = node.remove(x: x, y: y) {
+            for idx in 0...nodes.count {
+                if let removed = nodes[idx].remove(x: x, y: y) {
                     circle = removed
                 }
             }
-        
+            contents = .Deeper(nodes)
             return circle
         }
     }
 
-    func add(circle circle: Circle) {
+    mutating func add(circle circle: Circle) {
         switch contents {
         case let .Circles(circles, limit):
             let added = circles + [circle]
@@ -85,12 +84,13 @@ final class Node {
             } else {
                 contents = .Circles(added, limit)
             }
-        case let .Deeper(nodes):
-            for node in nodes {
+        case var .Deeper(nodes):
+            for (idx, node) in nodes.enumerate() {
                 if node.frame.intersects(circle) {
-                    node.add(circle: circle)
+                    nodes[idx].add(circle: circle)
                 }
             }
+            contents = .Deeper(nodes)
         }
     }
 }

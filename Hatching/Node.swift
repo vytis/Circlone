@@ -13,15 +13,16 @@ struct Node {
     
     let frame: CGRect
     private var contents: Contents
+    private var circles: [Circle]
     
     enum Contents {
-        case Circles([Circle], Int)
+        case Circles(Int)
         case Deeper([Node])
     }
     
     init(circles: [Circle], frame: CGRect, splitLimit: Int = 500) {
-        let circlesInFrame = circles.filter(frame.intersects)
-        self.contents = .Circles(circlesInFrame, splitLimit)
+        self.circles = circles.filter(frame.intersects)
+        self.contents = .Circles(splitLimit)
         self.frame = frame
     }
     
@@ -40,7 +41,7 @@ struct Node {
             return false
         }
         switch contents {
-        case .Circles(let circles, _):
+        case .Circles:
             return circle.collides(circles)
         case let .Deeper(nodes):
             for node in nodes {
@@ -54,11 +55,10 @@ struct Node {
     
     mutating func remove(x x: Float, y: Float) -> Circle? {
         switch contents {
-        case .Circles(var circles, let limit):
+        case .Circles:
             for (idx, item) in circles.enumerate() {
                 if item.containsPoint(x: x, y: y) {
                     circles.removeAtIndex(idx)
-                    contents = .Circles(circles, limit)
                     return item
                 }
             }
@@ -77,12 +77,13 @@ struct Node {
 
     mutating func add(circle circle: Circle) {
         switch contents {
-        case let .Circles(circles, limit):
-            let added = circles + [circle]
-            if added.count >= limit {
-                contents = .Deeper(Node.split(circles: added, frame: frame))
+        case .Circles(let limit):
+            circles.append(circle)
+            if circles.count >= limit {
+                contents = .Deeper(Node.split(circles: circles, frame: frame))
+                circles = []
             } else {
-                contents = .Circles(added, limit)
+                contents = .Circles(limit)
             }
         case var .Deeper(nodes):
             for (idx, node) in nodes.enumerate() {

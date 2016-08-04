@@ -39,22 +39,52 @@ extension Storage {
     mutating func add(items: [Circle]) -> [Circle] {
         var circles = [Circle]()
         for item in items {
-            if !item.collides(large) {
-                if !tree.collides(circle: item) {
-                    tree.add(circle: item)
-                    if item.radius >= pivotPoint {
-                        large.append(item)
-                    }
-                    all.append(item)
-                    circles.append(item)
-                    if all.count % 2500 == 0 {
-                        print("Circles: \(all.count) in \(-start.timeIntervalSinceNow)s")
-                    }
+            if item.collides(large) {
+                continue
+            }
+            if tree.collides(circle: item) {
+                continue
+            }
+            
+            tree.add(circle: item)
+            if item.radius >= pivotPoint {
+                let index = large.binarySearch {
+                    return $0.radius > item.radius
                 }
+                large.insert(item, atIndex: index)
+            } else {
+                tree.add(circle: item)
+            }
+            all.append(item)
+            circles.append(item)
+            if all.count % 2500 == 0 {
+                print("Circles: \(all.count) in \(-start.timeIntervalSinceNow)s")
             }
         }
         return circles
     }
+}
+
+extension CollectionType where Index: RandomAccessIndexType {
+    
+    /// Finds such index N that predicate is true for all elements up to
+    /// but not including the index N, and is false for all elements
+    /// starting with index N.
+    /// Behavior is undefined if there is no such N.
+    func binarySearch(predicate: Generator.Element -> Bool) -> Index {
+        var low = startIndex
+        var high = endIndex
+        while low != high {
+            let mid = low.advancedBy(low.distanceTo(high) / 2)
+            if predicate(self[mid]) {
+                low = mid.advancedBy(1)
+            } else {
+                high = mid
+            }
+        }
+        return low
+    }
+    
 }
 
 typealias SVG = Storage

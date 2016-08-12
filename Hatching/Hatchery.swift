@@ -8,7 +8,6 @@
 
 import Foundation
 
-public typealias Circles = ([Circle]) -> Void
 
 final public class Hatchery {
     
@@ -21,8 +20,7 @@ final public class Hatchery {
     private let q = dispatch_queue_create("com.circlone.hatchery", DISPATCH_QUEUE_SERIAL)
     
     private var storage: Storage
-    private let addedCircles: Circles?
-    private let removedCircles: Circles?
+    public private(set) weak var delegate: HatcheryDelegate?
     
     public var allCircles: [Circle] {
         return storage.all
@@ -41,11 +39,10 @@ final public class Hatchery {
         generateCircles()
     }
     
-    public init(viewport: Viewport, maxSize: Float, addedCircles: Circles? = nil, removedCircles: Circles? = nil) {
+    public init(viewport: Viewport, maxSize: Float, delegate: HatcheryDelegate? = nil) {
         self.viewport = viewport
         self.maxSize = maxSize
-        self.addedCircles = addedCircles
-        self.removedCircles = removedCircles
+        self.delegate = delegate
         storage = Storage(viewport: viewport)
         generateCircles()
     }
@@ -53,7 +50,7 @@ final public class Hatchery {
     public func removeCircleAt(x x: Float, y: Float) {
         dispatch_async(q) {
             if let removedCircle = self.storage.popItemAt(x: x, y: y)   {
-                self.removedCircles?([removedCircle])
+                self.delegate?.hatcheryRemoved(circles: [removedCircle])
             }
         }
     }
@@ -68,7 +65,7 @@ final public class Hatchery {
                 circles.append(self.generator.generate(self.viewport, maxSize: self.maxSize))
             }
             let newCircles = self.storage.add(circles)
-            self.addedCircles?(newCircles)
+            self.delegate?.hatcheryAdded(circles: newCircles)
             self.generateCircles()
         }
     }

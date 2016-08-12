@@ -53,7 +53,7 @@ final class ViewController: UIViewController {
         newCircles = Subscriber(onCircles: circleView.addCircles)
         removedCircles = Subscriber(onCircles: circleView.removeCircles)
 
-        hatchery = Hatchery(viewport: viewport, maxSize: 500, addedCircles: newCircles.addNew, removedCircles: removedCircles.addNew)
+        hatchery = Hatchery(viewport: viewport, maxSize: 500, delegate: self)
         labelContainer.hidden = true
     }
     
@@ -79,5 +79,15 @@ final class ViewController: UIViewController {
         if let hatchery = hatchery {
             hatchery.start()
         }
+    }
+}
+
+extension ViewController: HatcheryDelegate {
+    func hatcheryAdded(circles circles: [Circle]) {
+        newCircles.addNew(circles)
+    }
+    
+    func hatcheryRemoved(circles circles: [Circle]) {
+        removedCircles.addNew(circles)
     }
 }

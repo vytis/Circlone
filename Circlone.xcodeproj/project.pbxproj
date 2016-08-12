@@ -57,6 +57,7 @@
 		F1FF49AC1D5E139A000F744A /* Circle+Comparable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FF49AB1D5E139A000F744A /* Circle+Comparable.swift */; };
 		F1FF49AE1D5E13FD000F744A /* Circle+Collision.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FF49AD1D5E13FD000F744A /* Circle+Collision.swift */; };
 		F1FF49B01D5E1625000F744A /* CollectionType+BinarySearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FF49AF1D5E1625000F744A /* CollectionType+BinarySearch.swift */; };
+		F1FF49B21D5E1863000F744A /* HatcheryDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FF49B11D5E1863000F744A /* HatcheryDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -207,6 +208,7 @@
 		F1FF49AB1D5E139A000F744A /* Circle+Comparable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Circle+Comparable.swift"; sourceTree = "<group>"; };
 		F1FF49AD1D5E13FD000F744A /* Circle+Collision.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Circle+Collision.swift"; sourceTree = "<group>"; };
 		F1FF49AF1D5E1625000F744A /* CollectionType+BinarySearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CollectionType+BinarySearch.swift"; sourceTree = "<group>"; };
+		F1FF49B11D5E1863000F744A /* HatcheryDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HatcheryDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -296,6 +298,7 @@
 				F1FF49AB1D5E139A000F744A /* Circle+Comparable.swift */,
 				F1FF49AD1D5E13FD000F744A /* Circle+Collision.swift */,
 				F18C87221D36BD5B0021F729 /* Hatchery.swift */,
+				F1FF49B11D5E1863000F744A /* HatcheryDelegate.swift */,
 				F18C87231D36BD5B0021F729 /* Node.swift */,
 				F18C87241D36BD5B0021F729 /* RandomGenerator.swift */,
 				F18C87251D36BD5B0021F729 /* Storage.swift */,
@@ -789,6 +792,7 @@
 				F18C87301D36BE430021F729 /* CGRect+Helpers.swift in Sources */,
 				F1FF49AC1D5E139A000F744A /* Circle+Comparable.swift in Sources */,
 				F18C87291D36BD5B0021F729 /* Hatchery.swift in Sources */,
+				F1FF49B21D5E1863000F744A /* HatcheryDelegate.swift in Sources */,
 				F18C872C1D36BD5B0021F729 /* Storage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

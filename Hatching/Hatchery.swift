@@ -12,9 +12,9 @@ public typealias Circles = ([Circle]) -> Void
 
 final public class Hatchery {
     
-    let maxSize: Float
-    let viewport: Viewport
-    let generator = RandomGenerator(seed: 123)
+    public let maxSize: Float
+    public let viewport: Viewport
+    internal let generator = RandomGenerator(seed: 123)
     
     private var running = true
     
@@ -24,15 +24,15 @@ final public class Hatchery {
     private var storage: Storage
     private let addedCircles: Circles?
     private let removedCircles: Circles?
+    
+    public var allCircles: [Circle] {
+        return storage.all
+    }
 
     public func stop() {
         dispatch_sync(q) {
             self.running = false
         }
-    }
-    
-    public func saveSVG(atPath path: String) {
-        storage.saveSVG(atPath: path)
     }
     
     public func start() {

@@ -58,6 +58,7 @@
 		F1FF49AE1D5E13FD000F744A /* Circle+Collision.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FF49AD1D5E13FD000F744A /* Circle+Collision.swift */; };
 		F1FF49B01D5E1625000F744A /* CollectionType+BinarySearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FF49AF1D5E1625000F744A /* CollectionType+BinarySearch.swift */; };
 		F1FF49B21D5E1863000F744A /* HatcheryDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FF49B11D5E1863000F744A /* HatcheryDelegate.swift */; };
+		F1FF49B41D5E1D53000F744A /* CircleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FF49B31D5E1D53000F744A /* CircleTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -209,6 +210,7 @@
 		F1FF49AD1D5E13FD000F744A /* Circle+Collision.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Circle+Collision.swift"; sourceTree = "<group>"; };
 		F1FF49AF1D5E1625000F744A /* CollectionType+BinarySearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CollectionType+BinarySearch.swift"; sourceTree = "<group>"; };
 		F1FF49B11D5E1863000F744A /* HatcheryDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HatcheryDelegate.swift; sourceTree = "<group>"; };
+		F1FF49B31D5E1D53000F744A /* CircleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -315,6 +317,7 @@
 			children = (
 				F1FF49A71D5E0B1E000F744A /* CGRectTests.swift */,
 				F1FF49A51D5E0B12000F744A /* TreeTests.swift */,
+				F1FF49B31D5E1D53000F744A /* CircleTests.swift */,
 				F18C87091D36BCDB0021F729 /* Info.plist */,
 			);
 			path = HatchingTests;
@@ -802,6 +805,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1FF49A61D5E0B12000F744A /* TreeTests.swift in Sources */,
+				F1FF49B41D5E1D53000F744A /* CircleTests.swift in Sources */,
 				F1FF49A81D5E0B1E000F744A /* CGRectTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

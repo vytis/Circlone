@@ -13,7 +13,6 @@
 		F12467311D0DBDBD002A8325 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12467301D0DBDBD002A8325 /* SnapshotHelper.swift */; };
 		F18C86FA1D36BCDB0021F729 /* Hatching.h in Headers */ = {isa = PBXBuildFile; fileRef = F18C86F91D36BCDB0021F729 /* Hatching.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F18C87011D36BCDB0021F729 /* Hatching.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F18C86F71D36BCDB0021F729 /* Hatching.framework */; };
-		F18C87081D36BCDB0021F729 /* HatchingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18C87071D36BCDB0021F729 /* HatchingTests.swift */; };
 		F18C870C1D36BCDB0021F729 /* Hatching.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F18C86F71D36BCDB0021F729 /* Hatching.framework */; };
 		F18C870D1D36BCDB0021F729 /* Hatching.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F18C86F71D36BCDB0021F729 /* Hatching.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F18C871C1D36BD3E0021F729 /* Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18C87161D36BD3E0021F729 /* Circle.swift */; };
@@ -48,13 +47,13 @@
 		F19C1D661B35F039002522F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F19C1D641B35F039002522F2 /* LaunchScreen.storyboard */; };
 		F19C1D711B35F039002522F2 /* CircloneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19C1D701B35F039002522F2 /* CircloneTests.swift */; };
 		F19C1D7C1B35F039002522F2 /* CircloneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19C1D7B1B35F039002522F2 /* CircloneUITests.swift */; };
-		F1BE7C841CB9867000D94890 /* TreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BE7C831CB9867000D94890 /* TreeTests.swift */; };
-		F1BE7C861CB9868F00D94890 /* CGRectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BE7C851CB9868F00D94890 /* CGRectTests.swift */; };
 		F1DE05411B54440B00ACF5AD /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DE05401B54440B00ACF5AD /* CircleView.swift */; };
 		F1EC814D1CB92FA800DA311A /* DynamicColor+Deriving.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EC81211CB92FA800DA311A /* DynamicColor+Deriving.swift */; };
 		F1EC814E1CB92FA800DA311A /* DynamicColor+RGBA.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EC81221CB92FA800DA311A /* DynamicColor+RGBA.swift */; };
 		F1EC814F1CB92FA800DA311A /* DynamicColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EC81231CB92FA800DA311A /* DynamicColor.swift */; };
 		F1EC81501CB92FA800DA311A /* HSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EC81241CB92FA800DA311A /* HSL.swift */; };
+		F1FF49A61D5E0B12000F744A /* TreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FF49A51D5E0B12000F744A /* TreeTests.swift */; };
+		F1FF49A81D5E0B1E000F744A /* CGRectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FF49A71D5E0B1E000F744A /* CGRectTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -157,7 +156,6 @@
 		F18C86F91D36BCDB0021F729 /* Hatching.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Hatching.h; sourceTree = "<group>"; };
 		F18C86FB1D36BCDB0021F729 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F18C87001D36BCDB0021F729 /* HatchingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HatchingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F18C87071D36BCDB0021F729 /* HatchingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HatchingTests.swift; sourceTree = "<group>"; };
 		F18C87091D36BCDB0021F729 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F18C87161D36BD3E0021F729 /* Circle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Circle.swift; sourceTree = "<group>"; };
 		F18C87211D36BD5B0021F729 /* Circle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Circle.swift; sourceTree = "<group>"; };
@@ -196,13 +194,13 @@
 		F19C1D7B1B35F039002522F2 /* CircloneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircloneUITests.swift; sourceTree = "<group>"; };
 		F19C1D7D1B35F039002522F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F19C1D8D1B35F24D002522F2 /* Circlone.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Circlone.playground; sourceTree = "<group>"; };
-		F1BE7C831CB9867000D94890 /* TreeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreeTests.swift; sourceTree = "<group>"; };
-		F1BE7C851CB9868F00D94890 /* CGRectTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRectTests.swift; sourceTree = "<group>"; };
 		F1DE05401B54440B00ACF5AD /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		F1EC81211CB92FA800DA311A /* DynamicColor+Deriving.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DynamicColor+Deriving.swift"; sourceTree = "<group>"; };
 		F1EC81221CB92FA800DA311A /* DynamicColor+RGBA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DynamicColor+RGBA.swift"; sourceTree = "<group>"; };
 		F1EC81231CB92FA800DA311A /* DynamicColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicColor.swift; sourceTree = "<group>"; };
 		F1EC81241CB92FA800DA311A /* HSL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HSL.swift; sourceTree = "<group>"; };
+		F1FF49A51D5E0B12000F744A /* TreeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreeTests.swift; sourceTree = "<group>"; };
+		F1FF49A71D5E0B1E000F744A /* CGRectTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRectTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -303,7 +301,8 @@
 		F18C87061D36BCDB0021F729 /* HatchingTests */ = {
 			isa = PBXGroup;
 			children = (
-				F18C87071D36BCDB0021F729 /* HatchingTests.swift */,
+				F1FF49A71D5E0B1E000F744A /* CGRectTests.swift */,
+				F1FF49A51D5E0B12000F744A /* TreeTests.swift */,
 				F18C87091D36BCDB0021F729 /* Info.plist */,
 			);
 			path = HatchingTests;
@@ -404,8 +403,6 @@
 			isa = PBXGroup;
 			children = (
 				F19C1D701B35F039002522F2 /* CircloneTests.swift */,
-				F1BE7C831CB9867000D94890 /* TreeTests.swift */,
-				F1BE7C851CB9868F00D94890 /* CGRectTests.swift */,
 				F19C1D721B35F039002522F2 /* Info.plist */,
 			);
 			path = CircloneTests;
@@ -788,7 +785,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F18C87081D36BCDB0021F729 /* HatchingTests.swift in Sources */,
+				F1FF49A61D5E0B12000F744A /* TreeTests.swift in Sources */,
+				F1FF49A81D5E0B1E000F744A /* CGRectTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -854,8 +852,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F19C1D711B35F039002522F2 /* CircloneTests.swift in Sources */,
-				F1BE7C841CB9867000D94890 /* TreeTests.swift in Sources */,
-				F1BE7C861CB9868F00D94890 /* CGRectTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1350,6 +1346,7 @@
 				F18C870F1D36BCDB0021F729 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F18C87141D36BCDB0021F729 /* Build configuration list for PBXNativeTarget "HatchingTests" */ = {
 			isa = XCConfigurationList;
@@ -1358,6 +1355,7 @@
 				F18C87111D36BCDB0021F729 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F18C874C1D36C36C0021F729 /* Build configuration list for PBXNativeTarget "HeadlessGenerator" */ = {
 			isa = XCConfigurationList;
@@ -1366,6 +1364,7 @@
 				F18C874E1D36C36C0021F729 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F18C874F1D36C36C0021F729 /* Build configuration list for PBXNativeTarget "HeadlessGeneratorTests" */ = {
 			isa = XCConfigurationList;
@@ -1374,6 +1373,7 @@
 				F18C87511D36C36C0021F729 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F18C87711D36C4350021F729 /* Build configuration list for PBXNativeTarget "Hatching Mac" */ = {
 			isa = XCConfigurationList;
@@ -1382,6 +1382,7 @@
 				F18C87731D36C4350021F729 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F18C87751D36C4350021F729 /* Build configuration list for PBXNativeTarget "Hatching MacTests" */ = {
 			isa = XCConfigurationList;
@@ -1390,6 +1391,7 @@
 				F18C87771D36C4350021F729 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F19C1D531B35F038002522F2 /* Build configuration list for PBXProject "Circlone" */ = {
 			isa = XCConfigurationList;

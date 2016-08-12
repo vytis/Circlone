@@ -7,7 +7,6 @@
 //
 
 import XCTest
-@testable import Circlone
 @testable import Hatching
 
 class CGRectTests: XCTestCase {

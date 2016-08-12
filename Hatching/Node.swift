@@ -65,7 +65,7 @@ internal struct Node {
             return nil
         case var .Deeper(nodes):
             var circle: Circle?
-            for idx in 0...nodes.count {
+            for idx in 0..<nodes.count {
                 if let removed = nodes[idx].remove(x: x, y: y) {
                     circle = removed
                 }

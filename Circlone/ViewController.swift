@@ -19,8 +19,7 @@ final class ViewController: UIViewController {
     @IBOutlet weak var tapLabel: UILabel!
     @IBOutlet weak var shakeLabel: UILabel!
     
-    var newCircles: Subscriber!
-    var removedCircles: Subscriber!
+    var delegate: HatcheryDelegate!
     
     var hatchery: Hatchery?
     var colorScheme: ColorScheme! {
@@ -50,10 +49,8 @@ final class ViewController: UIViewController {
     
     func start(statePath statePath: String? = nil) {
         let viewport = Viewport(height: Float(view.frame.height), width: Float(view.frame.width))
-        newCircles = Subscriber(onCircles: circleView.addCircles)
-        removedCircles = Subscriber(onCircles: circleView.removeCircles)
-
-        hatchery = Hatchery(viewport: viewport, maxSize: 500, delegate: self)
+        delegate = CirclesWatcher(circleView: circleView)
+        hatchery = Hatchery(viewport: viewport, maxSize: 500, delegate: delegate)
         labelContainer.hidden = true
     }
     
@@ -82,12 +79,3 @@ final class ViewController: UIViewController {
     }
 }
 
-extension ViewController: HatcheryDelegate {
-    func hatcheryAdded(circles circles: [Circle]) {
-        newCircles.addNew(circles)
-    }
-    
-    func hatcheryRemoved(circles circles: [Circle]) {
-        removedCircles.addNew(circles)
-    }
-}

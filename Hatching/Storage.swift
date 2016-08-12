@@ -9,17 +9,17 @@
 import Foundation
 import CoreGraphics
 
-struct Storage {
+internal struct Storage {
     
     private var tree: Node
     private var large: [Circle] = []
     private var all: [Circle] = []
     
-    let start = NSDate()
+    private let start = NSDate()
     
-    let pivotPoint: Float
+    internal let pivotPoint: Float
     
-    init(viewport: Viewport, pivotPoint: Float? = nil) {
+    internal init(viewport: Viewport, pivotPoint: Float? = nil) {
         self.pivotPoint = pivotPoint ?? (viewport.height / 250)
         let frame = CGRect(origin: CGPoint.zero, size: CGSize(width: CGFloat(viewport.width), height: CGFloat(viewport.height)))
         tree = Node(circles: [], frame: frame)
@@ -27,7 +27,7 @@ struct Storage {
 }
 
 extension Storage {
-    mutating func popItemAt(x x: Float, y: Float) -> Circle? {
+    internal mutating func popItemAt(x x: Float, y: Float) -> Circle? {
         for (index, item) in self.large.enumerate() {
             if item.containsPoint(x: x, y: y) {                
                 large.removeAtIndex(index)
@@ -36,7 +36,7 @@ extension Storage {
         return tree.remove(x: x, y: y)
     }
     
-    mutating func add(items: [Circle]) -> [Circle] {
+    internal mutating func add(items: [Circle]) -> [Circle] {
         var circles = [Circle]()
         for item in items {
             if item.collides(large) {
@@ -65,7 +65,7 @@ extension Storage {
     }
 }
 
-extension CollectionType where Index: RandomAccessIndexType {
+private extension CollectionType where Index: RandomAccessIndexType {
     
     /// Finds such index N that predicate is true for all elements up to
     /// but not including the index N, and is false for all elements

@@ -8,26 +8,26 @@
 
 import CoreGraphics
 
-extension Circle {
-    var boundingBox: CGRect {
+internal extension Circle {
+    internal var boundingBox: CGRect {
         return CGRect(x: CGFloat(x - radius), y: CGFloat(y - radius), width: CGFloat(radius * 2), height: CGFloat(radius * 2))
     }
 }
 
-extension CGRect {
-    func intersects(circle: Circle) -> Bool {
+internal extension CGRect {
+    internal func intersects(circle: Circle) -> Bool {
         return intersects(circle.boundingBox)
     }
     
-    var leftSide: CGRect {
+    internal var leftSide: CGRect {
         return CGRect(origin: origin, size: CGSize(width: width / 2.0, height: height))
     }
     
-    var rightSide: CGRect {
+    internal var rightSide: CGRect {
         return CGRect(x: origin.x + width / 2.0, y: origin.y, width: width / 2.0, height: height)
     }
     
-    var bottomSide: CGRect {
+    internal var bottomSide: CGRect {
         return CGRect(x: origin.x, y: origin.y + height / 2.0, width: width, height: height / 2.0)
     }
     

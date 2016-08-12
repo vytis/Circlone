@@ -8,6 +8,7 @@
 
 import XCTest
 @testable import Circlone
+@testable import Hatching
 
 class CircloneTests: XCTestCase {
     
@@ -49,7 +50,7 @@ class CircloneTests: XCTestCase {
     }
     
     func testStoragePerformance() {
-        let storage = Storage(viewport: viewport)
+        var storage = Storage(viewport: viewport)
         let toAdd = (0...100000).map{ _ in self.generator.generate(self.viewport, maxSize: self.maxSize) }
         storage.add(toAdd)
         let toCollide = (0...20000).map{ _ in self.generator.generate(self.viewport, maxSize: self.maxSize) }

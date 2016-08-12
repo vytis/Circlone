@@ -9,24 +9,24 @@
 import CoreGraphics
 import Foundation
 
-struct Node {
+internal struct Node {
     
-    let frame: CGRect
-    private var contents: Contents
-    private var circles: [Circle]
+    internal let frame: CGRect
+    internal var contents: Contents
+    internal var circles: [Circle]
     
-    enum Contents {
+    internal enum Contents {
         case Circles(Int)
         case Deeper([Node])
     }
     
-    init(circles: [Circle], frame: CGRect, splitLimit: Int = 500) {
+    internal init(circles: [Circle], frame: CGRect, splitLimit: Int = 500) {
         self.circles = circles.filter(frame.intersects)
         self.contents = .Circles(splitLimit)
         self.frame = frame
     }
     
-    static func split(circles circles: [Circle], frame: CGRect) -> [Node] {
+    internal static func split(circles circles: [Circle], frame: CGRect) -> [Node] {
         
         let one = Node(circles: circles, frame: frame.leftSide.topSide)
         let two = Node(circles: circles, frame: frame.rightSide.topSide)
@@ -36,7 +36,7 @@ struct Node {
         return [one, two, three, four]
     }
     
-    func collides(circle circle: Circle) -> Bool {
+    internal func collides(circle circle: Circle) -> Bool {
         guard frame.intersects(circle) else {
             return false
         }
@@ -53,7 +53,7 @@ struct Node {
         }
     }
     
-    mutating func remove(x x: Float, y: Float) -> Circle? {
+    internal mutating func remove(x x: Float, y: Float) -> Circle? {
         switch contents {
         case .Circles:
             for (idx, item) in circles.enumerate() {
@@ -75,7 +75,7 @@ struct Node {
         }
     }
 
-    mutating func add(circle circle: Circle) {
+    internal mutating func add(circle circle: Circle) {
         switch contents {
         case .Circles(let limit):
             circles.append(circle)

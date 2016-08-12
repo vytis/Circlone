@@ -14,7 +14,7 @@ final public class Hatchery {
     
     let maxSize: Float
     let viewport: Viewport
-    let generator = RandomGenerator()
+    let generator = RandomGenerator(seed: 123)
     
     private var running = true
     

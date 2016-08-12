@@ -19,7 +19,6 @@ final public class Hatchery {
     private var running = true
     
     private let q = dispatch_queue_create("com.circlone.hatchery", DISPATCH_QUEUE_SERIAL)
-
     
     private var storage: Storage
     private let addedCircles: Circles?

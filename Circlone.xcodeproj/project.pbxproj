@@ -8,14 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		F12458321CB175AD00872D55 /* Subscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12458311CB175AD00872D55 /* Subscriber.swift */; };
-		F124672B1D0B35F9002A8325 /* ViewController+StateRestoration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F124672A1D0B35F9002A8325 /* ViewController+StateRestoration.swift */; };
 		F124672D1D0B3D6F002A8325 /* ColorScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = F124672C1D0B3D6F002A8325 /* ColorScheme.swift */; };
 		F12467311D0DBDBD002A8325 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12467301D0DBDBD002A8325 /* SnapshotHelper.swift */; };
 		F18C86FA1D36BCDB0021F729 /* Hatching.h in Headers */ = {isa = PBXBuildFile; fileRef = F18C86F91D36BCDB0021F729 /* Hatching.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F18C87011D36BCDB0021F729 /* Hatching.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F18C86F71D36BCDB0021F729 /* Hatching.framework */; };
 		F18C870C1D36BCDB0021F729 /* Hatching.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F18C86F71D36BCDB0021F729 /* Hatching.framework */; };
 		F18C870D1D36BCDB0021F729 /* Hatching.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F18C86F71D36BCDB0021F729 /* Hatching.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		F18C871C1D36BD3E0021F729 /* Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18C87161D36BD3E0021F729 /* Circle.swift */; };
+		F18C871C1D36BD3E0021F729 /* Circle+NormalizedRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18C87161D36BD3E0021F729 /* Circle+NormalizedRadius.swift */; };
 		F18C87281D36BD5B0021F729 /* Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18C87211D36BD5B0021F729 /* Circle.swift */; };
 		F18C87291D36BD5B0021F729 /* Hatchery.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18C87221D36BD5B0021F729 /* Hatchery.swift */; };
 		F18C872A1D36BD5B0021F729 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18C87231D36BD5B0021F729 /* Node.swift */; };
@@ -55,6 +54,9 @@
 		F1FF49A61D5E0B12000F744A /* TreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FF49A51D5E0B12000F744A /* TreeTests.swift */; };
 		F1FF49A81D5E0B1E000F744A /* CGRectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FF49A71D5E0B1E000F744A /* CGRectTests.swift */; };
 		F1FF49AA1D5E0D04000F744A /* Storage+SVG.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FF49A91D5E0D04000F744A /* Storage+SVG.swift */; };
+		F1FF49AC1D5E139A000F744A /* Circle+Comparable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FF49AB1D5E139A000F744A /* Circle+Comparable.swift */; };
+		F1FF49AE1D5E13FD000F744A /* Circle+Collision.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FF49AD1D5E13FD000F744A /* Circle+Collision.swift */; };
+		F1FF49B01D5E1625000F744A /* CollectionType+BinarySearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FF49AF1D5E1625000F744A /* CollectionType+BinarySearch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -150,7 +152,6 @@
 
 /* Begin PBXFileReference section */
 		F12458311CB175AD00872D55 /* Subscriber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Subscriber.swift; sourceTree = "<group>"; };
-		F124672A1D0B35F9002A8325 /* ViewController+StateRestoration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+StateRestoration.swift"; sourceTree = "<group>"; };
 		F124672C1D0B3D6F002A8325 /* ColorScheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorScheme.swift; sourceTree = "<group>"; };
 		F12467301D0DBDBD002A8325 /* SnapshotHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = ../fastlane/SnapshotHelper.swift; sourceTree = "<group>"; };
 		F18C86F71D36BCDB0021F729 /* Hatching.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Hatching.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -158,7 +159,7 @@
 		F18C86FB1D36BCDB0021F729 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F18C87001D36BCDB0021F729 /* HatchingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HatchingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F18C87091D36BCDB0021F729 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F18C87161D36BD3E0021F729 /* Circle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Circle.swift; sourceTree = "<group>"; };
+		F18C87161D36BD3E0021F729 /* Circle+NormalizedRadius.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Circle+NormalizedRadius.swift"; sourceTree = "<group>"; };
 		F18C87211D36BD5B0021F729 /* Circle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Circle.swift; sourceTree = "<group>"; };
 		F18C87221D36BD5B0021F729 /* Hatchery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hatchery.swift; sourceTree = "<group>"; };
 		F18C87231D36BD5B0021F729 /* Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
@@ -203,6 +204,9 @@
 		F1FF49A51D5E0B12000F744A /* TreeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreeTests.swift; sourceTree = "<group>"; };
 		F1FF49A71D5E0B1E000F744A /* CGRectTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRectTests.swift; sourceTree = "<group>"; };
 		F1FF49A91D5E0D04000F744A /* Storage+SVG.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Storage+SVG.swift"; sourceTree = "<group>"; };
+		F1FF49AB1D5E139A000F744A /* Circle+Comparable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Circle+Comparable.swift"; sourceTree = "<group>"; };
+		F1FF49AD1D5E13FD000F744A /* Circle+Collision.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Circle+Collision.swift"; sourceTree = "<group>"; };
+		F1FF49AF1D5E1625000F744A /* CollectionType+BinarySearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CollectionType+BinarySearch.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -287,12 +291,15 @@
 		F18C86F81D36BCDB0021F729 /* Hatching */ = {
 			isa = PBXGroup;
 			children = (
+				F18C87271D36BD5B0021F729 /* Viewport.swift */,
 				F18C87211D36BD5B0021F729 /* Circle.swift */,
-				F18C87231D36BD5B0021F729 /* Node.swift */,
+				F1FF49AB1D5E139A000F744A /* Circle+Comparable.swift */,
+				F1FF49AD1D5E13FD000F744A /* Circle+Collision.swift */,
 				F18C87221D36BD5B0021F729 /* Hatchery.swift */,
+				F18C87231D36BD5B0021F729 /* Node.swift */,
 				F18C87241D36BD5B0021F729 /* RandomGenerator.swift */,
 				F18C87251D36BD5B0021F729 /* Storage.swift */,
-				F18C87271D36BD5B0021F729 /* Viewport.swift */,
+				F1FF49AF1D5E1625000F744A /* CollectionType+BinarySearch.swift */,
 				F18C872F1D36BE430021F729 /* CGRect+Helpers.swift */,
 				F18C86F91D36BCDB0021F729 /* Hatching.h */,
 				F18C86FB1D36BCDB0021F729 /* Info.plist */,
@@ -386,18 +393,17 @@
 		F19C1D5A1B35F039002522F2 /* Circlone */ = {
 			isa = PBXGroup;
 			children = (
-				F18C87161D36BD3E0021F729 /* Circle.swift */,
 				F124582C1CB1706500872D55 /* External */,
+				F18C87161D36BD3E0021F729 /* Circle+NormalizedRadius.swift */,
 				F19C1D5B1B35F039002522F2 /* AppDelegate.swift */,
 				F19C1D5D1B35F039002522F2 /* ViewController.swift */,
-				F124672A1D0B35F9002A8325 /* ViewController+StateRestoration.swift */,
 				F124672C1D0B3D6F002A8325 /* ColorScheme.swift */,
+				F12458311CB175AD00872D55 /* Subscriber.swift */,
+				F1DE05401B54440B00ACF5AD /* CircleView.swift */,
 				F19C1D5F1B35F039002522F2 /* Main.storyboard */,
 				F19C1D621B35F039002522F2 /* Assets.xcassets */,
 				F19C1D641B35F039002522F2 /* LaunchScreen.storyboard */,
 				F19C1D671B35F039002522F2 /* Info.plist */,
-				F12458311CB175AD00872D55 /* Subscriber.swift */,
-				F1DE05401B54440B00ACF5AD /* CircleView.swift */,
 			);
 			path = Circlone;
 			sourceTree = "<group>";
@@ -774,11 +780,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1FF49AE1D5E13FD000F744A /* Circle+Collision.swift in Sources */,
 				F18C872B1D36BD5B0021F729 /* RandomGenerator.swift in Sources */,
+				F1FF49B01D5E1625000F744A /* CollectionType+BinarySearch.swift in Sources */,
 				F18C872A1D36BD5B0021F729 /* Node.swift in Sources */,
 				F18C87281D36BD5B0021F729 /* Circle.swift in Sources */,
 				F18C872E1D36BD5B0021F729 /* Viewport.swift in Sources */,
 				F18C87301D36BE430021F729 /* CGRect+Helpers.swift in Sources */,
+				F1FF49AC1D5E139A000F744A /* Circle+Comparable.swift in Sources */,
 				F18C87291D36BD5B0021F729 /* Hatchery.swift in Sources */,
 				F18C872C1D36BD5B0021F729 /* Storage.swift in Sources */,
 			);
@@ -840,12 +849,11 @@
 				F1DE05411B54440B00ACF5AD /* CircleView.swift in Sources */,
 				F12458321CB175AD00872D55 /* Subscriber.swift in Sources */,
 				F19C1D5E1B35F039002522F2 /* ViewController.swift in Sources */,
-				F124672B1D0B35F9002A8325 /* ViewController+StateRestoration.swift in Sources */,
 				F1EC814D1CB92FA800DA311A /* DynamicColor+Deriving.swift in Sources */,
 				F1EC81501CB92FA800DA311A /* HSL.swift in Sources */,
 				F19C1D5C1B35F039002522F2 /* AppDelegate.swift in Sources */,
 				F1EC814F1CB92FA800DA311A /* DynamicColor.swift in Sources */,
-				F18C871C1D36BD3E0021F729 /* Circle.swift in Sources */,
+				F18C871C1D36BD3E0021F729 /* Circle+NormalizedRadius.swift in Sources */,
 				F1EC814E1CB92FA800DA311A /* DynamicColor+RGBA.swift in Sources */,
 				F124672D1D0B3D6F002A8325 /* ColorScheme.swift in Sources */,
 			);

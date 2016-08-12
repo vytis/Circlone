@@ -8,15 +8,15 @@
 
 import Foundation
 
-final class RandomGenerator {
+final internal class RandomGenerator {
     
-    var number: UInt64
+    private var number: UInt64
 
-    init(seed: UInt64 = UInt64(arc4random())) {
+    internal init(seed: UInt64 = UInt64(arc4random())) {
         number = seed
     }
 
-    func generate(viewport: Viewport, minSize: Float = 1.0, maxSize: Float) -> Circle {
+    internal func generate(viewport: Viewport, minSize: Float = 1.0, maxSize: Float) -> Circle {
         
         let realMax = min(maxSize, viewport.width / 2.0 - 1)
         
@@ -28,8 +28,7 @@ final class RandomGenerator {
         return Circle(x:x, y:y, radius:radius)
     }
     
-    
-    func rand_uniform(limit: Float) -> Float {
+    private func rand_uniform(limit: Float) -> Float {
         
         number ^= number >> 12;
         number ^= number << 25;
@@ -40,5 +39,4 @@ final class RandomGenerator {
         
         return Float(Double(limit) * range)
     }
-
 }

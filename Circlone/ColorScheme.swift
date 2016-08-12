@@ -25,7 +25,7 @@ extension UIColor {
     }
 }
 
-final class ColorScheme: NSObject, NSCoding {
+final class ColorScheme: NSObject {
     var currentColor: UIColor
     var nextColor: UIColor
 
@@ -36,19 +36,5 @@ final class ColorScheme: NSObject, NSCoding {
     init(currentColor: UIColor = UIColor.baseBlueColor, nextColor: UIColor = UIColor.randomColor) {
         self.currentColor = currentColor
         self.nextColor = nextColor
-    }
-    
-    func encodeWithCoder(aCoder: NSCoder) {
-        aCoder.encodeObject(currentColor, forKey: "currentColor")
-        aCoder.encodeObject(nextColor, forKey: "nextColor")
-    }
-    
-    required convenience init?(coder aDecoder: NSCoder) {
-        guard let
-            currentColor = aDecoder.decodeObjectForKey("currentColor") as? UIColor,
-            nextColor = aDecoder.decodeObjectForKey("nextColor") as? UIColor else {
-                return nil
-        }
-        self.init(currentColor: currentColor, nextColor: nextColor)
     }
 }

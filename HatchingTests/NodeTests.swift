@@ -37,27 +37,27 @@ class NodeTests: XCTestCase {
     
     func testCollideNodeWhenDoesntIntersectFrame() {
         let node = Node(circles: [insideCircle], frame: frame)
-        XCTAssertFalse(node.collides(circle: outsideCircle))
+        XCTAssertFalse(node.collides(outsideCircle))
     }
     
     func testCollidesWhenContainingCirclesCollide() {
         let node = Node(circles: [one, two], frame: frame)
         let target = Circle(x: 3, y: 3, radius: 2)
-        XCTAssertTrue(node.collides(circle: target))
+        XCTAssertTrue(node.collides(target))
         let outside = Circle(x: 9, y: 9, radius: 1)
-        XCTAssertFalse(node.collides(circle: outside))
+        XCTAssertFalse(node.collides(outside))
     }
     
     func testCollidesWhenContainingDeeperNode() {
         let top = Node(circles: [one], frame: frame.topSide)
         let bottom = Node(circles: [two], frame: frame.bottomSide)
         
-        let node = Node(contents: .Deeper([top, bottom]), frame: frame)
+        let node = Node(contents: .deeper([top, bottom]), frame: frame)
         
         let target = Circle(x: 3, y: 3, radius: 2)
-        XCTAssertTrue(node.collides(circle: target))
+        XCTAssertTrue(node.collides(target))
         let outside = Circle(x: 9, y: 9, radius: 1)
-        XCTAssertFalse(node.collides(circle: outside))
+        XCTAssertFalse(node.collides(outside))
     }
     
     func testRemoveCircleFromTopNode() {
@@ -75,7 +75,7 @@ class NodeTests: XCTestCase {
         let top = Node(circles: [one], frame: frame.topSide)
         let bottom = Node(circles: [two], frame: frame.bottomSide)
         
-        var node = Node(contents: .Deeper([top, bottom]), frame: frame)
+        var node = Node(contents: .deeper([top, bottom]), frame: frame)
         
         let notExisting = node.remove(x: 0, y: 0)
         XCTAssertNil(notExisting)

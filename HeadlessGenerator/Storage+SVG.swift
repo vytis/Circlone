@@ -25,7 +25,7 @@ extension SVG {
         if let documentsDir = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last {
             let path = (documentsDir as NSString).appendingPathComponent(path)
             do {
-                try output.writeToFile(path, atomically: true, encoding: NSUTF8StringEncoding)
+                try output.write(toFile: path, atomically: true, encoding: .utf8)
                 print("saved at \(path)")
             } catch {
                 

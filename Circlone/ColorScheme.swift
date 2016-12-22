@@ -8,7 +8,7 @@
 
 import UIKit
 
-private func randValue(from from: CGFloat = 0.0, to: CGFloat = 1.0) -> CGFloat {
+private func randValue(from: CGFloat = 0.0, to: CGFloat = 1.0) -> CGFloat {
     let interval = to - from
     let ratio = CGFloat(arc4random()) / CGFloat(UINT32_MAX)
     let value = interval * ratio + from

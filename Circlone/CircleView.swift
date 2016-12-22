@@ -11,34 +11,34 @@ import Hatching
 
 final class CircleView: UIView {
     
-    private struct Blob {
+    fileprivate struct Blob {
         let circle: Circle
         let color: UIColor
     }
     
-    private var blobsToDraw: [Blob] = []
+    fileprivate var blobsToDraw: [Blob] = []
     
-    private var blobsLayer: CGLayerRef!
-    private var imageToDraw: UIImage?
+    fileprivate var blobsLayer: CGLayer!
+    fileprivate var imageToDraw: UIImage?
     
     var baseColor: UIColor!
     
     func reset() {
-        let layerContext = CGLayerGetContext(blobsLayer)
-        CGContextClearRect(layerContext, bounds)
+        let layerContext = blobsLayer.context
+        layerContext?.clear(bounds)
         setNeedsDisplay()
     }
     
     var image: UIImage {
         get {
-            let context = CGBitmapContextCreate(nil, Int(bounds.width) * 2, Int(bounds.height) * 2, 8, 0, CGColorSpaceCreateDeviceRGB(), CGImageAlphaInfo.NoneSkipFirst.rawValue)
-            CGContextScaleCTM(context, 2, 2)
-            CGContextDrawLayerInRect(context, bounds, blobsLayer)
+            let context = CGContext(data: nil, width: Int(bounds.width) * 2, height: Int(bounds.height) * 2, bitsPerComponent: 8, bytesPerRow: 0, space: CGColorSpaceCreateDeviceRGB(), bitmapInfo: CGImageAlphaInfo.noneSkipFirst.rawValue)
+            context?.scaleBy(x: 2, y: 2)
+            context?.draw(blobsLayer, in: bounds)
             
-            guard let imageData = CGBitmapContextCreateImage(context) else {
+            guard let imageData = context?.makeImage() else {
                 return UIImage()
             }
-            return UIImage(CGImage: imageData)
+            return UIImage(cgImage: imageData)
         }
         set {
             imageToDraw = newValue
@@ -46,49 +46,49 @@ final class CircleView: UIView {
         }
     }
     
-    func addCircles(circles: [Circle]) {
+    func addCircles(_ circles: [Circle]) {
         let newBlobs = circles.map { (circle) -> Blob in
             let ratio = Double(circle.normalizedRadius(maxRadius: 500))
-            let color = self.baseColor.tintColor(amount: CGFloat(ratio))
+            let color = self.baseColor.tinted(amount: CGFloat(ratio))
             let blob = Blob(circle: circle, color: color)
             return blob
         }
         addBlobs(newBlobs)
     }
     
-    func removeCircles(circles: [Circle]) {
-        let blobs = circles.map { Blob(circle: $0, color: UIColor.blackColor()) }
+    func removeCircles(_ circles: [Circle]) {
+        let blobs = circles.map { Blob(circle: $0, color: UIColor.black) }
         addBlobs(blobs)
     }
     
-    private func addBlobs(blobs: [Blob]) {
+    fileprivate func addBlobs(_ blobs: [Blob]) {
         blobsToDraw += blobs
         if (blobsToDraw.count > 0) {
             setNeedsDisplay()
         }
     }
     
-    override func drawRect(rect: CGRect) {
+    override func draw(_ rect: CGRect) {
         let context = UIGraphicsGetCurrentContext()!
         
 
         
         if blobsLayer == nil {
             let size = CGSize(width: frame.width * 2, height: frame.height * 2)
-            blobsLayer = CGLayerCreateWithContext(context, size, nil)
-            let layerContext = CGLayerGetContext(blobsLayer)
-            CGContextScaleCTM(layerContext, 2, 2)
+            blobsLayer = CGLayer(context, size: size, auxiliaryInfo: nil)
+            let layerContext = blobsLayer.context
+            layerContext?.scaleBy(x: 2, y: 2)
         }
         
-        let layerContext = CGLayerGetContext(blobsLayer)
+        let layerContext = blobsLayer.context
         
         if let image = imageToDraw {
-            CGContextDrawImage(layerContext, bounds, image.CGImage)
+            layerContext?.draw(image.cgImage!, in: bounds)
             imageToDraw = nil
         }
         
-        let sortedBlobs = blobsToDraw.sort { left, right in
-            return left.color == UIColor.blackColor()
+        let sortedBlobs = blobsToDraw.sorted { left, right in
+            return left.color == UIColor.black
         }
 
         sortedBlobs.forEach {
@@ -97,17 +97,17 @@ final class CircleView: UIView {
         
         blobsToDraw.removeAll()
         
-        CGContextDrawLayerInRect(context, bounds, blobsLayer)
+        context.draw(blobsLayer, in: bounds)
     }
 }
 
 extension CircleView.Blob {
     
-    func draw(context: CGContext?) {
-        CGContextSetFillColorWithColor(context, color.CGColor)
+    func draw(_ context: CGContext?) {
+        context?.setFillColor(color.cgColor)
         
         let radius = circle.radius
-        let boundingBox = CGRectMake(CGFloat(circle.x - radius), CGFloat(circle.y - radius), CGFloat(radius * 2), CGFloat(radius * 2))
-        CGContextFillEllipseInRect(context, boundingBox);
+        let boundingBox = CGRect(x: CGFloat(circle.x - radius), y: CGFloat(circle.y - radius), width: CGFloat(radius * 2), height: CGFloat(radius * 2))
+        context?.fillEllipse(in: boundingBox);
     }
 }

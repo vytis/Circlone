@@ -9,6 +9,6 @@
 import Foundation
 
 public protocol HatcheryDelegate: class {
-    func hatcheryAdded(circles circles: [Circle])
-    func hatcheryRemoved(circles circles: [Circle])
+    func hatcheryAdded(circles: [Circle])
+    func hatcheryRemoved(circles: [Circle])
 }

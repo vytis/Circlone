@@ -9,35 +9,35 @@
 import UIKit
 import Hatching
 
-typealias Circles = [Circle] -> Void
+typealias Circles = ([Circle]) -> Void
 
 final class Subscriber {
-    private var displayLink: CADisplayLink!
-    private var newCircles = [Circle]()
-    private let q = dispatch_queue_create("Subscriber Queue", DISPATCH_QUEUE_SERIAL)
+    fileprivate var displayLink: CADisplayLink!
+    fileprivate var newCircles = [Circle]()
+    fileprivate let q = DispatchQueue(label: "Subscriber Queue", attributes: [])
     
-    private let onNewCircles: Circles
+    fileprivate let onNewCircles: Circles
         
     func stop() {
         displayLink.invalidate()
     }
     
-    init(onCircles: Circles) {
+    init(onCircles: @escaping Circles) {
         self.onNewCircles = onCircles
         displayLink = CADisplayLink(target: self, selector: #selector(onDraw))
-        displayLink?.addToRunLoop(NSRunLoop.mainRunLoop(), forMode: NSDefaultRunLoopMode)
+        displayLink?.add(to: RunLoop.main, forMode: RunLoopMode.defaultRunLoopMode)
     }
     
-    func addNew(circles: [Circle]) {
-        dispatch_sync(q) {
+    func addNew(_ circles: [Circle]) {
+        (q).sync {
             self.newCircles += circles
         }
     }
     
-    @objc private func onDraw() {
-        dispatch_sync(q) {
+    @objc fileprivate func onDraw() {
+        q.sync {
             if !self.newCircles.isEmpty {
-                dispatch_async(dispatch_get_main_queue()) { [circles = self.newCircles] in
+                DispatchQueue.main.async { [circles = self.newCircles] in
                     self.onNewCircles(circles)
                 }
                 self.newCircles.removeAll()

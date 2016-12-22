@@ -26,42 +26,42 @@ final class ViewController: UIViewController {
         didSet {
             let color = colorScheme.currentColor
             circleView.baseColor = color
-            tapLabel.textColor = color.tintColor(amount: 0.7)
-            shakeLabel.textColor = color.tintColor(amount: 0.3)
+            tapLabel.textColor = color.tinted(amount: 0.7)
+            shakeLabel.textColor = color.tinted(amount: 0.3)
         }
     }
     
-    @IBAction func viewPanned(sender: UIPanGestureRecognizer) {
+    @IBAction func viewPanned(_ sender: UIPanGestureRecognizer) {
         if let hatchery = hatchery {
-            let point = sender.locationInView(circleView)
+            let point = sender.location(in: circleView)
             hatchery.removeCircleAt(x: Float(point.x), y: Float(point.y))
         }
     }
     
-    @IBAction func viewTapped(sender: UITapGestureRecognizer) {
+    @IBAction func viewTapped(_ sender: UITapGestureRecognizer) {
         if let hatchery = hatchery {
-            let point = sender.locationInView(circleView)
+            let point = sender.location(in: circleView)
             hatchery.removeCircleAt(x: Float(point.x), y: Float(point.y))
         } else {
             start()
         }
     }
     
-    func start(statePath statePath: String? = nil) {
+    func start(statePath: String? = nil) {
         let viewport = Viewport(height: Float(view.frame.height), width: Float(view.frame.width))
         delegate = CirclesWatcher(circleView: circleView)
         hatchery = Hatchery(viewport: viewport, maxSize: 500, delegate: delegate)
-        labelContainer.hidden = true
+        labelContainer.isHidden = true
     }
     
-    override func canBecomeFirstResponder() -> Bool {
+    override var canBecomeFirstResponder : Bool {
         return true
     }
     
-    override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
+    override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
         hatchery?.stop()
         hatchery = nil
-        labelContainer.hidden = false
+        labelContainer.isHidden = false
         circleView.reset()
         colorScheme = colorScheme.nextScheme
     }
@@ -69,7 +69,7 @@ final class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         colorScheme = ColorScheme()
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(applicationWillEnterForeground), name: UIApplicationWillEnterForegroundNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(applicationWillEnterForeground), name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil)
     }
     
     func applicationWillEnterForeground() {

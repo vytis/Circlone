@@ -18,11 +18,11 @@ class CirclesWatcher: HatcheryDelegate {
         removedCircles = Subscriber(onCircles: circleView.removeCircles)
     }
     
-    func hatcheryAdded(circles circles: [Circle]) {
+    func hatcheryAdded(circles: [Circle]) {
         newCircles.addNew(circles)
     }
     
-    func hatcheryRemoved(circles circles: [Circle]) {
+    func hatcheryRemoved(circles: [Circle]) {
         removedCircles.addNew(circles)
     }
 }

@@ -21,7 +21,7 @@ class CircloneUITests: XCTestCase {
     
     func testScreenshots() {
         snapshot("01Shake")
-        let window = app.windows.elementBoundByIndex(0)
+        let window = app.windows.element(boundBy: 0)
         window.tap()
         snapshot("02Circles")
     }

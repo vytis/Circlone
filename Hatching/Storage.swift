@@ -42,7 +42,7 @@ extension Storage {
             if item.collides(large) {
                 continue
             }
-            if tree.collides(circle: item) {
+            if tree.collides(item) {
                 continue
             }
             
@@ -51,7 +51,7 @@ extension Storage {
                 let index = large.binarySearch {
                     return $0.radius > item.radius
                 }
-                large.insert(item, atIndex: index)
+                large.insert(item, at: index)
             } else {
                 tree.add(circle: item)
             }

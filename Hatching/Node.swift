@@ -36,7 +36,7 @@ internal struct Node {
         return [one, two, three, four]
     }
     
-    internal func collides(circle: Circle) -> Bool {
+    internal func collides(_ circle: Circle) -> Bool {
         guard frame.intersects(circle) else {
             return false
         }
@@ -45,7 +45,7 @@ internal struct Node {
             return circle.collides(circles)
         case let .deeper(nodes):
             for node in nodes {
-                if node.collides(circle: circle) {
+                if node.collides(circle) {
                     return true
                 }
             }

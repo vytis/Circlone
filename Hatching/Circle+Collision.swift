@@ -9,11 +9,11 @@
 import Foundation
 
 public extension Circle {
-    public func containsPoint(x x: Float, y: Float) -> Bool {
+    public func containsPoint(x: Float, y: Float) -> Bool {
         return collides(Circle(x: x, y: y, radius: 0))
     }
     
-    public func collides(other: Circle) -> Bool {
+    public func collides(_ other: Circle) -> Bool {
         let delta_x = x - other.x;
         let delta_y = y - other.y;
         let distance_sq = delta_x * delta_x + delta_y * delta_y;
@@ -21,7 +21,7 @@ public extension Circle {
         return distance_sq < radiuses * radiuses
     }
     
-    public func collides(others: [Circle]) -> Bool {
+    public func collides(_ others: [Circle]) -> Bool {
         for other in others {
             if collides(other) {
                 return true

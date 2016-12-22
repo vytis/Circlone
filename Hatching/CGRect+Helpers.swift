@@ -15,7 +15,7 @@ internal extension Circle {
 }
 
 internal extension CGRect {
-    internal func intersects(circle: Circle) -> Bool {
+    internal func intersects(_ circle: Circle) -> Bool {
         return intersects(circle.boundingBox)
     }
     

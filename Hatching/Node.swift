@@ -16,17 +16,17 @@ internal struct Node {
     internal var circles: [Circle]
     
     internal enum Contents {
-        case Circles(Int)
-        case Deeper([Node])
+        case circles(Int)
+        case deeper([Node])
     }
     
     internal init(circles: [Circle], frame: CGRect, splitLimit: Int = 500) {
         self.circles = circles.filter(frame.intersects)
-        self.contents = .Circles(splitLimit)
+        self.contents = .circles(splitLimit)
         self.frame = frame
     }
     
-    internal static func split(circles circles: [Circle], frame: CGRect) -> [Node] {
+    internal static func split(circles: [Circle], frame: CGRect) -> [Node] {
         
         let one = Node(circles: circles, frame: frame.leftSide.topSide)
         let two = Node(circles: circles, frame: frame.rightSide.topSide)
@@ -36,14 +36,14 @@ internal struct Node {
         return [one, two, three, four]
     }
     
-    internal func collides(circle circle: Circle) -> Bool {
+    internal func collides(circle: Circle) -> Bool {
         guard frame.intersects(circle) else {
             return false
         }
         switch contents {
-        case .Circles:
+        case .circles:
             return circle.collides(circles)
-        case let .Deeper(nodes):
+        case let .deeper(nodes):
             for node in nodes {
                 if node.collides(circle: circle) {
                     return true
@@ -53,45 +53,45 @@ internal struct Node {
         }
     }
     
-    internal mutating func remove(x x: Float, y: Float) -> Circle? {
+    internal mutating func remove(x: Float, y: Float) -> Circle? {
         switch contents {
-        case .Circles:
-            for (idx, item) in circles.enumerate() {
+        case .circles:
+            for (idx, item) in circles.enumerated() {
                 if item.containsPoint(x: x, y: y) {
-                    circles.removeAtIndex(idx)
+                    circles.remove(at: idx)
                     return item
                 }
             }
             return nil
-        case var .Deeper(nodes):
+        case var .deeper(nodes):
             var circle: Circle?
             for idx in 0..<nodes.count {
                 if let removed = nodes[idx].remove(x: x, y: y) {
                     circle = removed
                 }
             }
-            contents = .Deeper(nodes)
+            contents = .deeper(nodes)
             return circle
         }
     }
 
-    internal mutating func add(circle circle: Circle) {
+    internal mutating func add(circle: Circle) {
         switch contents {
-        case .Circles(let limit):
+        case .circles(let limit):
             circles.append(circle)
             if circles.count >= limit {
-                contents = .Deeper(Node.split(circles: circles, frame: frame))
+                contents = .deeper(Node.split(circles: circles, frame: frame))
                 circles = []
             } else {
-                contents = .Circles(limit)
+                contents = .circles(limit)
             }
-        case var .Deeper(nodes):
-            for (idx, node) in nodes.enumerate() {
+        case var .deeper(nodes):
+            for (idx, node) in nodes.enumerated() {
                 if node.frame.intersects(circle) {
                     nodes[idx].add(circle: circle)
                 }
             }
-            contents = .Deeper(nodes)
+            contents = .deeper(nodes)
         }
     }
 }

@@ -22,8 +22,8 @@ extension SVG {
         }
         print("Unique: \(allCircles.count)")
         output += "</svg>"
-        if let documentsDir = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true).last {
-            let path = (documentsDir as NSString).stringByAppendingPathComponent(path)
+        if let documentsDir = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last {
+            let path = (documentsDir as NSString).appendingPathComponent(path)
             do {
                 try output.writeToFile(path, atomically: true, encoding: NSUTF8StringEncoding)
                 print("saved at \(path)")

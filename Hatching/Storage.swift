@@ -11,11 +11,11 @@ import CoreGraphics
 
 internal struct Storage {
     
-    private var tree: Node
-    private var large: [Circle] = []
+    fileprivate var tree: Node
+    fileprivate var large: [Circle] = []
     internal var all: [Circle] = []
     
-    private let start = NSDate()
+    fileprivate let start = Date()
     
     internal let pivotPoint: Float
     
@@ -27,16 +27,16 @@ internal struct Storage {
 }
 
 extension Storage {
-    internal mutating func popItemAt(x x: Float, y: Float) -> Circle? {
-        for (index, item) in self.large.enumerate() {
+    internal mutating func popItemAt(x: Float, y: Float) -> Circle? {
+        for (index, item) in self.large.enumerated() {
             if item.containsPoint(x: x, y: y) {                
-                large.removeAtIndex(index)
+                large.remove(at: index)
             }
         }
         return tree.remove(x: x, y: y)
     }
     
-    internal mutating func add(items: [Circle]) -> [Circle] {
+    internal mutating func add(_ items: [Circle]) -> [Circle] {
         var circles = [Circle]()
         for item in items {
             if item.collides(large) {

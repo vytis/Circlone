@@ -662,16 +662,20 @@
 					};
 					F18C87341D36C36C0021F729 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0820;
 					};
 					F18C87441D36C36C0021F729 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0820;
 						TestTargetID = F18C87341D36C36C0021F729;
 					};
 					F18C87591D36C4340021F729 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0820;
 					};
 					F18C87621D36C4340021F729 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0820;
 						TestTargetID = F18C87341D36C36C0021F729;
 					};
 					F19C1D571B35F039002522F2 = {
@@ -1010,6 +1014,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Vytis.Hatching;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -1055,6 +1060,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Vytis.HeadlessGenerator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -1072,6 +1078,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Vytis.HeadlessGenerator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -1088,6 +1096,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Vytis.HeadlessGeneratorTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HeadlessGenerator.app/Contents/MacOS/HeadlessGenerator";
 			};
 			name = Debug;
@@ -1105,6 +1114,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Vytis.HeadlessGeneratorTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HeadlessGenerator.app/Contents/MacOS/HeadlessGenerator";
 			};
 			name = Release;
@@ -1130,6 +1140,7 @@
 				PRODUCT_NAME = Hatching;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -1156,6 +1167,8 @@
 				PRODUCT_NAME = Hatching;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -1173,6 +1186,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Vytis.Hatching-MacTests";
 				PRODUCT_NAME = Hatching;
 				SDKROOT = macosx;
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HeadlessGenerator.app/Contents/MacOS/HeadlessGenerator";
 			};
 			name = Debug;
@@ -1189,6 +1203,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Vytis.Hatching-MacTests";
 				PRODUCT_NAME = Hatching;
 				SDKROOT = macosx;
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HeadlessGenerator.app/Contents/MacOS/HeadlessGenerator";
 			};
 			name = Release;

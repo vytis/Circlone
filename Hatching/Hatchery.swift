@@ -15,25 +15,25 @@ final public class Hatchery {
     public let viewport: Viewport
     internal let generator = RandomGenerator(seed: 123)
     
-    private var running = true
+    fileprivate var running = true
     
-    private let q = dispatch_queue_create("com.circlone.hatchery", DISPATCH_QUEUE_SERIAL)
+    fileprivate let q = DispatchQueue(label: "com.circlone.hatchery", attributes: [])
     
-    private var storage: Storage
-    public private(set) weak var delegate: HatcheryDelegate?
+    fileprivate var storage: Storage
+    public fileprivate(set) weak var delegate: HatcheryDelegate?
     
     public var allCircles: [Circle] {
         return storage.all
     }
 
     public func stop() {
-        dispatch_sync(q) {
+        q.sync {
             self.running = false
         }
     }
     
     public func start() {
-        dispatch_sync(q) {
+        q.sync {
             self.running = true
         }
         generateCircles()
@@ -47,8 +47,8 @@ final public class Hatchery {
         generateCircles()
     }
         
-    public func removeCircleAt(x x: Float, y: Float) {
-        dispatch_async(q) {
+    public func removeCircleAt(x: Float, y: Float) {
+        q.async {
             if let removedCircle = self.storage.popItemAt(x: x, y: y)   {
                 self.delegate?.hatcheryRemoved(circles: [removedCircle])
             }
@@ -56,7 +56,7 @@ final public class Hatchery {
     }
     
     public func generateCircles() {
-        dispatch_async(q) {
+        q.async {
             if !self.running {
                 return
             }

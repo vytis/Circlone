@@ -61,6 +61,7 @@ final class ViewController: UIViewController {
     override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
         hatchery?.stop()
         hatchery = nil
+        delegate = CirclesWatcher(circleView: circleView)
         labelContainer.isHidden = false
         circleView.reset()
         colorScheme = colorScheme.nextScheme

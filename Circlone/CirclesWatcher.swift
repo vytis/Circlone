@@ -9,13 +9,22 @@
 import Foundation
 import Hatching
 
-class CirclesWatcher: HatcheryDelegate {
+final class CirclesWatcher: HatcheryDelegate {
     let newCircles: Subscriber
     let removedCircles: Subscriber
+    weak var circleView: CircleView?
+    
+    deinit {
+        newCircles.stop()
+        removedCircles.stop()
+    }
 
     init(circleView: CircleView) {
-        newCircles = Subscriber(onCircles: circleView.addCircles)
-        removedCircles = Subscriber(onCircles: circleView.removeCircles)
+        self.circleView = circleView
+        newCircles = Subscriber()
+        removedCircles = Subscriber()
+        newCircles.delegate = self
+        removedCircles.delegate = self
     }
     
     func hatcheryAdded(circles: [Circle]) {
@@ -24,5 +33,15 @@ class CirclesWatcher: HatcheryDelegate {
     
     func hatcheryRemoved(circles: [Circle]) {
         removedCircles.addNew(circles)
+    }
+}
+
+extension CirclesWatcher: SubscriberDelegate {
+    func updated(from subscriber: Subscriber, withCircles circles: [Circle]) {
+        if subscriber === newCircles {
+            circleView?.addCircles(circles)
+        } else {
+            circleView?.removeCircles(circles)
+        }
     }
 }

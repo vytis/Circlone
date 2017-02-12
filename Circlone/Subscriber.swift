@@ -36,11 +36,13 @@ final class Subscriber {
     }
     
     @objc fileprivate func onDraw() {
+        var circles: [Circle]?
         q.sync {
-            DispatchQueue.main.async { [circles = self.newCircles] in
-                self.delegate?.updated(from: self, withCircles: circles)
-            }
-            self.newCircles.removeAll()
+            circles = self.newCircles
+            self.newCircles = []
+        }
+        if let newCircles = circles, !newCircles.isEmpty {
+            self.delegate?.updated(from: self, withCircles: newCircles)
         }
     }
 }

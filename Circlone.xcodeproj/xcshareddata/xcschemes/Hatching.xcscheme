@@ -29,7 +29,26 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       codeCoverageEnabled = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "F18C86FF1D36BCDB0021F729"
+               BuildableName = "HatchingTests.xctest"
+               BlueprintName = "HatchingTests"
+               ReferencedContainer = "container:Circlone.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "F18C86F61D36BCDB0021F729"
+            BuildableName = "Hatching.framework"
+            BlueprintName = "Hatching"
+            ReferencedContainer = "container:Circlone.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>

@@ -11,11 +11,11 @@ import Foundation
 
 internal struct Node {
     
-    fileprivate let frame: CGRect
-    fileprivate var contents: Contents
-    fileprivate let splitLimit: Int
+    internal let frame: CGRect
+    internal var contents: Contents
+    internal let splitLimit: Int
     
-    fileprivate enum Contents {
+    internal enum Contents {
         case circles([Circle])
         case deeper([Node])
     }
@@ -26,7 +26,7 @@ internal struct Node {
         self.contents = .circles(circles.filter(frame.intersects))
     }
     
-    fileprivate static func split(circles: [Circle], frame: CGRect) -> [Node] {
+    internal static func split(circles: [Circle], frame: CGRect) -> [Node] {
         
         let one = Node(circles: circles, frame: frame.leftSide.topSide)
         let two = Node(circles: circles, frame: frame.rightSide.topSide)

@@ -9,6 +9,18 @@
 import XCTest
 @testable import Hatching
 
+extension Node {
+    var circles: [Circle] {
+        switch contents {
+        case let .circles(circles):
+            return circles
+        case .deeper:
+            return []
+        }
+    }
+    
+}
+
 class NodeTests: XCTestCase {
     let insideCircle = Circle(x: 5, y: 5, radius: 2)
     let outsideCircle = Circle(x: 100, y: 100, radius: 5)
@@ -89,6 +101,6 @@ extension Node {
     internal init(contents: Contents, frame: CGRect) {
         self.contents = contents
         self.frame = frame
-        self.circles = []
+        self.splitLimit = 100
     }
 }

@@ -11,22 +11,22 @@ import Foundation
 
 internal struct Node {
     
-    internal let frame: CGRect
-    internal var contents: Contents
-    internal var circles: [Circle]
+    fileprivate let frame: CGRect
+    fileprivate var contents: Contents
+    fileprivate let splitLimit: Int
     
-    internal enum Contents {
-        case circles(Int)
+    fileprivate enum Contents {
+        case circles([Circle])
         case deeper([Node])
     }
     
     internal init(circles: [Circle], frame: CGRect, splitLimit: Int = 500) {
-        self.circles = circles.filter(frame.intersects)
-        self.contents = .circles(splitLimit)
+        self.splitLimit = splitLimit
         self.frame = frame
+        self.contents = .circles(circles.filter(frame.intersects))
     }
     
-    internal static func split(circles: [Circle], frame: CGRect) -> [Node] {
+    fileprivate static func split(circles: [Circle], frame: CGRect) -> [Node] {
         
         let one = Node(circles: circles, frame: frame.leftSide.topSide)
         let two = Node(circles: circles, frame: frame.rightSide.topSide)
@@ -41,8 +41,8 @@ internal struct Node {
             return false
         }
         switch contents {
-        case .circles:
-            return circle.collides(circles)
+        case let .circles(items):
+            return circle.collides(items)
         case let .deeper(nodes):
             for node in nodes {
                 if node.collides(circle) {
@@ -55,10 +55,12 @@ internal struct Node {
     
     internal mutating func remove(x: Float, y: Float) -> Circle? {
         switch contents {
-        case .circles:
-            for (idx, item) in circles.enumerated() {
+        case let .circles(circles):
+            var updated = circles
+            for (idx, item) in updated.enumerated() {
                 if item.containsPoint(x: x, y: y) {
-                    circles.remove(at: idx)
+                    updated.remove(at: idx)
+                    contents = .circles(updated)
                     return item
                 }
             }
@@ -77,13 +79,13 @@ internal struct Node {
 
     internal mutating func add(circle: Circle) {
         switch contents {
-        case .circles(let limit):
-            circles.append(circle)
-            if circles.count >= limit {
-                contents = .deeper(Node.split(circles: circles, frame: frame))
-                circles = []
+        case let .circles(circles):
+            var updated = circles
+            updated.append(circle)
+            if updated.count >= splitLimit {
+                contents = .deeper(Node.split(circles: updated, frame: frame))
             } else {
-                contents = .circles(limit)
+                contents = .circles(updated)
             }
         case var .deeper(nodes):
             for (idx, node) in nodes.enumerated() {

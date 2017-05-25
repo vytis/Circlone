@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 final public class Hatchery {
     
     public let maxSize: Float
@@ -60,10 +59,7 @@ final public class Hatchery {
             if !self.running {
                 return
             }
-            var circles = [Circle]()
-            for _ in (0..<10000) {
-                circles.append(self.generator.generate(self.viewport, maxSize: self.maxSize))
-            }
+            let circles = (0..<10000).map { _ in self.generator.generate(self.viewport, maxSize: self.maxSize) }
             let newCircles = self.storage.add(circles)
             self.delegate?.hatcheryAdded(circles: newCircles)
             self.generateCircles()

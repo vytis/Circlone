@@ -23,6 +23,20 @@ extension UIColor {
     static var randomColor: UIColor {
         return UIColor(hue: randValue(), saturation: randValue(), brightness: randValue(from: 0.3, to: 0.9), alpha: 1.0)
     }
+    
+    func tinted(amount: CGFloat) -> UIColor {
+        var r: CGFloat = 0
+        var g: CGFloat = 0
+        var b: CGFloat = 0
+        var a: CGFloat = 0
+        
+        getRed(&r, green: &g, blue: &b, alpha: &a)
+
+        let red   = r + amount * (1 - r)
+        let green = g + amount * (1 - g)
+        let blue  = b + amount * (1 - b)
+        return UIColor(red: red, green: green, blue: blue, alpha: 1.0)
+    }
 }
 
 final class ColorScheme: NSObject {

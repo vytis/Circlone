@@ -13,16 +13,6 @@
 		F12458321CB175AD00872D55 /* EventsConsumer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12458311CB175AD00872D55 /* EventsConsumer.swift */; };
 		F124672D1D0B3D6F002A8325 /* ColorScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = F124672C1D0B3D6F002A8325 /* ColorScheme.swift */; };
 		F12467311D0DBDBD002A8325 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12467301D0DBDBD002A8325 /* SnapshotHelper.swift */; };
-		F176212F1E0C2C4700EC99F1 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17621251E0C2C4700EC99F1 /* Array.swift */; };
-		F17621301E0C2C4700EC99F1 /* ContrastDisplayContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17621261E0C2C4700EC99F1 /* ContrastDisplayContext.swift */; };
-		F17621311E0C2C4700EC99F1 /* DynamicColor+HSB.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17621271E0C2C4700EC99F1 /* DynamicColor+HSB.swift */; };
-		F17621321E0C2C4700EC99F1 /* DynamicColor+HSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17621281E0C2C4700EC99F1 /* DynamicColor+HSL.swift */; };
-		F17621331E0C2C4700EC99F1 /* DynamicColor+Lab.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17621291E0C2C4700EC99F1 /* DynamicColor+Lab.swift */; };
-		F17621341E0C2C4700EC99F1 /* DynamicColor+Mixing.swift in Sources */ = {isa = PBXBuildFile; fileRef = F176212A1E0C2C4700EC99F1 /* DynamicColor+Mixing.swift */; };
-		F17621351E0C2C4700EC99F1 /* DynamicColor+XYZ.swift in Sources */ = {isa = PBXBuildFile; fileRef = F176212B1E0C2C4700EC99F1 /* DynamicColor+XYZ.swift */; };
-		F17621361E0C2C4700EC99F1 /* DynamicColorSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = F176212C1E0C2C4700EC99F1 /* DynamicColorSpace.swift */; };
-		F17621371E0C2C4700EC99F1 /* DynamicGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F176212D1E0C2C4700EC99F1 /* DynamicGradient.swift */; };
-		F17621381E0C2C4700EC99F1 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F176212E1E0C2C4700EC99F1 /* Utils.swift */; };
 		F17621391E0C2EFA00EC99F1 /* Hatching.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F18C86F71D36BCDB0021F729 /* Hatching.framework */; };
 		F18C86FA1D36BCDB0021F729 /* Hatching.h in Headers */ = {isa = PBXBuildFile; fileRef = F18C86F91D36BCDB0021F729 /* Hatching.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F18C87011D36BCDB0021F729 /* Hatching.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F18C86F71D36BCDB0021F729 /* Hatching.framework */; };
@@ -47,10 +37,6 @@
 		F19C1D711B35F039002522F2 /* CircloneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19C1D701B35F039002522F2 /* CircloneTests.swift */; };
 		F19C1D7C1B35F039002522F2 /* CircloneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19C1D7B1B35F039002522F2 /* CircloneUITests.swift */; };
 		F1DE05411B54440B00ACF5AD /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DE05401B54440B00ACF5AD /* CircleView.swift */; };
-		F1EC814D1CB92FA800DA311A /* DynamicColor+Deriving.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EC81211CB92FA800DA311A /* DynamicColor+Deriving.swift */; };
-		F1EC814E1CB92FA800DA311A /* DynamicColor+RGBA.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EC81221CB92FA800DA311A /* DynamicColor+RGBA.swift */; };
-		F1EC814F1CB92FA800DA311A /* DynamicColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EC81231CB92FA800DA311A /* DynamicColor.swift */; };
-		F1EC81501CB92FA800DA311A /* HSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EC81241CB92FA800DA311A /* HSL.swift */; };
 		F1FF49A61D5E0B12000F744A /* NodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FF49A51D5E0B12000F744A /* NodeTests.swift */; };
 		F1FF49A81D5E0B1E000F744A /* CGRectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FF49A71D5E0B1E000F744A /* CGRectTests.swift */; };
 		F1FF49AA1D5E0D04000F744A /* Storage+SVG.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FF49A91D5E0D04000F744A /* Storage+SVG.swift */; };
@@ -135,16 +121,6 @@
 		F12458311CB175AD00872D55 /* EventsConsumer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsConsumer.swift; sourceTree = "<group>"; };
 		F124672C1D0B3D6F002A8325 /* ColorScheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorScheme.swift; sourceTree = "<group>"; };
 		F12467301D0DBDBD002A8325 /* SnapshotHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = ../fastlane/SnapshotHelper.swift; sourceTree = "<group>"; };
-		F17621251E0C2C4700EC99F1 /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
-		F17621261E0C2C4700EC99F1 /* ContrastDisplayContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContrastDisplayContext.swift; sourceTree = "<group>"; };
-		F17621271E0C2C4700EC99F1 /* DynamicColor+HSB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DynamicColor+HSB.swift"; sourceTree = "<group>"; };
-		F17621281E0C2C4700EC99F1 /* DynamicColor+HSL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DynamicColor+HSL.swift"; sourceTree = "<group>"; };
-		F17621291E0C2C4700EC99F1 /* DynamicColor+Lab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DynamicColor+Lab.swift"; sourceTree = "<group>"; };
-		F176212A1E0C2C4700EC99F1 /* DynamicColor+Mixing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DynamicColor+Mixing.swift"; sourceTree = "<group>"; };
-		F176212B1E0C2C4700EC99F1 /* DynamicColor+XYZ.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DynamicColor+XYZ.swift"; sourceTree = "<group>"; };
-		F176212C1E0C2C4700EC99F1 /* DynamicColorSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicColorSpace.swift; sourceTree = "<group>"; };
-		F176212D1E0C2C4700EC99F1 /* DynamicGradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicGradient.swift; sourceTree = "<group>"; };
-		F176212E1E0C2C4700EC99F1 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		F18C86F71D36BCDB0021F729 /* Hatching.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Hatching.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F18C86F91D36BCDB0021F729 /* Hatching.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Hatching.h; sourceTree = "<group>"; };
 		F18C86FB1D36BCDB0021F729 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -180,10 +156,6 @@
 		F19C1D7D1B35F039002522F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F19C1D8D1B35F24D002522F2 /* Circlone.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Circlone.playground; sourceTree = "<group>"; };
 		F1DE05401B54440B00ACF5AD /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
-		F1EC81211CB92FA800DA311A /* DynamicColor+Deriving.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DynamicColor+Deriving.swift"; sourceTree = "<group>"; };
-		F1EC81221CB92FA800DA311A /* DynamicColor+RGBA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DynamicColor+RGBA.swift"; sourceTree = "<group>"; };
-		F1EC81231CB92FA800DA311A /* DynamicColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicColor.swift; sourceTree = "<group>"; };
-		F1EC81241CB92FA800DA311A /* HSL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HSL.swift; sourceTree = "<group>"; };
 		F1FF49A51D5E0B12000F744A /* NodeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NodeTests.swift; sourceTree = "<group>"; };
 		F1FF49A71D5E0B1E000F744A /* CGRectTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRectTests.swift; sourceTree = "<group>"; };
 		F1FF49A91D5E0D04000F744A /* Storage+SVG.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Storage+SVG.swift"; sourceTree = "<group>"; };
@@ -256,14 +228,6 @@
 				7FC785B01ED70DCA00624756 /* Storage.swift */,
 			);
 			path = Storage;
-			sourceTree = "<group>";
-		};
-		F124582C1CB1706500872D55 /* External */ = {
-			isa = PBXGroup;
-			children = (
-				F1EC80E41CB92FA800DA311A /* DynamicColor */,
-			);
-			path = External;
 			sourceTree = "<group>";
 		};
 		F18C86F81D36BCDB0021F729 /* Hatching */ = {
@@ -348,7 +312,6 @@
 		F19C1D5A1B35F039002522F2 /* Circlone */ = {
 			isa = PBXGroup;
 			children = (
-				F124582C1CB1706500872D55 /* External */,
 				F18C87161D36BD3E0021F729 /* Circle+NormalizedRadius.swift */,
 				F19C1D5B1B35F039002522F2 /* AppDelegate.swift */,
 				F19C1D5D1B35F039002522F2 /* ViewController.swift */,
@@ -380,35 +343,6 @@
 				F19C1D7D1B35F039002522F2 /* Info.plist */,
 			);
 			path = CircloneUITests;
-			sourceTree = "<group>";
-		};
-		F1EC80E41CB92FA800DA311A /* DynamicColor */ = {
-			isa = PBXGroup;
-			children = (
-				F1EC81201CB92FA800DA311A /* Sources */,
-			);
-			path = DynamicColor;
-			sourceTree = "<group>";
-		};
-		F1EC81201CB92FA800DA311A /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-				F17621251E0C2C4700EC99F1 /* Array.swift */,
-				F17621261E0C2C4700EC99F1 /* ContrastDisplayContext.swift */,
-				F17621271E0C2C4700EC99F1 /* DynamicColor+HSB.swift */,
-				F17621281E0C2C4700EC99F1 /* DynamicColor+HSL.swift */,
-				F17621291E0C2C4700EC99F1 /* DynamicColor+Lab.swift */,
-				F176212A1E0C2C4700EC99F1 /* DynamicColor+Mixing.swift */,
-				F176212B1E0C2C4700EC99F1 /* DynamicColor+XYZ.swift */,
-				F176212C1E0C2C4700EC99F1 /* DynamicColorSpace.swift */,
-				F176212D1E0C2C4700EC99F1 /* DynamicGradient.swift */,
-				F176212E1E0C2C4700EC99F1 /* Utils.swift */,
-				F1EC81211CB92FA800DA311A /* DynamicColor+Deriving.swift */,
-				F1EC81221CB92FA800DA311A /* DynamicColor+RGBA.swift */,
-				F1EC81231CB92FA800DA311A /* DynamicColor.swift */,
-				F1EC81241CB92FA800DA311A /* HSL.swift */,
-			);
-			path = Sources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -725,26 +659,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F17621341E0C2C4700EC99F1 /* DynamicColor+Mixing.swift in Sources */,
 				F1DE05411B54440B00ACF5AD /* CircleView.swift in Sources */,
 				F12458321CB175AD00872D55 /* EventsConsumer.swift in Sources */,
-				F17621371E0C2C4700EC99F1 /* DynamicGradient.swift in Sources */,
 				F19C1D5E1B35F039002522F2 /* ViewController.swift in Sources */,
-				F1EC814D1CB92FA800DA311A /* DynamicColor+Deriving.swift in Sources */,
-				F1EC81501CB92FA800DA311A /* HSL.swift in Sources */,
 				F19C1D5C1B35F039002522F2 /* AppDelegate.swift in Sources */,
-				F17621321E0C2C4700EC99F1 /* DynamicColor+HSL.swift in Sources */,
-				F17621361E0C2C4700EC99F1 /* DynamicColorSpace.swift in Sources */,
-				F1EC814F1CB92FA800DA311A /* DynamicColor.swift in Sources */,
 				F18C871C1D36BD3E0021F729 /* Circle+NormalizedRadius.swift in Sources */,
-				F17621311E0C2C4700EC99F1 /* DynamicColor+HSB.swift in Sources */,
-				F17621301E0C2C4700EC99F1 /* ContrastDisplayContext.swift in Sources */,
-				F176212F1E0C2C4700EC99F1 /* Array.swift in Sources */,
-				F1EC814E1CB92FA800DA311A /* DynamicColor+RGBA.swift in Sources */,
-				F17621381E0C2C4700EC99F1 /* Utils.swift in Sources */,
-				F17621351E0C2C4700EC99F1 /* DynamicColor+XYZ.swift in Sources */,
 				F124672D1D0B3D6F002A8325 /* ColorScheme.swift in Sources */,
-				F17621331E0C2C4700EC99F1 /* DynamicColor+Lab.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

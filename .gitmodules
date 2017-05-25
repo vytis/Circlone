@@ -1,3 +1,0 @@
-[submodule "Circlone/External/DynamicColor"]
-	path = Circlone/External/DynamicColor
-	url = git@github.com:yannickl/DynamicColor.git

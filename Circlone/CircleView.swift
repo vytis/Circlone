@@ -46,19 +46,20 @@ final class CircleView: UIView {
         }
     }
     
-    func addCircles(_ circles: [Circle]) {
-        let newBlobs = circles.map { (circle) -> Blob in
-            let ratio = Double(circle.normalizedRadius(maxRadius: 500))
-            let color = self.baseColor.tinted(amount: CGFloat(ratio))
-            let blob = Blob(circle: circle, color: color)
-            return blob
+    func addEvents(_ events: [Event]) {
+        let newBlobs = events.map { (event) -> Blob in
+            switch event {
+            case let .added(circle):
+                let ratio = Double(circle.normalizedRadius(maxRadius: 500))
+                let color = self.baseColor.tinted(amount: CGFloat(ratio))
+                let blob = Blob(circle: circle, color: color)
+                return blob
+            case let .removed(circle):
+                let blob = Blob(circle: circle, color: .black)
+                return blob
+            }
         }
         addBlobs(newBlobs)
-    }
-    
-    func removeCircles(_ circles: [Circle]) {
-        let blobs = circles.map { Blob(circle: $0, color: UIColor.black) }
-        addBlobs(blobs)
     }
     
     fileprivate func addBlobs(_ blobs: [Blob]) {
@@ -87,11 +88,7 @@ final class CircleView: UIView {
             imageToDraw = nil
         }
         
-        let sortedBlobs = blobsToDraw.sorted { left, right in
-            return left.color == UIColor.black
-        }
-
-        sortedBlobs.forEach {
+        blobsToDraw.forEach {
             $0.draw(layerContext)
         }
         

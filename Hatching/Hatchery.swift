@@ -8,6 +8,11 @@
 
 import Foundation
 
+public enum Event {
+    case added(Circle)
+    case removed(Circle)
+}
+
 final public class Hatchery {
     
     public let maxSize: Float
@@ -19,7 +24,7 @@ final public class Hatchery {
     fileprivate let q = DispatchQueue(label: "com.circlone.hatchery", attributes: [])
     
     fileprivate var storage: Storage
-    public fileprivate(set) weak var delegate: HatcheryDelegate?
+    fileprivate var produced = [Event]()
     
     public var allCircles: [Circle] {
         return storage.all
@@ -38,10 +43,9 @@ final public class Hatchery {
         generateCircles()
     }
     
-    public init(viewport: Viewport, maxSize: Float, delegate: HatcheryDelegate? = nil) {
+    public init(viewport: Viewport, maxSize: Float) {
         self.viewport = viewport
         self.maxSize = maxSize
-        self.delegate = delegate
         storage = Storage(viewport: viewport)
         generateCircles()
     }
@@ -49,7 +53,7 @@ final public class Hatchery {
     public func removeCircleAt(x: Float, y: Float) {
         q.async {
             if let removedCircle = self.storage.popItemAt(x: x, y: y)   {
-                self.delegate?.hatcheryRemoved(circles: [removedCircle])
+                self.produced.append(.removed(removedCircle))
             }
         }
     }
@@ -60,9 +64,18 @@ final public class Hatchery {
                 return
             }
             let circles = (0..<10000).map { _ in self.generator.generate(self.viewport, maxSize: self.maxSize) }
-            let newCircles = self.storage.add(circles)
-            self.delegate?.hatcheryAdded(circles: newCircles)
+            let newEvents = self.storage.add(circles).map { Event.added($0) }
+            self.produced.append(contentsOf: newEvents)
             self.generateCircles()
         }
+    }
+    
+    public func consumeAll() -> [Event] {
+        var events = [Event]()
+        q.sync {
+            events.append(contentsOf: self.produced)
+            produced.removeAll()
+        }
+        return events
     }
 }

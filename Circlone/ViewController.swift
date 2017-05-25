@@ -19,7 +19,7 @@ final class ViewController: UIViewController {
     @IBOutlet weak var tapLabel: UILabel!
     @IBOutlet weak var shakeLabel: UILabel!
     
-    var delegate: HatcheryDelegate!
+    var subscriber: Subscriber!
     
     var hatchery: Hatchery?
     var colorScheme: ColorScheme! {
@@ -49,8 +49,8 @@ final class ViewController: UIViewController {
     
     func start(statePath: String? = nil) {
         let viewport = Viewport(height: Float(view.frame.height), width: Float(view.frame.width))
-        delegate = CirclesWatcher(circleView: circleView)
-        hatchery = Hatchery(viewport: viewport, maxSize: 500, delegate: delegate)
+        hatchery = Hatchery(viewport: viewport, maxSize: 500)
+        subscriber = Subscriber(hatchery: hatchery!, view: circleView)
         labelContainer.isHidden = true
     }
     
@@ -61,7 +61,7 @@ final class ViewController: UIViewController {
     override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
         hatchery?.stop()
         hatchery = nil
-        delegate = CirclesWatcher(circleView: circleView)
+//        delegate = CirclesWatcher(circleView: circleView)
         labelContainer.isHidden = false
         circleView.reset()
         colorScheme = colorScheme.nextScheme

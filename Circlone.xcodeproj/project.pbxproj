@@ -56,9 +56,7 @@
 		F1FF49AC1D5E139A000F744A /* Circle+Comparable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FF49AB1D5E139A000F744A /* Circle+Comparable.swift */; };
 		F1FF49AE1D5E13FD000F744A /* Circle+Collision.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FF49AD1D5E13FD000F744A /* Circle+Collision.swift */; };
 		F1FF49B01D5E1625000F744A /* CollectionType+BinarySearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FF49AF1D5E1625000F744A /* CollectionType+BinarySearch.swift */; };
-		F1FF49B21D5E1863000F744A /* HatcheryDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FF49B11D5E1863000F744A /* HatcheryDelegate.swift */; };
 		F1FF49B41D5E1D53000F744A /* CircleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FF49B31D5E1D53000F744A /* CircleTests.swift */; };
-		F1FF49B61D5E2963000F744A /* CirclesWatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FF49B51D5E2963000F744A /* CirclesWatcher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -191,9 +189,7 @@
 		F1FF49AB1D5E139A000F744A /* Circle+Comparable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Circle+Comparable.swift"; sourceTree = "<group>"; };
 		F1FF49AD1D5E13FD000F744A /* Circle+Collision.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Circle+Collision.swift"; sourceTree = "<group>"; };
 		F1FF49AF1D5E1625000F744A /* CollectionType+BinarySearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CollectionType+BinarySearch.swift"; sourceTree = "<group>"; };
-		F1FF49B11D5E1863000F744A /* HatcheryDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HatcheryDelegate.swift; sourceTree = "<group>"; };
 		F1FF49B31D5E1D53000F744A /* CircleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleTests.swift; sourceTree = "<group>"; };
-		F1FF49B51D5E2963000F744A /* CirclesWatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CirclesWatcher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -268,7 +264,6 @@
 				F1FF49AB1D5E139A000F744A /* Circle+Comparable.swift */,
 				F1FF49AD1D5E13FD000F744A /* Circle+Collision.swift */,
 				F18C87221D36BD5B0021F729 /* Hatchery.swift */,
-				F1FF49B11D5E1863000F744A /* HatcheryDelegate.swift */,
 				F18C87231D36BD5B0021F729 /* Node.swift */,
 				F18C87241D36BD5B0021F729 /* RandomGenerator.swift */,
 				F18C87251D36BD5B0021F729 /* Storage.swift */,
@@ -349,7 +344,6 @@
 				F18C87161D36BD3E0021F729 /* Circle+NormalizedRadius.swift */,
 				F19C1D5B1B35F039002522F2 /* AppDelegate.swift */,
 				F19C1D5D1B35F039002522F2 /* ViewController.swift */,
-				F1FF49B51D5E2963000F744A /* CirclesWatcher.swift */,
 				F124672C1D0B3D6F002A8325 /* ColorScheme.swift */,
 				F12458311CB175AD00872D55 /* Subscriber.swift */,
 				F1DE05401B54440B00ACF5AD /* CircleView.swift */,
@@ -687,7 +681,6 @@
 				F18C87301D36BE430021F729 /* CGRect+Helpers.swift in Sources */,
 				F1FF49AC1D5E139A000F744A /* Circle+Comparable.swift in Sources */,
 				F18C87291D36BD5B0021F729 /* Hatchery.swift in Sources */,
-				F1FF49B21D5E1863000F744A /* HatcheryDelegate.swift in Sources */,
 				F18C872C1D36BD5B0021F729 /* Storage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -728,7 +721,6 @@
 				F1DE05411B54440B00ACF5AD /* CircleView.swift in Sources */,
 				F12458321CB175AD00872D55 /* Subscriber.swift in Sources */,
 				F17621371E0C2C4700EC99F1 /* DynamicGradient.swift in Sources */,
-				F1FF49B61D5E2963000F744A /* CirclesWatcher.swift in Sources */,
 				F19C1D5E1B35F039002522F2 /* ViewController.swift in Sources */,
 				F1EC814D1CB92FA800DA311A /* DynamicColor+Deriving.swift in Sources */,
 				F1EC81501CB92FA800DA311A /* HSL.swift in Sources */,

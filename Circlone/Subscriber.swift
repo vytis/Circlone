@@ -15,8 +15,10 @@ protocol SubscriberDelegate: class {
 
 final class Subscriber {
     fileprivate var displayLink: CADisplayLink!
-    fileprivate var newCircles = [Circle]()
+//    fileprivate var newCircles = [Circle]()
     fileprivate let q = DispatchQueue(label: "Subscriber Queue", attributes: [])
+    fileprivate var hatchery: Hatchery!
+    fileprivate var view: CircleView!
     
     internal weak var delegate: SubscriberDelegate?
         
@@ -24,25 +26,17 @@ final class Subscriber {
         displayLink.invalidate()
     }
     
-    init() {
+    init(hatchery: Hatchery, view: CircleView) {
+        self.hatchery = hatchery
+        self.view = view
         displayLink = CADisplayLink(target: self, selector: #selector(onDraw))
         displayLink?.add(to: RunLoop.main, forMode: RunLoopMode.defaultRunLoopMode)
     }
     
-    func addNew(_ circles: [Circle]) {
-        q.sync {
-            self.newCircles += circles
-        }
-    }
-    
     @objc fileprivate func onDraw() {
-        var circles: [Circle]?
-        q.sync {
-            circles = self.newCircles
-            self.newCircles = []
-        }
-        if let newCircles = circles, !newCircles.isEmpty {
-            self.delegate?.updated(from: self, withCircles: newCircles)
+        let newEvents = hatchery.consumeAll()
+        if !newEvents.isEmpty {
+            view.addEvents(newEvents)
         }
     }
 }

@@ -9,19 +9,11 @@
 import UIKit
 import Hatching
 
-protocol SubscriberDelegate: class {
-    func updated(from subscriber: Subscriber, withCircles circles: [Circle])
-}
-
-final class Subscriber {
+final class EventsConsumer {
     fileprivate var displayLink: CADisplayLink!
-//    fileprivate var newCircles = [Circle]()
-    fileprivate let q = DispatchQueue(label: "Subscriber Queue", attributes: [])
     fileprivate var hatchery: Hatchery!
     fileprivate var view: CircleView!
     
-    internal weak var delegate: SubscriberDelegate?
-        
     func stop() {
         displayLink.invalidate()
     }

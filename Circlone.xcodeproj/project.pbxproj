@@ -10,7 +10,7 @@
 		7FC785B11ED70DCA00624756 /* CollectionType+BinarySearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC785AE1ED70DCA00624756 /* CollectionType+BinarySearch.swift */; };
 		7FC785B21ED70DCA00624756 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC785AF1ED70DCA00624756 /* Node.swift */; };
 		7FC785B31ED70DCA00624756 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC785B01ED70DCA00624756 /* Storage.swift */; };
-		F12458321CB175AD00872D55 /* Subscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12458311CB175AD00872D55 /* Subscriber.swift */; };
+		F12458321CB175AD00872D55 /* EventsConsumer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12458311CB175AD00872D55 /* EventsConsumer.swift */; };
 		F124672D1D0B3D6F002A8325 /* ColorScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = F124672C1D0B3D6F002A8325 /* ColorScheme.swift */; };
 		F12467311D0DBDBD002A8325 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12467301D0DBDBD002A8325 /* SnapshotHelper.swift */; };
 		F176212F1E0C2C4700EC99F1 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17621251E0C2C4700EC99F1 /* Array.swift */; };
@@ -132,7 +132,7 @@
 		7FC785AE1ED70DCA00624756 /* CollectionType+BinarySearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CollectionType+BinarySearch.swift"; sourceTree = "<group>"; };
 		7FC785AF1ED70DCA00624756 /* Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 		7FC785B01ED70DCA00624756 /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
-		F12458311CB175AD00872D55 /* Subscriber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Subscriber.swift; sourceTree = "<group>"; };
+		F12458311CB175AD00872D55 /* EventsConsumer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsConsumer.swift; sourceTree = "<group>"; };
 		F124672C1D0B3D6F002A8325 /* ColorScheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorScheme.swift; sourceTree = "<group>"; };
 		F12467301D0DBDBD002A8325 /* SnapshotHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = ../fastlane/SnapshotHelper.swift; sourceTree = "<group>"; };
 		F17621251E0C2C4700EC99F1 /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
@@ -353,7 +353,7 @@
 				F19C1D5B1B35F039002522F2 /* AppDelegate.swift */,
 				F19C1D5D1B35F039002522F2 /* ViewController.swift */,
 				F124672C1D0B3D6F002A8325 /* ColorScheme.swift */,
-				F12458311CB175AD00872D55 /* Subscriber.swift */,
+				F12458311CB175AD00872D55 /* EventsConsumer.swift */,
 				F1DE05401B54440B00ACF5AD /* CircleView.swift */,
 				F19C1D5F1B35F039002522F2 /* Main.storyboard */,
 				F19C1D621B35F039002522F2 /* Assets.xcassets */,
@@ -727,7 +727,7 @@
 			files = (
 				F17621341E0C2C4700EC99F1 /* DynamicColor+Mixing.swift in Sources */,
 				F1DE05411B54440B00ACF5AD /* CircleView.swift in Sources */,
-				F12458321CB175AD00872D55 /* Subscriber.swift in Sources */,
+				F12458321CB175AD00872D55 /* EventsConsumer.swift in Sources */,
 				F17621371E0C2C4700EC99F1 /* DynamicGradient.swift in Sources */,
 				F19C1D5E1B35F039002522F2 /* ViewController.swift in Sources */,
 				F1EC814D1CB92FA800DA311A /* DynamicColor+Deriving.swift in Sources */,

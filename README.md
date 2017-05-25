@@ -12,12 +12,12 @@ An iOS app generating random abstract images from circles
 1. Checkout repository 
 
 ```
-git clone --recursive git@github.com:vytis/Circlone.git
+git clone git@github.com:vytis/Circlone.git
 ```
 2. Open `Circlone.xcodeproj`
 3. Build `Circlone` target
 
 ### Requirements
-Xcode 7.3
+Xcode 8.2
 
 

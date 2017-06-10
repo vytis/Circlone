@@ -23,7 +23,7 @@ final public class Hatchery {
     
     fileprivate let q = DispatchQueue(label: "com.circlone.hatchery", attributes: [])
     
-    fileprivate var storage: Storage
+    internal var storage: Storage
     fileprivate var produced = [Event]()
     
     public var allCircles: [Circle] {

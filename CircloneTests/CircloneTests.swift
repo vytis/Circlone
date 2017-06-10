@@ -22,9 +22,9 @@ class CircloneTests: XCTestCase {
     
     
     func testGeneratorPerformance() {
-        self.measureBlock { 
+        self.measure {
             for _ in 0...500000 {
-                self.generator.generate(self.viewport, maxSize: self.maxSize)
+                _ = self.generator.generate(self.viewport, maxSize: self.maxSize)
             }
         }
     }
@@ -39,7 +39,7 @@ class CircloneTests: XCTestCase {
             }
         }
         let toCollide = (0...10000).map{ _ in self.generator.generate(self.viewport, maxSize: self.maxSize) }
-        self.measureBlock() {
+        self.measure() {
             var newCircles: [Circle] = []
             for circle in toCollide {
                 if !circle.collides(circles) {
@@ -52,10 +52,10 @@ class CircloneTests: XCTestCase {
     func testStoragePerformance() {
         var storage = Storage(viewport: viewport)
         let toAdd = (0...100000).map{ _ in self.generator.generate(self.viewport, maxSize: self.maxSize) }
-        storage.add(toAdd)
+        _ = storage.add(toAdd)
         let toCollide = (0...20000).map{ _ in self.generator.generate(self.viewport, maxSize: self.maxSize) }
-        self.measureBlock { 
-            storage.add(toCollide)
+        self.measure {
+            _ = storage.add(toCollide)
         }
     }
     

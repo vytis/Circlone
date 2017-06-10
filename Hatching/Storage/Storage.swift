@@ -15,7 +15,11 @@ internal struct Storage {
     fileprivate var large: [Circle] = []
     internal var all: [Circle] = []
     
+    internal typealias ObserverCallback = (Int, TimeInterval) -> ()
+    fileprivate typealias Observer = (limit: Int, callback: ObserverCallback)
+    
     fileprivate let start = Date()
+    fileprivate var callback: Observer?
     
     internal let pivotPoint: Float
     
@@ -23,7 +27,11 @@ internal struct Storage {
         self.pivotPoint = pivotPoint ?? (viewport.height / 250)
         let frame = CGRect(origin: CGPoint.zero, size: CGSize(width: CGFloat(viewport.width), height: CGFloat(viewport.height)))
         tree = Node(circles: [], frame: frame)
-    }    
+    }
+    
+    internal mutating func setObserver(every limit: Int, callback: @escaping ObserverCallback) {
+        self.callback = (limit: limit, callback: callback)
+    }
 }
 
 extension Storage {
@@ -57,8 +65,10 @@ extension Storage {
             }
             all.append(item)
             circles.append(item)
-            if all.count % 2500 == 0 {
-                print("Circles: \(all.count) in \(-start.timeIntervalSinceNow)s")
+            if let (limit, callback) = callback, all.count % limit == 0 {
+                let count = all.count
+                let elapsed = -self.start.timeIntervalSinceNow
+                    callback(count, elapsed)
             }
         }
         return circles

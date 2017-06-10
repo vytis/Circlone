@@ -66,4 +66,13 @@ class HatchingPerformanceTests: XCTestCase {
         }
     }
     
+    func testRemovalPerformance() {
+        let toRemove = generateCircles(count: 200)
+        self.measure {
+            toRemove.forEach {
+                _ = storage.popItemAt(x: $0.x, y: $0.y)
+            }
+        }
+    }
+    
 }

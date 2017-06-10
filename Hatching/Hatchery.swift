@@ -17,7 +17,7 @@ final public class Hatchery {
     
     public let maxSize: Float
     public let viewport: Viewport
-    internal let generator = RandomGenerator(seed: 123)
+    internal let generator: RandomGenerator
     
     fileprivate var running = true
     
@@ -43,11 +43,15 @@ final public class Hatchery {
         generateCircles()
     }
     
-    public init(viewport: Viewport, maxSize: Float) {
+    public convenience init(viewport: Viewport, maxSize: Float) {
+        self.init(viewport: viewport, maxSize: maxSize, storage: Storage(viewport: viewport), generator: RandomGenerator())
+    }
+    
+    internal init(viewport: Viewport, maxSize: Float, storage: Storage, generator: RandomGenerator) {
         self.viewport = viewport
         self.maxSize = maxSize
-        storage = Storage(viewport: viewport)
-        generateCircles()
+        self.storage = storage
+        self.generator = generator
     }
         
     public func removeCircleAt(x: Float, y: Float) {

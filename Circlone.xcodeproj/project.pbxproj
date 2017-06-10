@@ -15,6 +15,7 @@
 		F12467311D0DBDBD002A8325 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12467301D0DBDBD002A8325 /* SnapshotHelper.swift */; };
 		F17621391E0C2EFA00EC99F1 /* Hatching.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F18C86F71D36BCDB0021F729 /* Hatching.framework */; };
 		F185FF801EEC27A3002F3AB2 /* StoragePerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F185FF7F1EEC2762002F3AB2 /* StoragePerformanceTests.swift */; };
+		F185FF821EEC2854002F3AB2 /* HatcheryPerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F185FF811EEC2854002F3AB2 /* HatcheryPerformanceTests.swift */; };
 		F18C86FA1D36BCDB0021F729 /* Hatching.h in Headers */ = {isa = PBXBuildFile; fileRef = F18C86F91D36BCDB0021F729 /* Hatching.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F18C87011D36BCDB0021F729 /* Hatching.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F18C86F71D36BCDB0021F729 /* Hatching.framework */; };
 		F18C870C1D36BCDB0021F729 /* Hatching.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F18C86F71D36BCDB0021F729 /* Hatching.framework */; };
@@ -122,6 +123,7 @@
 		F124672C1D0B3D6F002A8325 /* ColorScheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorScheme.swift; sourceTree = "<group>"; };
 		F12467301D0DBDBD002A8325 /* SnapshotHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = ../fastlane/SnapshotHelper.swift; sourceTree = "<group>"; };
 		F185FF7F1EEC2762002F3AB2 /* StoragePerformanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoragePerformanceTests.swift; sourceTree = "<group>"; };
+		F185FF811EEC2854002F3AB2 /* HatcheryPerformanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HatcheryPerformanceTests.swift; sourceTree = "<group>"; };
 		F18C86F71D36BCDB0021F729 /* Hatching.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Hatching.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F18C86F91D36BCDB0021F729 /* Hatching.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Hatching.h; sourceTree = "<group>"; };
 		F18C86FB1D36BCDB0021F729 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -152,7 +154,7 @@
 		F19C1D771B35F039002522F2 /* CircloneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CircloneUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F19C1D7B1B35F039002522F2 /* CircloneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircloneUITests.swift; sourceTree = "<group>"; };
 		F19C1D7D1B35F039002522F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F19C1D8D1B35F24D002522F2 /* Circlone.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Circlone.playground; sourceTree = "<group>"; };
+		F19C1D8D1B35F24D002522F2 /* Circlone.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Circlone.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		F1DE05401B54440B00ACF5AD /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		F1E1F5BC1EEC159100C8372E /* HatchingPerformanceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HatchingPerformanceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1E1F5C01EEC159100C8372E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -340,6 +342,7 @@
 			isa = PBXGroup;
 			children = (
 				F185FF7F1EEC2762002F3AB2 /* StoragePerformanceTests.swift */,
+				F185FF811EEC2854002F3AB2 /* HatcheryPerformanceTests.swift */,
 				F1E1F5C01EEC159100C8372E /* Info.plist */,
 			);
 			path = HatchingPerformanceTests;
@@ -681,6 +684,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F185FF821EEC2854002F3AB2 /* HatcheryPerformanceTests.swift in Sources */,
 				F185FF801EEC27A3002F3AB2 /* StoragePerformanceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

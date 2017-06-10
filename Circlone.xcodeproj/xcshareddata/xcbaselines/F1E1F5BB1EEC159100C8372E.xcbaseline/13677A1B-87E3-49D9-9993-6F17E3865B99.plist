@@ -4,6 +4,69 @@
 <dict>
 	<key>classNames</key>
 	<dict>
+		<key>HatchingPerformanceTests</key>
+		<dict>
+			<key>testLargeBatchPerformance()</key>
+			<dict>
+				<key>com.apple.XCTPerformanceMetric_WallClockTime</key>
+				<dict>
+					<key>baselineAverage</key>
+					<real>0.57224</real>
+					<key>baselineIntegrationDisplayName</key>
+					<string>10 Jun 2017, 17:41:44</string>
+				</dict>
+			</dict>
+			<key>testPerformanceFrom1000to1100()</key>
+			<dict>
+				<key>com.apple.XCTPerformanceMetric_WallClockTime</key>
+				<dict>
+					<key>baselineAverage</key>
+					<real>0.13733</real>
+					<key>baselineIntegrationDisplayName</key>
+					<string>10 Jun 2017, 17:41:44</string>
+				</dict>
+			</dict>
+			<key>testPerformanceFrom500to600()</key>
+			<dict>
+				<key>com.apple.XCTPerformanceMetric_WallClockTime</key>
+				<dict>
+					<key>baselineAverage</key>
+					<real>0.055818</real>
+					<key>baselineIntegrationDisplayName</key>
+					<string>10 Jun 2017, 17:41:44</string>
+				</dict>
+			</dict>
+			<key>testPerformanceFrom600to700()</key>
+			<dict>
+				<key>com.apple.XCTPerformanceMetric_WallClockTime</key>
+				<dict>
+					<key>baselineAverage</key>
+					<real>0.073707</real>
+					<key>baselineIntegrationDisplayName</key>
+					<string>10 Jun 2017, 17:41:44</string>
+				</dict>
+			</dict>
+			<key>testPerformanceFrom700to800()</key>
+			<dict>
+				<key>com.apple.XCTPerformanceMetric_WallClockTime</key>
+				<dict>
+					<key>baselineAverage</key>
+					<real>0.092475</real>
+					<key>baselineIntegrationDisplayName</key>
+					<string>10 Jun 2017, 17:41:44</string>
+				</dict>
+			</dict>
+			<key>testSmallBatchPerformance()</key>
+			<dict>
+				<key>com.apple.XCTPerformanceMetric_WallClockTime</key>
+				<dict>
+					<key>baselineAverage</key>
+					<real>0.14801</real>
+					<key>baselineIntegrationDisplayName</key>
+					<string>10 Jun 2017, 17:41:44</string>
+				</dict>
+			</dict>
+		</dict>
 		<key>StoragePerformanceTests</key>
 		<dict>
 			<key>testCollisionPerformance()</key>

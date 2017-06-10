@@ -32,6 +32,16 @@
                ReferencedContainer = "container:Circlone.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "F1E1F5BB1EEC159100C8372E"
+               BuildableName = "HatchingPerformanceTests.xctest"
+               BlueprintName = "HatchingPerformanceTests"
+               ReferencedContainer = "container:Circlone.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

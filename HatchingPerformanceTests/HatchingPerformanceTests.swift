@@ -1,20 +1,19 @@
 //
-//  CircloneTests.swift
-//  CircloneTests
+//  HatchingPerformanceTests.swift
+//  HatchingPerformanceTests
 //
-//  Created by Vytis ⚫ on 2015-06-20.
-//  Copyright © 2015 🗿. All rights reserved.
+//  Created by Vytis ⚫ on 10/06/2017.
+//  Copyright © 2017 🗿. All rights reserved.
 //
 
 import XCTest
-@testable import Circlone
 @testable import Hatching
 
-class CircloneTests: XCTestCase {
+class HatchingPerformanceTests: XCTestCase {
     
     let maxSize: Float = 100
     let viewport = Viewport(height: 500, width: 500)
-
+    
     var generator: RandomGenerator!
     override func setUp() {
         generator = RandomGenerator(seed: 1234)
@@ -28,11 +27,11 @@ class CircloneTests: XCTestCase {
             }
         }
     }
-
+    
     func testCollisionPerformance() {
         var circles: [Circle] = []
         let toAdd = (0...100000).map{ _ in self.generator.generate(self.viewport, maxSize: self.maxSize) }
-
+        
         for circle in toAdd {
             if !circle.collides(circles) {
                 circles += [circle]

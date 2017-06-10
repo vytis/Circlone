@@ -1,6 +1,6 @@
 //
-//  HatchingPerformanceTests.swift
-//  HatchingPerformanceTests
+//  StoragePerformanceTests.swift
+//  StoragePerformanceTests
 //
 //  Created by Vytis ⚫ on 10/06/2017.
 //  Copyright © 2017 🗿. All rights reserved.
@@ -9,7 +9,7 @@
 import XCTest
 @testable import Hatching
 
-class HatchingPerformanceTests: XCTestCase {
+class StoragePerformanceTests: XCTestCase {
     
     let maxSize: Float = 100
     let viewport = Viewport(height: 500, width: 500)
@@ -31,7 +31,10 @@ class HatchingPerformanceTests: XCTestCase {
     func generateCircles(count: Int) -> [Circle] {
         return (0...count).map { _ in self.generator.generate(self.viewport, maxSize: self.maxSize) }
     }
-    
+}
+
+// MARK: - Generator
+extension StoragePerformanceTests {
     func testGeneratorPerformance() {
         self.measure {
             // We want to see the performance of the generate function without array overhead
@@ -41,7 +44,10 @@ class HatchingPerformanceTests: XCTestCase {
             }
         }
     }
-    
+}
+
+// MARK: - Collision
+extension StoragePerformanceTests {
     func testCollisionPerformance() {
         var initial: [Circle] = []
         
@@ -57,7 +63,10 @@ class HatchingPerformanceTests: XCTestCase {
             _ = toCollide.filter { $0.collides(initial) }
         }
     }
-    
+}
+
+// MARK: - Storage
+extension StoragePerformanceTests {
     func testStoragePerformance() {
         
         let toCollide = generateCircles(count: 20_000)
@@ -74,5 +83,4 @@ class HatchingPerformanceTests: XCTestCase {
             }
         }
     }
-    
 }

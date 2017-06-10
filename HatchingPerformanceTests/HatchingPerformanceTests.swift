@@ -15,44 +15,52 @@ class HatchingPerformanceTests: XCTestCase {
     let viewport = Viewport(height: 500, width: 500)
     
     var generator: RandomGenerator!
+    var storage: Storage!
+    
     override func setUp() {
         generator = RandomGenerator(seed: 1234)
+        storage = Storage(viewport: viewport)
+        _ = storage.add(generateCircles(count: 100_000))
     }
     
+    override func tearDown() {
+        generator = nil
+        storage = nil
+    }
+    
+    func generateCircles(count: Int) -> [Circle] {
+        return (0...count).map { _ in self.generator.generate(self.viewport, maxSize: self.maxSize) }
+    }
     
     func testGeneratorPerformance() {
         self.measure {
-            for _ in 0...500000 {
+            // We want to see the performance of the generate function without array overhead
+            // So we should not use the helper function here
+            for _ in 0...500_000 {
                 _ = self.generator.generate(self.viewport, maxSize: self.maxSize)
             }
         }
     }
     
     func testCollisionPerformance() {
-        var circles: [Circle] = []
-        let toAdd = (0...100000).map{ _ in self.generator.generate(self.viewport, maxSize: self.maxSize) }
+        var initial: [Circle] = []
         
-        for circle in toAdd {
-            if !circle.collides(circles) {
-                circles += [circle]
+        // Make sure we have a set of circles that don't overlap
+        for circle in generateCircles(count: 100_000) {
+            if !circle.collides(initial) {
+                initial += [circle]
             }
         }
-        let toCollide = (0...10000).map{ _ in self.generator.generate(self.viewport, maxSize: self.maxSize) }
+        
+        let toCollide = generateCircles(count: 10_000)
         self.measure() {
-            var newCircles: [Circle] = []
-            for circle in toCollide {
-                if !circle.collides(circles) {
-                    newCircles += [circle]
-                }
-            }
+            _ = toCollide.filter { $0.collides(initial) }
         }
     }
     
     func testStoragePerformance() {
-        var storage = Storage(viewport: viewport)
-        let toAdd = (0...100000).map{ _ in self.generator.generate(self.viewport, maxSize: self.maxSize) }
-        _ = storage.add(toAdd)
-        let toCollide = (0...20000).map{ _ in self.generator.generate(self.viewport, maxSize: self.maxSize) }
+        
+        let toCollide = generateCircles(count: 20_000)
         self.measure {
             _ = storage.add(toCollide)
         }

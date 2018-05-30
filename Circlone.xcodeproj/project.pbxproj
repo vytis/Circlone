@@ -37,6 +37,8 @@
 		F19C1D7C1B35F039002522F2 /* CircloneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19C1D7B1B35F039002522F2 /* CircloneUITests.swift */; };
 		F1CA05A520BEF4A800D0BF23 /* XCTestCase+Circles.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CA05A420BEF4A800D0BF23 /* XCTestCase+Circles.swift */; };
 		F1CA05A920BF01BA00D0BF23 /* StorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CA05A820BF01BA00D0BF23 /* StorageTests.swift */; };
+		F1CA05AB20BF087F00D0BF23 /* HatcheryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CA05AA20BF087F00D0BF23 /* HatcheryTests.swift */; };
+		F1CA05AD20BF0C2600D0BF23 /* MockGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CA05AC20BF0C2600D0BF23 /* MockGenerator.swift */; };
 		F1DE05411B54440B00ACF5AD /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DE05401B54440B00ACF5AD /* CircleView.swift */; };
 		F1FF49A61D5E0B12000F744A /* NodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FF49A51D5E0B12000F744A /* NodeTests.swift */; };
 		F1FF49A81D5E0B1E000F744A /* CGRectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FF49A71D5E0B1E000F744A /* CGRectTests.swift */; };
@@ -148,6 +150,8 @@
 		F19C1D8D1B35F24D002522F2 /* Circlone.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Circlone.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		F1CA05A420BEF4A800D0BF23 /* XCTestCase+Circles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Circles.swift"; sourceTree = "<group>"; };
 		F1CA05A820BF01BA00D0BF23 /* StorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageTests.swift; sourceTree = "<group>"; };
+		F1CA05AA20BF087F00D0BF23 /* HatcheryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HatcheryTests.swift; sourceTree = "<group>"; };
+		F1CA05AC20BF0C2600D0BF23 /* MockGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockGenerator.swift; sourceTree = "<group>"; };
 		F1DE05401B54440B00ACF5AD /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		F1FF49A51D5E0B12000F744A /* NodeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NodeTests.swift; sourceTree = "<group>"; };
 		F1FF49A71D5E0B1E000F744A /* CGRectTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRectTests.swift; sourceTree = "<group>"; };
@@ -238,9 +242,11 @@
 			children = (
 				F1CA05A420BEF4A800D0BF23 /* XCTestCase+Circles.swift */,
 				F1FF49A71D5E0B1E000F744A /* CGRectTests.swift */,
-				F1CA05A820BF01BA00D0BF23 /* StorageTests.swift */,
-				F1FF49A51D5E0B12000F744A /* NodeTests.swift */,
 				F1FF49B31D5E1D53000F744A /* CircleTests.swift */,
+				F1FF49A51D5E0B12000F744A /* NodeTests.swift */,
+				F1CA05A820BF01BA00D0BF23 /* StorageTests.swift */,
+				F1CA05AA20BF087F00D0BF23 /* HatcheryTests.swift */,
+				F1CA05AC20BF0C2600D0BF23 /* MockGenerator.swift */,
 				F18C87091D36BCDB0021F729 /* Info.plist */,
 			);
 			path = HatchingTests;
@@ -582,9 +588,11 @@
 			files = (
 				F1FF49A61D5E0B12000F744A /* NodeTests.swift in Sources */,
 				F1FF49B41D5E1D53000F744A /* CircleTests.swift in Sources */,
+				F1CA05AD20BF0C2600D0BF23 /* MockGenerator.swift in Sources */,
 				F1FF49A81D5E0B1E000F744A /* CGRectTests.swift in Sources */,
 				F1CA05A520BEF4A800D0BF23 /* XCTestCase+Circles.swift in Sources */,
 				F1CA05A920BF01BA00D0BF23 /* StorageTests.swift in Sources */,
+				F1CA05AB20BF087F00D0BF23 /* HatcheryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

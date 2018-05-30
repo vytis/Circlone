@@ -9,18 +9,6 @@
 import XCTest
 @testable import Hatching
 
-extension Node {
-    var circles: [Circle] {
-        switch contents {
-        case let .circles(circles):
-            return circles
-        case .deeper:
-            return []
-        }
-    }
-    
-}
-
 class NodeTests: XCTestCase {
     let insideCircle = Circle(x: 5, y: 5, radius: 2)
     let outsideCircle = Circle(x: 100, y: 100, radius: 5)
@@ -31,7 +19,7 @@ class NodeTests: XCTestCase {
 
     func testNodeAddsOnlyIntersectingCircles() {
         let node = Node(circles: [insideCircle, outsideCircle], frame: frame)
-        XCTAssertEqual(node.circles, [insideCircle])
+        XCTAssertEqual(node.contents, .circles([insideCircle]))
     }
     
     func testSplitNode() {
@@ -41,10 +29,10 @@ class NodeTests: XCTestCase {
         let nodes = Node.split(circles: [left, middle, right], frame: frame)
         
         let leftNode = nodes[0]
-        XCTAssertEqual(leftNode.circles, [left, middle])
+        XCTAssertEqual(leftNode.contents, .circles([left, middle]))
 
         let rightNode = nodes[0]
-        XCTAssertEqual(rightNode.circles, [right, middle])
+        XCTAssertEqual(rightNode.contents, .circles([right, middle]))
     }
     
     func testCollideNodeWhenDoesntIntersectFrame() {
@@ -80,7 +68,7 @@ class NodeTests: XCTestCase {
         let removed = node.remove(x: 1, y: 1)
         XCTAssertEqual(removed, one)
         
-        XCTAssertEqual(node.circles, [two])
+        XCTAssertEqual(node.contents, .circles([two]))
     }
     
     func testRemoveCircleFromDeeperNode() {
@@ -94,6 +82,34 @@ class NodeTests: XCTestCase {
 
         let removed = node.remove(x: 1, y: 1)
         XCTAssertEqual(removed, one)
+    }
+
+    func testAddingCircleToTopNode() {
+        var node = Node(contents: .circles([one]), frame: frame)
+        node.add(circle: two)
+
+        XCTAssertEqual(node.contents, .circles([one, two]))
+    }
+
+    func testAddingAndSplitting() {
+        var node = Node(contents: .circles([one]), frame: frame, splitLimit: 1)
+        node.add(circle: two)
+
+        let afterSplit = Node.split(circles: [one, two], frame: frame)
+        XCTAssertEqual(node.contents, .deeper(afterSplit))
+    }
+
+    func testAddingAndAppendingToCorrectNode() {
+        var leftNode = Node(contents: .circles([one]), frame: frame.leftSide)
+        let rightNode = Node(contents: .circles([two]), frame: frame.rightSide)
+        var node = Node(contents: .deeper([leftNode, rightNode]), frame: frame)
+
+        let inLeft = Circle(x: 3, y: 3, radius: 1)
+        node.add(circle: inLeft)
+
+        leftNode.add(circle: inLeft)
+
+        XCTAssertEqual(node.contents, .deeper([leftNode, rightNode]))
     }
 }
 

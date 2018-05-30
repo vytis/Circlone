@@ -74,7 +74,7 @@ final class ViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(applicationWillEnterForeground), name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil)
     }
     
-    func applicationWillEnterForeground() {
+    @objc func applicationWillEnterForeground() {
         if let hatchery = hatchery {
             hatchery.start()
         }

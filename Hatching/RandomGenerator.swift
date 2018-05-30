@@ -34,7 +34,7 @@ final internal class RandomGenerator {
         number ^= number << 25;
         number ^= number >> 27;
         
-        let (multiplied, _) = UInt64.multiplyWithOverflow(number, 2685821657736338717)
+        let (multiplied, _) = number.multipliedReportingOverflow(by: 2685821657736338717)
         let range = Double(multiplied) / Double(UInt64.max)
         
         return Float(Double(limit) * range)

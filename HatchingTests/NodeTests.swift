@@ -97,10 +97,3 @@ class NodeTests: XCTestCase {
     }
 }
 
-extension Node {
-    internal init(contents: Contents, frame: CGRect) {
-        self.contents = contents
-        self.frame = frame
-        self.splitLimit = 100
-    }
-}

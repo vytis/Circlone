@@ -80,13 +80,6 @@
 			remoteGlobalIDString = F19C1D571B35F039002522F2;
 			remoteInfo = Circlone;
 		};
-		F1E1F5C11EEC159100C8372E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F19C1D501B35F038002522F2 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F19C1D571B35F039002522F2;
-			remoteInfo = Circlone;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -152,7 +145,6 @@
 		F19C1D7D1B35F039002522F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F19C1D8D1B35F24D002522F2 /* Circlone.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Circlone.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		F1DE05401B54440B00ACF5AD /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
-		F1E1F5BC1EEC159100C8372E /* HatchingPerformanceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HatchingPerformanceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1FF49A51D5E0B12000F744A /* NodeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NodeTests.swift; sourceTree = "<group>"; };
 		F1FF49A71D5E0B1E000F744A /* CGRectTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRectTests.swift; sourceTree = "<group>"; };
 		F1FF49A91D5E0D04000F744A /* Storage+SVG.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Storage+SVG.swift"; sourceTree = "<group>"; };
@@ -201,13 +193,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		F19C1D741B35F039002522F2 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F1E1F5B91EEC159100C8372E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -300,7 +285,6 @@
 				F18C87001D36BCDB0021F729 /* HatchingTests.xctest */,
 				F18C87351D36C36C0021F729 /* HeadlessGenerator.app */,
 				F18C87451D36C36C0021F729 /* HeadlessGeneratorTests.xctest */,
-				F1E1F5BC1EEC159100C8372E /* HatchingPerformanceTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -456,24 +440,6 @@
 			productReference = F19C1D771B35F039002522F2 /* CircloneUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
-		F1E1F5BB1EEC159100C8372E /* HatchingPerformanceTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F1E1F5C31EEC159100C8372E /* Build configuration list for PBXNativeTarget "HatchingPerformanceTests" */;
-			buildPhases = (
-				F1E1F5B81EEC159100C8372E /* Sources */,
-				F1E1F5B91EEC159100C8372E /* Frameworks */,
-				F1E1F5BA1EEC159100C8372E /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				F1E1F5C21EEC159100C8372E /* PBXTargetDependency */,
-			);
-			name = HatchingPerformanceTests;
-			productName = HatchingPerformanceTests;
-			productReference = F1E1F5BC1EEC159100C8372E /* HatchingPerformanceTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -511,10 +477,6 @@
 						LastSwiftMigration = 0930;
 						TestTargetID = F19C1D571B35F039002522F2;
 					};
-					F1E1F5BB1EEC159100C8372E = {
-						CreatedOnToolsVersion = 9.0;
-						DevelopmentTeam = 3837T5PK39;
-					};
 				};
 			};
 			buildConfigurationList = F19C1D531B35F038002522F2 /* Build configuration list for PBXProject "Circlone" */;
@@ -534,7 +496,6 @@
 				F19C1D761B35F039002522F2 /* CircloneUITests */,
 				F18C86F61D36BCDB0021F729 /* Hatching */,
 				F18C86FF1D36BCDB0021F729 /* HatchingTests */,
-				F1E1F5BB1EEC159100C8372E /* HatchingPerformanceTests */,
 				F18C87341D36C36C0021F729 /* HeadlessGenerator */,
 				F18C87441D36C36C0021F729 /* HeadlessGeneratorTests */,
 			);
@@ -583,13 +544,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		F19C1D751B35F039002522F2 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F1E1F5BA1EEC159100C8372E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -666,13 +620,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F1E1F5B81EEC159100C8372E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -700,11 +647,6 @@
 			isa = PBXTargetDependency;
 			target = F19C1D571B35F039002522F2 /* Circlone */;
 			targetProxy = F19C1D781B35F039002522F2 /* PBXContainerItemProxy */;
-		};
-		F1E1F5C21EEC159100C8372E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F19C1D571B35F039002522F2 /* Circlone */;
-			targetProxy = F1E1F5C11EEC159100C8372E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1073,57 +1015,6 @@
 			};
 			name = Release;
 		};
-		F1E1F5C41EEC159100C8372E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = 3837T5PK39;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = HatchingPerformanceTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = lt.circlone.HatchingPerformanceTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		F1E1F5C51EEC159100C8372E /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = 3837T5PK39;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = HatchingPerformanceTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = lt.circlone.HatchingPerformanceTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1186,15 +1077,6 @@
 			buildConfigurations = (
 				F19C1D871B35F039002522F2 /* Debug */,
 				F19C1D881B35F039002522F2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F1E1F5C31EEC159100C8372E /* Build configuration list for PBXNativeTarget "HatchingPerformanceTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F1E1F5C41EEC159100C8372E /* Debug */,
-				F1E1F5C51EEC159100C8372E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

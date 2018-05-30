@@ -24,8 +24,8 @@ internal struct Node: Equatable {
         
         let one = Node(circles: circles, frame: frame.leftSide.topSide)
         let two = Node(circles: circles, frame: frame.rightSide.topSide)
-        let three = Node(circles: circles, frame: frame.bottomSide.rightSide)
-        let four = Node(circles: circles, frame: frame.bottomSide.leftSide)
+        let three = Node(circles: circles, frame: frame.rightSide.bottomSide)
+        let four = Node(circles: circles, frame: frame.leftSide.bottomSide)
 
         return [one, two, three, four]
     }

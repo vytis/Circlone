@@ -10,31 +10,36 @@ import XCTest
 @testable import Hatching
 
 class NodeTests: XCTestCase {
-    let insideCircle = Circle(x: 5, y: 5, radius: 2)
-    let outsideCircle = Circle(x: 100, y: 100, radius: 5)
-    let one = Circle(x: 2, y: 2, radius: 2)
-    let two = Circle(x: 6, y: 6, radius: 2)
-    let frame = CGRect(x: 0, y: 0, width: 10, height: 10)
 
+    let frame = CGRect(x: 0, y: 0, width: 10, height: 10)
 
     func testNodeAddsOnlyIntersectingCircles() {
         let node = Node(circles: [insideCircle, outsideCircle], frame: frame)
         XCTAssertEqual(node.contents, .circles([insideCircle]))
     }
     
-    func testSplitNode() {
+    func testSplitNodes() {
         let left = Circle(x: 2, y: 5, radius: 1)
         let middle = Circle(x: 5, y: 5, radius: 5)
         let right = Circle(x: 8, y: 5, radius: 1)
         let nodes = Node.split(circles: [left, middle, right], frame: frame)
-        
-        let leftNode = nodes[0]
-        XCTAssertEqual(leftNode.contents, .circles([left, middle]))
+        let nodeFrames = nodes.map { $0.frame }
 
-        let rightNode = nodes[0]
-        XCTAssertEqual(rightNode.contents, .circles([right, middle]))
+        // Source frame split without gaps:
+        // * None of the frames intersect together
+        // * Total area is equal to initial frame area
+        var area: CGFloat = 0
+        for (idx, item) in nodeFrames.enumerated() {
+            for (otherIdx, otherItem) in nodeFrames.enumerated() {
+                if idx == otherIdx { continue }
+                XCTAssertFalse(item.intersects(otherItem), "Frames should not intersect: \(item) and \(otherItem)")
+            }
+
+            area += item.height * item.width
+        }
+        XCTAssertEqual(area, frame.width * frame.height)
     }
-    
+
     func testCollideNodeWhenDoesntIntersectFrame() {
         let node = Node(circles: [insideCircle], frame: frame)
         XCTAssertFalse(node.collides(outsideCircle))

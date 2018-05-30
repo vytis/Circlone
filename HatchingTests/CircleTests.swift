@@ -11,11 +11,6 @@ import XCTest
 
 class CircleTests: XCTestCase {
     
-    let one = Circle(x: 1, y: 2, radius: 3)
-    let two = Circle(x: 2, y: 3, radius: 4)
-    let three = Circle(x: 2, y: 3, radius: 6)
-    let four = Circle(x: 5, y: 8, radius: 3)
-    
     func testCircleEqualWhenAllValuesAreEqual() {
         XCTAssertEqual(one, one)
         XCTAssertNotEqual(one, two)
@@ -23,9 +18,8 @@ class CircleTests: XCTestCase {
     }
     
     func testCircleIsBiggerWhenRadiusIsBigger() {
-        XCTAssertLessThan(one, two)
-        XCTAssertLessThan(two, three)
         XCTAssertLessThan(one, three)
+        XCTAssertLessThan(two, three)
         XCTAssertLessThanOrEqual(one, one)
     }
     
@@ -37,12 +31,12 @@ class CircleTests: XCTestCase {
     
     func testCollidesWhenThereIsOverlappingArea() {
         XCTAssertTrue(one.collides(one))
-        XCTAssertTrue(one.collides(two))
-        XCTAssertFalse(one.collides(four))
+        XCTAssertTrue(one.collides(three))
+        XCTAssertFalse(one.collides(two))
     }
     
     func testCollidesWhenAtLeastOneCircleCollides() {
-        XCTAssertTrue(one.collides([two, four]))
-        XCTAssertFalse(one.collides([four, four]))
+        XCTAssertTrue(one.collides([two, three]))
+        XCTAssertFalse(one.collides([two, four]))
     }
 }

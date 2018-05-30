@@ -9,7 +9,7 @@
 import Foundation
 import CoreGraphics
 
-internal struct Storage {
+internal struct Storage: Equatable {
     
     fileprivate var tree: Node
     fileprivate var large: [Circle] = []

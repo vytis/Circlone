@@ -26,4 +26,8 @@ extension XCTestCase {
     var four: Circle {
         return Circle(x: 5, y: 8, radius: 3)
     }
+
+    var frame: CGRect {
+        return CGRect(x: 0, y: 0, width: 10, height: 10)
+    }
 }

@@ -11,8 +11,6 @@ import XCTest
 
 class NodeTests: XCTestCase {
 
-    let frame = CGRect(x: 0, y: 0, width: 10, height: 10)
-
     func testNodeAddsOnlyIntersectingCircles() {
         let node = Node(circles: [insideCircle, outsideCircle], frame: frame)
         XCTAssertEqual(node.contents, .circles([insideCircle]))

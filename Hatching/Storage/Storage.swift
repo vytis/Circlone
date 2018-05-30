@@ -27,6 +27,9 @@ internal struct Storage: Equatable {
 }
 
 extension Storage {
+
+    typealias Progress = (Int) -> (Void)
+
     internal mutating func popItemAt(x: Float, y: Float) -> Circle? {
         for (index, item) in self.large.enumerated() {
             if item.containsPoint(x: x, y: y) {                
@@ -36,7 +39,7 @@ extension Storage {
         return tree.remove(x: x, y: y)
     }
     
-    internal mutating func add(_ items: [Circle]) -> [Circle] {
+    internal mutating func add(_ items: [Circle], progress: Progress? = nil) -> [Circle] {
         var circles = [Circle]()
         for item in items {
             if item.collides(large) {
@@ -57,9 +60,7 @@ extension Storage {
             }
             all.append(item)
             circles.append(item)
-            if all.count % 2500 == 0 {
-                print("Circles: \(all.count) in \(-start.timeIntervalSinceNow)s")
-            }
+            progress?(circles.count)
         }
         return circles
     }

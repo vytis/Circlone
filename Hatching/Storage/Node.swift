@@ -9,13 +9,13 @@
 import CoreGraphics
 import Foundation
 
-internal struct Node {
+internal struct Node: Equatable {
     
     internal let frame: CGRect
     internal var contents: Contents
     internal let splitLimit: Int
     
-    internal enum Contents {
+    internal enum Contents: Equatable {
         case circles([Circle])
         case deeper([Node])
     }

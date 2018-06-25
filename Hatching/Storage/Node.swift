@@ -9,29 +9,23 @@
 import CoreGraphics
 import Foundation
 
-internal struct Node {
+internal struct Node: Equatable {
     
     internal let frame: CGRect
     internal var contents: Contents
     internal let splitLimit: Int
     
-    internal enum Contents {
+    internal enum Contents: Equatable {
         case circles([Circle])
         case deeper([Node])
-    }
-    
-    internal init(circles: [Circle], frame: CGRect, splitLimit: Int = 500) {
-        self.splitLimit = splitLimit
-        self.frame = frame
-        self.contents = .circles(circles.filter(frame.intersects))
     }
     
     internal static func split(circles: [Circle], frame: CGRect) -> [Node] {
         
         let one = Node(circles: circles, frame: frame.leftSide.topSide)
         let two = Node(circles: circles, frame: frame.rightSide.topSide)
-        let three = Node(circles: circles, frame: frame.bottomSide.rightSide)
-        let four = Node(circles: circles, frame: frame.bottomSide.leftSide)
+        let three = Node(circles: circles, frame: frame.rightSide.bottomSide)
+        let four = Node(circles: circles, frame: frame.leftSide.bottomSide)
 
         return [one, two, three, four]
     }
@@ -95,5 +89,17 @@ internal struct Node {
             }
             contents = .deeper(nodes)
         }
+    }
+}
+
+internal extension Node {
+    internal init(contents: Contents, frame: CGRect, splitLimit: Int = 500) {
+        self.splitLimit = splitLimit
+        self.frame = frame
+        self.contents = contents
+    }
+
+    internal init(circles: [Circle], frame: CGRect, splitLimit: Int = 500) {
+        self.init(contents: .circles(circles.filter(frame.intersects)), frame: frame, splitLimit: splitLimit)
     }
 }

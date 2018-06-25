@@ -9,44 +9,35 @@
 import XCTest
 @testable import Hatching
 
-extension Node {
-    var circles: [Circle] {
-        switch contents {
-        case let .circles(circles):
-            return circles
-        case .deeper:
-            return []
-        }
-    }
-    
-}
-
 class NodeTests: XCTestCase {
-    let insideCircle = Circle(x: 5, y: 5, radius: 2)
-    let outsideCircle = Circle(x: 100, y: 100, radius: 5)
-    let one = Circle(x: 2, y: 2, radius: 2)
-    let two = Circle(x: 6, y: 6, radius: 2)
-    let frame = CGRect(x: 0, y: 0, width: 10, height: 10)
-
 
     func testNodeAddsOnlyIntersectingCircles() {
         let node = Node(circles: [insideCircle, outsideCircle], frame: frame)
-        XCTAssertEqual(node.circles, [insideCircle])
+        XCTAssertEqual(node.contents, .circles([insideCircle]))
     }
     
-    func testSplitNode() {
+    func testSplitNodes() {
         let left = Circle(x: 2, y: 5, radius: 1)
         let middle = Circle(x: 5, y: 5, radius: 5)
         let right = Circle(x: 8, y: 5, radius: 1)
         let nodes = Node.split(circles: [left, middle, right], frame: frame)
-        
-        let leftNode = nodes[0]
-        XCTAssertEqual(leftNode.circles, [left, middle])
+        let nodeFrames = nodes.map { $0.frame }
 
-        let rightNode = nodes[0]
-        XCTAssertEqual(rightNode.circles, [right, middle])
+        // Source frame split without gaps:
+        // * None of the frames intersect together
+        // * Total area is equal to initial frame area
+        var area: CGFloat = 0
+        for (idx, item) in nodeFrames.enumerated() {
+            for (otherIdx, otherItem) in nodeFrames.enumerated() {
+                if idx == otherIdx { continue }
+                XCTAssertFalse(item.intersects(otherItem), "Frames should not intersect: \(item) and \(otherItem)")
+            }
+
+            area += item.height * item.width
+        }
+        XCTAssertEqual(area, frame.width * frame.height)
     }
-    
+
     func testCollideNodeWhenDoesntIntersectFrame() {
         let node = Node(circles: [insideCircle], frame: frame)
         XCTAssertFalse(node.collides(outsideCircle))
@@ -80,7 +71,7 @@ class NodeTests: XCTestCase {
         let removed = node.remove(x: 1, y: 1)
         XCTAssertEqual(removed, one)
         
-        XCTAssertEqual(node.circles, [two])
+        XCTAssertEqual(node.contents, .circles([two]))
     }
     
     func testRemoveCircleFromDeeperNode() {
@@ -95,12 +86,33 @@ class NodeTests: XCTestCase {
         let removed = node.remove(x: 1, y: 1)
         XCTAssertEqual(removed, one)
     }
-}
 
-extension Node {
-    internal init(contents: Contents, frame: CGRect) {
-        self.contents = contents
-        self.frame = frame
-        self.splitLimit = 100
+    func testAddingCircleToTopNode() {
+        var node = Node(contents: .circles([one]), frame: frame)
+        node.add(circle: two)
+
+        XCTAssertEqual(node.contents, .circles([one, two]))
+    }
+
+    func testAddingAndSplitting() {
+        var node = Node(contents: .circles([one]), frame: frame, splitLimit: 1)
+        node.add(circle: two)
+
+        let afterSplit = Node.split(circles: [one, two], frame: frame)
+        XCTAssertEqual(node.contents, .deeper(afterSplit))
+    }
+
+    func testAddingAndAppendingToCorrectNode() {
+        var leftNode = Node(contents: .circles([one]), frame: frame.leftSide)
+        let rightNode = Node(contents: .circles([two]), frame: frame.rightSide)
+        var node = Node(contents: .deeper([leftNode, rightNode]), frame: frame)
+
+        let inLeft = Circle(x: 3, y: 3, radius: 1)
+        node.add(circle: inLeft)
+
+        leftNode.add(circle: inLeft)
+
+        XCTAssertEqual(node.contents, .deeper([leftNode, rightNode]))
     }
 }
+

@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct Circle {
+public struct Circle: Equatable {
     public let x: Float
     public let y: Float
     public let radius: Float

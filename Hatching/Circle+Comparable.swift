@@ -13,7 +13,3 @@ extension Circle: Comparable {}
 public func <(lhs: Circle, rhs: Circle) -> Bool {
     return lhs.radius < rhs.radius
 }
-
-public func ==(lhs: Circle, rhs: Circle) -> Bool {
-    return lhs.radius == rhs.radius
-}

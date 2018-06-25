@@ -9,7 +9,7 @@
 import Foundation
 import CoreGraphics
 
-internal struct Storage {
+internal struct Storage: Equatable {
     
     fileprivate var tree: Node
     fileprivate var large: [Circle] = []
@@ -35,6 +35,9 @@ internal struct Storage {
 }
 
 extension Storage {
+
+    typealias Progress = (Int) -> (Void)
+
     internal mutating func popItemAt(x: Float, y: Float) -> Circle? {
         for (index, item) in self.large.enumerated() {
             if item.containsPoint(x: x, y: y) {                
@@ -44,7 +47,7 @@ extension Storage {
         return tree.remove(x: x, y: y)
     }
     
-    internal mutating func add(_ items: [Circle]) -> [Circle] {
+    internal mutating func add(_ items: [Circle], progress: Progress? = nil) -> [Circle] {
         var circles = [Circle]()
         for item in items {
             if item.collides(large) {

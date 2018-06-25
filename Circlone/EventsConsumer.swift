@@ -26,7 +26,7 @@ final class EventsConsumer {
     }
     
     @objc fileprivate func onDraw() {
-        let newEvents = hatchery.consumeAll()
+        let newEvents = hatchery.consumeEvents()
         if !newEvents.isEmpty {
             view.addEvents(newEvents)
         }

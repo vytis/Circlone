@@ -9,7 +9,15 @@ pool:
 steps:
 - task: Xcode@5
   inputs:
+    actions: 'build-for-testing'
     scheme: 'Circlone'
-    sdk: 'iphoneos'
+    sdk: 'iphonesimulator'
     configuration: 'Release'
-    xcodeVersion: 'default' # Options: 8, 9, default, specifyPath
+    xcodeVersion: 'default'
+- task: Xcode@5
+  inputs:
+    actions: 'test-without-building'
+    scheme: 'Circlone'
+    sdk: 'iphonesimulator'
+    configuration: 'Release'
+    xcodeVersion: 'default'

@@ -12,12 +12,12 @@ steps:
     actions: 'build-for-testing'
     scheme: 'Circlone'
     sdk: 'iphonesimulator'
-    configuration: 'Release'
+    configuration: 'Debug'
     xcodeVersion: 'default'
 - task: Xcode@5
   inputs:
     actions: 'test-without-building'
     scheme: 'Circlone'
     sdk: 'iphonesimulator'
-    configuration: 'Release'
+    configuration: 'Debug'
     xcodeVersion: 'default'

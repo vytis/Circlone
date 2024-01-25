@@ -58,7 +58,7 @@ final class ViewController: UIViewController {
         return true
     }
     
-    override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         hatchery?.stop()
         hatchery = nil
         consumer.stop()
@@ -71,7 +71,7 @@ final class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         colorScheme = ColorScheme()
-        NotificationCenter.default.addObserver(self, selector: #selector(applicationWillEnterForeground), name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(applicationWillEnterForeground), name: NSNotification.Name.UIApplication.willEnterForegroundNotification, object: nil)
     }
     
     @objc func applicationWillEnterForeground() {

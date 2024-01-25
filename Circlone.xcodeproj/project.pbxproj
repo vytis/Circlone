@@ -117,6 +117,7 @@
 		F12458311CB175AD00872D55 /* EventsConsumer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsConsumer.swift; sourceTree = "<group>"; };
 		F124672C1D0B3D6F002A8325 /* ColorScheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorScheme.swift; sourceTree = "<group>"; };
 		F12467301D0DBDBD002A8325 /* SnapshotHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = ../fastlane/SnapshotHelper.swift; sourceTree = "<group>"; };
+		F126A2462B627C7800D698FD /* codemagic.yaml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = codemagic.yaml; sourceTree = "<group>"; };
 		F18C86F71D36BCDB0021F729 /* Hatching.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Hatching.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F18C86F91D36BCDB0021F729 /* Hatching.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Hatching.h; sourceTree = "<group>"; };
 		F18C86FB1D36BCDB0021F729 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -277,6 +278,7 @@
 		F19C1D4F1B35F038002522F2 = {
 			isa = PBXGroup;
 			children = (
+				F126A2462B627C7800D698FD /* codemagic.yaml */,
 				F19C1D8D1B35F24D002522F2 /* Circlone.playground */,
 				F19C1D5A1B35F039002522F2 /* Circlone */,
 				F19C1D7A1B35F039002522F2 /* CircloneUITests */,

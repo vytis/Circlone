@@ -23,7 +23,7 @@ workflows:
 #          agvtool new-version -all $(($LATEST_BUILD_NUMBER + 1))
       - name: Build ipa for distribution
         script: |
-            echo "hello"
+            xcodebuild -project Circlone.xcodeproj/ -scheme Circlone -destination 'platform=iOS Simulator,name=iPhone 15,OS=17.2' build
 #          xcode-project build-ipa \
 #            --workspace "$CM_BUILD_DIR/$XCODE_WORKSPACE" \
 #            --scheme "$XCODE_SCHEME"

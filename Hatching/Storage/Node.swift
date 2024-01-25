@@ -93,13 +93,13 @@ internal struct Node: Equatable {
 }
 
 internal extension Node {
-    internal init(contents: Contents, frame: CGRect, splitLimit: Int = 500) {
+    init(contents: Contents, frame: CGRect, splitLimit: Int = 500) {
         self.splitLimit = splitLimit
         self.frame = frame
         self.contents = contents
     }
 
-    internal init(circles: [Circle], frame: CGRect, splitLimit: Int = 500) {
+    init(circles: [Circle], frame: CGRect, splitLimit: Int = 500) {
         self.init(contents: .circles(circles.filter(frame.intersects)), frame: frame, splitLimit: splitLimit)
     }
 }

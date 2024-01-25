@@ -1,0 +1,19 @@
+workflows:
+  ios-build:
+    name: iOS Native
+    max_build_duration: 120
+    instance_type: mac_mini_m1
+    environment:
+      xcode: latest
+    scripts:
+      - name: Install xcbeautify
+        script: |
+          brew install xcbeautify
+      - name: Build app
+        script: |
+            xcodebuild \
+            -project Circlone.xcodeproj/ \
+            -scheme Circlone \
+            -destination 'platform=iOS Simulator,name=iPhone 15,OS=17.2' \
+            build\
+            | xcbeautify

@@ -22,7 +22,7 @@ final class EventsConsumer {
         self.hatchery = hatchery
         self.view = view
         displayLink = CADisplayLink(target: self, selector: #selector(onDraw))
-        displayLink?.add(to: RunLoop.main, forMode: RunLoopMode.defaultRunLoopMode)
+//        displayLink?.add(to: RunLoop.main, forMode: RunLoop.Mode.RunLoop.Mode.default)
     }
     
     @objc fileprivate func onDraw() {

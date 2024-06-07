@@ -223,12 +223,10 @@
 		F18C86F81D36BCDB0021F729 /* Hatching */ = {
 			isa = PBXGroup;
 			children = (
+				F1C550D12C1315C200594174 /* Circle */,
 				7FC785AD1ED70DCA00624756 /* Storage */,
 				F18C87221D36BD5B0021F729 /* Hatchery.swift */,
 				F18C87271D36BD5B0021F729 /* Viewport.swift */,
-				F18C87211D36BD5B0021F729 /* Circle.swift */,
-				F1FF49AB1D5E139A000F744A /* Circle+Comparable.swift */,
-				F1FF49AD1D5E13FD000F744A /* Circle+Collision.swift */,
 				F18C87241D36BD5B0021F729 /* RandomGenerator.swift */,
 				F18C872F1D36BE430021F729 /* CGRect+Helpers.swift */,
 				F18C86F91D36BCDB0021F729 /* Hatching.h */,
@@ -326,6 +324,16 @@
 				F19C1D7D1B35F039002522F2 /* Info.plist */,
 			);
 			path = CircloneUITests;
+			sourceTree = "<group>";
+		};
+		F1C550D12C1315C200594174 /* Circle */ = {
+			isa = PBXGroup;
+			children = (
+				F18C87211D36BD5B0021F729 /* Circle.swift */,
+				F1FF49AB1D5E139A000F744A /* Circle+Comparable.swift */,
+				F1FF49AD1D5E13FD000F744A /* Circle+Collision.swift */,
+			);
+			path = Circle;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -279,9 +279,9 @@
 			children = (
 				F19C1D8D1B35F24D002522F2 /* Circlone.playground */,
 				F19C1D5A1B35F039002522F2 /* Circlone */,
-				F19C1D7A1B35F039002522F2 /* CircloneUITests */,
 				F18C86F81D36BCDB0021F729 /* Hatching */,
 				F18C87061D36BCDB0021F729 /* HatchingTests */,
+				F19C1D7A1B35F039002522F2 /* CircloneUITests */,
 				F18C87361D36C36C0021F729 /* HeadlessGenerator */,
 				F18C87481D36C36C0021F729 /* HeadlessGeneratorTests */,
 				F19C1D591B35F039002522F2 /* Products */,

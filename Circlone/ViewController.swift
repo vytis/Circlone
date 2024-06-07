@@ -3,17 +3,17 @@ import CoreGraphics
 import Hatching
 
 final class ViewController: UIViewController {
-
+    
     @IBOutlet weak var circleView: CircleView!
-
+    
     @IBOutlet weak var labelContainer: UIView!
-
+    
     @IBOutlet weak var tapLabel: UILabel!
     @IBOutlet weak var shakeLabel: UILabel!
     
     var consumer: EventsConsumer!
-    
     var hatchery: Hatchery?
+    
     var colorScheme: ColorScheme! {
         didSet {
             let color = colorScheme.currentColor
@@ -39,18 +39,15 @@ final class ViewController: UIViewController {
         }
     }
     
-    func start(statePath: String? = nil) {
+    func start() {
         let viewport = Viewport(height: Float(view.frame.height), width: Float(view.frame.width))
         self.hatchery = Hatchery(viewport: viewport, maxSize: 500)
         self.consumer = EventsConsumer(hatchery: hatchery!, view: circleView)
         labelContainer.isHidden = true
+        hatchery!.start()
     }
     
-    override var canBecomeFirstResponder : Bool {
-        return true
-    }
-    
-    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+    func stop() {
         hatchery?.stop()
         hatchery = nil
         consumer.stop()
@@ -60,15 +57,18 @@ final class ViewController: UIViewController {
         colorScheme = colorScheme.nextScheme
     }
     
+    override var canBecomeFirstResponder : Bool {
+        return true
+    }
+    
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        stop()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         colorScheme = ColorScheme()
-        NotificationCenter.default.addObserver(
-          self,
-          selector: #selector(applicationWillEnterForeground),
-          name: UIApplication.willEnterForegroundNotification,
-          object: nil)
-//        NotificationCenter.default.addObserver(self, selector: #selector(applicationWillEnterForeground), name: NSNotification.Name.UIApplication.willEnterForegroundNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(applicationWillEnterForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
     }
     
     @objc func applicationWillEnterForeground() {

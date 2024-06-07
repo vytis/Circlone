@@ -22,11 +22,10 @@ final internal class RandomGenerator {
         let x = rand_uniform(limit) + radius
         let y = rand_uniform(viewport.height - 2 * radius) + radius
         
-        return Circle(x:x, y:y, radius:radius)
+        return Circle(x: x, y: y, radius: radius)
     }
     
     fileprivate func rand_uniform(_ limit: Float) -> Float {
-        
         number ^= number >> 12;
         number ^= number << 25;
         number ^= number >> 27;

@@ -1,6 +1,5 @@
-//import Foundation
-
 public extension Circle {
+    
     func containsPoint(x: Float, y: Float) -> Bool {
         return collides(Circle(x: x, y: y, radius: 0))
     }

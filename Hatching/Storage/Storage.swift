@@ -52,8 +52,8 @@ extension Storage {
             }
             all.append(item)
             circles.append(item)
-            progress?(all.count, circles.count)
         }
+        progress?(all.count, circles.count)
         return circles
     }
 }

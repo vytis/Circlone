@@ -63,7 +63,9 @@ final public class Hatchery {
                 return
             }
             let circles = (0..<10000).map { _ in self.generate() }
-            let newEvents = self.storage.add(circles).map { Event.added($0) }
+            let newEvents = self.storage.add(circles, progress: { total, added in
+                print("Total: \(total) added: \(added)")
+            }).map { Event.added($0) }
             self.produced.append(contentsOf: newEvents)
             self.generateCircles()
         }

@@ -20,7 +20,7 @@ internal struct Storage: Equatable {
 
 extension Storage {
 
-    typealias Progress = (Int) -> (Void)
+    typealias Progress = (Int, Int) -> (Void)
 
     internal mutating func popItemAt(x: Float, y: Float) -> Circle? {
         for (index, item) in self.large.enumerated() {
@@ -52,7 +52,7 @@ extension Storage {
             }
             all.append(item)
             circles.append(item)
-            progress?(circles.count)
+            progress?(all.count, circles.count)
         }
         return circles
     }

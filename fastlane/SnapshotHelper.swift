@@ -22,7 +22,7 @@ open class Snapshot: NSObject {
     open class func setupSnapshot(_ app: XCUIApplication) {
         setLanguage(app)
         setLocale(app)
-        setLaunchArguments(app)
+//        setLaunchArguments(app)
     }
 
     class func setLanguage(_ app: XCUIApplication) {
@@ -60,26 +60,26 @@ open class Snapshot: NSObject {
         app.launchArguments += ["-AppleLocale", "\"\(locale)\""]
     }
 
-    class func setLaunchArguments(_ app: XCUIApplication) {
-        guard let prefix = pathPrefix() else {
-            return
-        }
-
-        let path = prefix.appendingPathComponent("snapshot-launch_arguments.txt")
-        app.launchArguments += ["-FASTLANE_SNAPSHOT", "YES", "-ui_testing"]
-
-        do {
-            let launchArguments = try NSString(contentsOfFile: path, encoding: String.Encoding.utf8.rawValue) as String
-            let regex = try NSRegularExpression(pattern: "(\\\".+?\\\"|\\S+)", options: [])
-            let matches = regex.matches(in: launchArguments, options: [], range: NSRange(location:0, length:launchArguments.characters.count))
-            let results = matches.map { result -> String in
-                (launchArguments as NSString).substring(with: result.range)
-            }
-            app.launchArguments += results
-        } catch {
-            print("Couldn't detect/set launch_arguments...")
-        }
-    }
+//    class func setLaunchArguments(_ app: XCUIApplication) {
+//        guard let prefix = pathPrefix() else {
+//            return
+//        }
+//
+//        let path = prefix.appendingPathComponent("snapshot-launch_arguments.txt")
+//        app.launchArguments += ["-FASTLANE_SNAPSHOT", "YES", "-ui_testing"]
+//
+//        do {
+//            let launchArguments = try NSString(contentsOfFile: path, encoding: String.Encoding.utf8.rawValue) as String
+//            let regex = try NSRegularExpression(pattern: "(\\\".+?\\\"|\\S+)", options: [])
+//            let matches = regex.matches(in: launchArguments, options: [], range: NSRange(location:0, length:launchArguments.characters.count))
+//            let results = matches.map { result -> String in
+//                (launchArguments as NSString).substring(with: result.range)
+//            }
+//            app.launchArguments += results
+//        } catch {
+//            print("Couldn't detect/set launch_arguments...")
+//        }
+//    }
 
     open class func snapshot(_ name: String, waitForLoadingIndicator: Bool = true) {
         if waitForLoadingIndicator {

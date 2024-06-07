@@ -64,8 +64,6 @@ final class CircleView: UIView {
     override func draw(_ rect: CGRect) {
         let context = UIGraphicsGetCurrentContext()!
         
-
-        
         if blobsLayer == nil {
             let size = CGSize(width: frame.width * 2, height: frame.height * 2)
             blobsLayer = CGLayer(context, size: size, auxiliaryInfo: nil)

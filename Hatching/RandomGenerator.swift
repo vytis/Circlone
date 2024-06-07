@@ -1,11 +1,3 @@
-//
-//  RandomGenerator.swift
-//  Circlone
-//
-//  Created by Vytis ⚫ on 2015-08-14.
-//  Copyright © 2015 🗿. All rights reserved.
-//
-
 import Foundation
 
 final internal class RandomGenerator {

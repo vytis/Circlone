@@ -1,11 +1,3 @@
-//
-//  ColorScheme.swift
-//  Circlone
-//
-//  Created by Vytis ⚫ on 2016-06-10.
-//  Copyright © 2016 🗿. All rights reserved.
-//
-
 import UIKit
 
 private func randValue(from: CGFloat = 0.0, to: CGFloat = 1.0) -> CGFloat {

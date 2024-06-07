@@ -1,12 +1,4 @@
-//
-//  Circle+Collision.swift
-//  Circlone
-//
-//  Created by Vytis ⚫ on 2016-08-12.
-//  Copyright © 2016 🗿. All rights reserved.
-//
-
-import Foundation
+//import Foundation
 
 public extension Circle {
     func containsPoint(x: Float, y: Float) -> Bool {

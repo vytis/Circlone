@@ -1,11 +1,3 @@
-//
-//  Hatching.h
-//  Hatching
-//
-//  Created by Vytis ⚫ on 2016-07-13.
-//  Copyright © 2016 🗿. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
 
 //! Project version number for Hatching.

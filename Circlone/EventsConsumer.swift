@@ -1,11 +1,3 @@
-//
-//  Subscriber.swift
-//  Circlone
-//
-//  Created by Vytis ⚫ on 2016-04-03.
-//  Copyright © 2016 🗿. All rights reserved.
-//
-
 import UIKit
 import Hatching
 

@@ -1,11 +1,3 @@
-//
-//  HeadlessGeneratorTests.swift
-//  HeadlessGeneratorTests
-//
-//  Created by Vytis ⚫ on 2016-07-13.
-//  Copyright © 2016 🗿. All rights reserved.
-//
-
 import XCTest
 @testable import HeadlessGenerator
 

@@ -1,11 +1,3 @@
-//
-//  Circle.swift
-//  Circlone
-//
-//  Created by Vytis ⚫ on 2015-06-20.
-//  Copyright © 2015 🗿. All rights reserved.
-//
-
 import Foundation
 
 public struct Circle: Equatable {

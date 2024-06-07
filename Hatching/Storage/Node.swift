@@ -1,11 +1,3 @@
-//
-//  Tree.swift
-//  Circlone
-//
-//  Created by Vytis ⚫ on 2016-04-09.
-//  Copyright © 2016 🗿. All rights reserved.
-//
-
 import CoreGraphics
 import Foundation
 

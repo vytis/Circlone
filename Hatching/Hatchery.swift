@@ -57,6 +57,15 @@ final public class Hatchery {
         }
     }
     
+    public func consumeEvents() -> [Event] {
+        var events = [Event]()
+        q.sync {
+            events.append(contentsOf: self.produced)
+            produced.removeAll()
+        }
+        return events
+    }
+    
     internal func generateCircles() {
         q.async {
             if !self.running {
@@ -71,14 +80,5 @@ final public class Hatchery {
             }
             self.generateCircles()
         }
-    }
-    
-    public func consumeEvents() -> [Event] {
-        var events = [Event]()
-        q.sync {
-            events.append(contentsOf: self.produced)
-            produced.removeAll()
-        }
-        return events
     }
 }

@@ -7,8 +7,6 @@ internal struct Storage: Equatable {
     fileprivate var large: [Circle] = []
     internal var all: [Circle] = []
     
-    fileprivate let start = Date()
-    
     internal let pivotPoint: Float
     
     internal init(viewport: Viewport, pivotPoint: Float? = nil) {

@@ -29,7 +29,7 @@ class StorageTests: XCTestCase {
         expectation.expectedFulfillmentCount = items.count
 
         var countsReported = [Int]()
-        _ = storage.add(items) { count in
+        _ = storage.add(items) { count, total in
             countsReported.append(count)
             expectation.fulfill()
         }
